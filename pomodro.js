@@ -66,8 +66,8 @@ function zamanlayiciBaslat(){
     }
     else if (kontrolNum%2 != 0){
         kontrolNum+=1
-        saniyecon.innerText = "1"
-        dakikacon.innerText = "00"
+        saniyecon.innerText = "59"
+        dakikacon.innerText = "4"
         pomodroContainer.style.boxShadow = "0px 0px 49px 0px #ed0313"
         pomodroContainer.style.border = "3px solid #ed0313"
     }
