@@ -49,12 +49,14 @@ tamEkranButton.addEventListener('click', () => {
         });
     }
 });
-
+let kontrolNum = 1;
 function zamanlayiciBaslat(){
     if(saniyecon.innerText > 0){
         let saniyeconN = Number(saniyecon.innerText)
         saniyeconN-=1
         saniyecon.innerText = saniyeconN
+        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #030eed"
+        pomodroContainer.style.border = "3px solid blue"
     }
     else if(dakikacon.innerText > 0){
         let dakikaconN= Number(dakikacon.innerText)
@@ -62,9 +64,16 @@ function zamanlayiciBaslat(){
         dakikacon.innerText = dakikaconN
         saniyecon.innerText = "59"
     }
+    else if (kontrolNum%2 != 0){
+        kontrolNum+=1
+        saniyecon.innerText = "1"
+        dakikacon.innerText = "00"
+        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #ed0313"
+        pomodroContainer.style.border = "3px solid #ed0313"
+    }
     else{
-        saniyecon.innerText = "59"
-        dakikacon.innerText = "04"
+        dakikacon.innerText = "25"
+        saniyecon.innerText = "00"
     }
 }
 
