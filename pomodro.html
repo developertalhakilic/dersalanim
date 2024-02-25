@@ -41,19 +41,20 @@
             <h2>00</h2></div>
         <p id="saatYazi">Saat</p> -->
         <div class="dakika2 hourelement">
-            <h2>25</h2>
+            <h2 id="dakika">25</h2>
         </div>
         <p id="dakikaYazi">Dakika</p>
         <div class="saniye hourelement">
-            <h2>00</h2>
+            <h2 id="saniye">00</h2>
         </div>
         <p id="saniyeYazi">Saniye</p>
     </div>
     </div>
     <div class="buttons">
-    <button class="bn5 button" id="butonBaslat">Başlat</button>
-    <button class="bn5 button" id="butonDuraklat">Duraklat</button>
-    <button class="bn5 button" id="butonBitir">Bitir</button>
+    <button class="bn5 button" id="butonBaslat" onclick="hideStartButton()">Başlat</button>
+    <button class="bn5 button" id="butonDuraklat" onclick="showTheBaslatButon()">Duraklat</button>
+    <button class="bn5 button" id="butonGeriBaslat" onclick="showTheDuraklatButon()">Devam Ettir</button>
+    <button class="bn5 button" id="butonBitir" onclick="stopButton()">Bitir</button>
     </div>
     <a href="home.html"><img src="Images/Ders_Alanım-removebg-preview.png" alt="" class="logo" id="logo"></a>
     <div class="icerik1" id="icerik1">

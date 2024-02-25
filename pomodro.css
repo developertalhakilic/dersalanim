@@ -12,15 +12,14 @@ h2{
     border-radius: 50px;
     height: 400px;
     border: 3px solid blue;
-    -webkit-box-shadow: 0px 0px 49px 0px rgba(3,14,237,1);
-    -moz-box-shadow: 0px 0px 49px 0px rgba(3,14,237,1);
-    box-shadow: 0px 0px 49px 0px rgba(3,14,237,1);
+    box-shadow: 0px 0px 49px 0px #030eed;
 }
 .pomodroContainer button{
     font-size: 40px;
     height: 70px;
     border: none;
     margin-top: 9px;
+    z-index: 9999;
     cursor: pointer;
     margin-left: 90%;
     background-color: black;
@@ -61,11 +60,11 @@ p{
     display: flex;
     justify-content: center;
     margin-top: 35px;
-    width: 900px;
+    width: 80%;
     border-radius: 25px;
 }
 .buttons{
-    margin-top: 90px;
+    margin-top: 40px;
 }
 .button{
     font-size: 20px;
@@ -108,4 +107,13 @@ p{
 
 span{
     color: red;
+}
+#butonDuraklat{
+    display: none;
+}
+#butonBitir{
+    display: none;
+}
+#butonGeriBaslat{
+    display: none;
 }
