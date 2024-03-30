@@ -1,0 +1,164 @@
+.sorularContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 1200px;
+    height: 100vh;
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(107,104,107,1);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(107,104,107,1);
+    box-shadow: 0px 0px 25px 0px rgba(107,104,107,1);
+}
+
+.soruekle{
+    width: 800px;
+    border-radius: 25px;
+    height: 65px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    background-color: red;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.soruekle i{
+    margin-left: 15px;
+    font-size: 35px;
+    border-radius: 100%;
+    margin-top: 13px;
+}
+.soruekle h2{
+    margin-top: 10px;
+    position: absolute;
+}
+.soruekle:hover{
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(107,104,107,1);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(107,104,107,1);
+    box-shadow: 0px 0px 25px 0px rgba(107,104,107,1);
+}
+.colorWhite{
+    transition: 0.4s;
+}
+.soruekle:hover .colorWhite{
+    color: white;
+}
+.soruBilgiAdd{
+    transition: 0.3s;
+    width: 760px;
+    border-radius: 25px;
+    margin-top: 80px;
+    height: 0px;
+    position: absolute;
+    z-index: 9999;
+    cursor: initial;
+    background-color: #a44040;
+    display: flex;
+}
+.soruBilgiAdd .left{
+    width: 50%;
+    transition: 0.4s;
+    margin-top: 1px;
+    height: 100%;
+    display: none;
+    border-right: 1px solid rgb(146, 47, 47);
+    border-radius: 25px 0 0 25px ;
+}
+.soruBilgiAdd .right{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    border-radius: 0 25px 25px 0;
+}
+.soruBilgiAdd .left form h2{
+    display: flex;
+}
+.soruBilgiAdd .left form{
+    display: flex;
+}
+
+.formLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formLeft h2{
+    margin: 10px;
+    color: white;
+    font-family: 'Bunya PERSONAL', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    outline: #006faa 2px;
+}
+.formLeft input{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+    background-color: #101010;
+    font-family: 'KG Crossing A Line', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: 0.4s;
+    color: white;
+    font-size: 24px;
+}
+.formLeft input:focus{
+    border: 1px solid rgb(5, 67, 74);
+}
+.textAreaLeft:focus{
+    border: 1px solid rgb(5, 67, 74);
+}
+.textAreaLeft{
+    outline: 4px solid red;
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+    background-color: #101010;
+    font-family: 'KG Crossing A Line', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 100;
+    color: white;
+    font-size: 21px;
+    padding: 5px;
+}
+
+.lastButton{
+    width: 300px;
+    height: 32px;
+    font-size: 16px;
+    margin: 10px;
+    font-family: 'Static Bold', sans-serif;
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.471);
+    text-align: center;
+    font-size: 29px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: 0.4s;
+}
+
+.lastButton:hover{
+    background-color: #471e1e;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    color: white;
+    background-color: white;
+}

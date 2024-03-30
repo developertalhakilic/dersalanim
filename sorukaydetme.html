@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="tr">
 <head>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -23,33 +21,61 @@
     <meta property="og:url" content="https://wolfprogrammingapps.github.io/Ders Alanım/" />
     <meta property="og:image" content="https://wolfprogrammingapps.github.io/dersalanim/Ads%C4%B1z_tasar%C4%B1m-removebg-preview.png"/>
     <meta property="og:description" content="Ders Alanım ile Ders Çalışmak İçin Tüm Araçları Tek Sitede Bulun !"/>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="sorukaydetme.css">
     <link rel="stylesheet" href="ortak.css">
 </head>
 
 <body>
-
     <div class="sideBarTop">
         <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="sideBar" id="sideBar">
     <div class="sideBarBottom">
-        <button onclick="window.location = 'home.html'" style="color: rgb(255, 140, 0);"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
+        <button onclick="window.location = 'home.html'"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
         <button onclick="window.location = 'pomodro.html'"><i class="fa-solid fa-clock"></i> Pomodro Sayacı</button>
         <button onclick="window.location = '.html'"><i class="fa-solid fa-bell"></i> Zaman Tutucu</button>
-        <button onclick="window.location = 'sorukaydetme.html'"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button>
+        <button onclick="window.location = 'sorukaydetme.html'" style="color: rgb(255, 140, 0);"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button>
         <button onclick="window.location = '.html'"><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button>
         <button onclick="window.location = 'istatistikler.html'"><i class="fa-solid fa-chart-simple"></i></i> İstatistikler</button>
     </div>
     </div>
+    <div class="sorularContainer">
+        <div class="container">
+            <div class="soruekle" id="soruEkle" onclick="soruEkleBasma()">
+                <i class="fa-solid fa-plus colorWhite"></i>
+                <h2 style="position: absolute; margin-left: -520px;font-size: 37px; font-family: 'Bunya PERSONAL', sans-serif;" class="colorWhite">Soru Ekle</h2>
+                <i class="fa-solid fa-caret-down colorWhite" style="margin-left: 700px; font-size: 40px;margin-top: 10px;"></i>
+        </div>
+        <div class="soruBilgiAdd" id="soruBilgiAdd">
+            <div class="left animate__animated animate__fadeIn" id="left">
+                <form class="formLeft ">
+                    <h2>Ders İsmi:</h2>
+                    <input type="text">
+                    <h2>Kitap İsmi</h2>
+                    <input type="text">
+                    <h2>Sayfa / Test No.</h2>
+                    <input type="number">
+                    <h2>Soru No.</h2>
+                    <input type="number">
 
-    <center>
-    <a href="home.html"><img src="Images/Ders_Alanım-removebg-preview.png" alt="" class="logo"></a>
-    <br>
-    <br>
-    </center>
+                </form>
+            </div>
+            <div class="right animate__animated animate__fadeIn" id="right" style="display: none;">
+                <form class="formLeft">
+                    <h2>Çözme Tarihi:</h2>
+                    <input type="date">
+                    <h2>Açıklama</h2>
+                    <textarea class="textAreaLeft"></textarea>
+                    <button class="lastButton">Temizle</button>
+                    <button class="lastButton" onclick="soruEkleme()">Gönder</button>
+                </form>
+            </div>
+            <div class="sorular">
 
+            </div>
+        </div>
+    </div>
+    </div>
     <script src="hamburgerMenu.js"></script>
+    <script src="sorukaydetme.js"></script>
 </body>
-
-</html>

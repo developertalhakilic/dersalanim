@@ -9,6 +9,9 @@ const baslatButon = document.getElementById("butonBaslat")
 const duraklatButon = document.getElementById("butonDuraklat")
 const bitirButon = document.getElementById("butonBitir")
 const restartButon = document.getElementById("butonGeriBaslat")
+const tamEkranButton = document.getElementById('tamEkranButton');
+const hamburger = document.getElementById("hamburgerButton")
+const side = document.getElementById("sideBar")
 function tamEkran() {
     var element = document.documentElement; // Sayfanın kök elementini alı
     if (element.requestFullscreen) {
@@ -21,9 +24,6 @@ function tamEkran() {
         element.msRequestFullscreen();
     }
 }
-
-const tamEkranButton = document.getElementById('tamEkranButton');
-
 tamEkranButton.addEventListener('click', () => {
     const body = document.body;
 
@@ -33,9 +33,9 @@ tamEkranButton.addEventListener('click', () => {
             basYazi.style.display = "none"
             pomodroContainer.style.marginTop = "170px"
             pomodroContainer.style.width = "90%"
-            logo.style.display = "none"
-            icerik1.style.display = "none"
-            icerik2.style.display = "none"
+            hamburger.style.color = "white"
+            hamburger.style.display = "none"
+            side.style.display = "none"
         });
     } else {
         document.exitFullscreen().then(() => {
@@ -43,37 +43,52 @@ tamEkranButton.addEventListener('click', () => {
             basYazi.style.display = "block"
             pomodroContainer.style.marginTop = "0px"
             pomodroContainer.style.width = "58%"
-            logo.style.display = "block"
-            icerik1.style.display = "block"
-            icerik2.style.display = "block"
+            hamburger.style.display = "block"
         });
     }
 });
-let kontrolNum = 1;
+let kontrolSayi = 2;
+if(localStorage.getItem("pomodoroSayisi") == null){
+    localStorage.setItem("pomodoroSayisi",0)
+}
+if(localStorage.getItem("dersSaniyesi") == null){
+    localStorage.setItem("dersSaniyesi",0)
+}
+let pomodoroSayisi = Number(localStorage.getItem("pomodoroSayisi"))
+let dersSaniyesi = Number(localStorage.getItem("dersSaniyesi"))
 function zamanlayiciBaslat(){
-    if(saniyecon.innerText > 0){
-        let saniyeconN = Number(saniyecon.innerText)
-        saniyeconN-=1
-        saniyecon.innerText = saniyeconN
-        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #030eed"
-        pomodroContainer.style.border = "3px solid blue"
+    if(saniyecon.innerText==0 && dakikacon.innerText != -1){
+        let yeniVar = Number(dakikacon.innerText)
+        dakikacon.innerText = yeniVar-1
+        saniyecon.innerText = "60"
     }
-    else if(dakikacon.innerText > 0){
-        let dakikaconN= Number(dakikacon.innerText)
-        dakikaconN-=1
-        dakikacon.innerText = dakikaconN
-        saniyecon.innerText = "59"
+    if(saniyecon.innerText>0){
+        let yeniVar2 = Number(saniyecon.innerText)
+        saniyecon.innerText = yeniVar2-=1
+        dersSaniyesi+=1
+        localStorage.setItem("dersSaniyesi",dersSaniyesi)
+        if(saniyecon.innerText.length == 1){
+            saniyecon.innerText = "0" + saniyecon.innerText
+        }
+        if(dakikacon.innerText.length == 1){
+            dakikacon.innerText = "0" + dakikacon.innerText
+        }
     }
-    else if (kontrolNum%2 != 0){
-        kontrolNum+=1
-        saniyecon.innerText = "59"
+    if(dakikacon.innerText == -1 && kontrolSayi % 2 == 0){
+        kontrolSayi+=1
+        pomodoroSayisi+=1
+        localStorage.setItem("pomodoroSayisi",pomodoroSayisi)
         dakikacon.innerText = "4"
-        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #ed0313"
-        pomodroContainer.style.border = "3px solid #ed0313"
+        saniyecon.innerText = "59"
+        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #ed0303"
+        pomodroContainer.style.border = "3px solid red"
     }
-    else{
+    if(dakikacon.innerText== -1 && kontrolSayi % 2 != 0){
+        kontrolSayi+=1
         dakikacon.innerText = "25"
         saniyecon.innerText = "00"
+        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #030eed"
+        pomodroContainer.style.border = "3px solid blue"
     }
 }
 

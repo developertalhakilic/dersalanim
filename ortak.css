@@ -1,4 +1,14 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
+@import url(https://fonts.cdnfonts.com/css/bunya-personal);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
+@import url('https://fonts.cdnfonts.com/css/learninglings-4');
+@import url('https://fonts.cdnfonts.com/css/djb-file-folder-tabs');
+@import url('https://fonts.cdnfonts.com/css/cafeta');
+@import url('https://fonts.cdnfonts.com/css/sf-orson-casual-heavy');
+@import url('https://fonts.cdnfonts.com/css/camilla-ahoy');
+@import url('https://fonts.cdnfonts.com/css/marcovaldo-trial');       
+@import url('https://fonts.cdnfonts.com/css/kg-crossing-a-line');
+@import url('https://fonts.cdnfonts.com/css/static-bold');
 *{
     margin: 0;
     padding: 0;
@@ -73,3 +83,55 @@
     top: 0;
     border-radius: 10px;
   }
+
+body{
+    background-color: #000000;
+}
+.sideBar{
+  width: 300px;
+  height: 100vh;
+  position: absolute;
+  background-color: #101010;
+  padding: 10px;
+  padding-top: 40px;
+  display: none;
+  transition: 0.4s;
+  z-index: 9999;
+  
+}
+.sideBarBottom button{
+  display: flex;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  background-color: #101010;
+  color: white;
+  font-family: 'Bunya PERSONAL', sans-serif;
+  border: none;
+  border-bottom: 1px solid #a7a4a4;
+  cursor: pointer;
+}
+
+.sideBarTop button{
+  border: none;
+  justify-content: flex-start;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 33px;
+  width: 33px;
+  height: 40px;
+  margin-top: 13px;
+  margin-left: 12PX;
+  background-color: #101010;
+  color: white;
+  position: absolute;
+  z-index: 25000;
+  transition: 0.3s;
+}
+.sideBarBottom i{
+  margin-right: 10px;
+  font-size: 27px;
+}
+
