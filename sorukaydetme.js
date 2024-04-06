@@ -11,7 +11,10 @@ const sayfaTestNo = document.getElementById("sayfa/testNo")
 const soruNo = document.getElementById("soruNo")
 const cozmeTarihi = document.getElementById("cozmeTarihi")
 const aciklamaText = document.getElementById("aciklama")
-
+let kontrolSayi = 0
+let sorularHTML = localStorage.getItem("SorularHTML")
+console.log(sorularHTML)
+sorularDiv.innerHTML += sorularHTML
 // ? Todolar :
 
 
@@ -50,7 +53,7 @@ function soruEkleme(){
             keyNumbers.push(Number(key.match(/\d+$/)[0]))
         }
         catch{
-            console.log("Continueing")
+            undefined
         }
     })
     let enBuyuk = keyNumbers.reduce((acc, currentValue) => Math.max(acc, currentValue), -Infinity);
@@ -60,6 +63,13 @@ function soruEkleme(){
     let soruNoValue = soruNo.value
     let cozmeTarihiValue = cozmeTarihi.value
     let aciklamaTextValue = aciklamaText.value
+    if(dersIsmiValue != "" && kitapIsmiValue != "" && sayfaTestNoValue != "" && soruNoValue != "" && cozmeTarihiValue != "" && aciklamaTextValue != ""){
+        console.log("continueing")
+        kontrolSayi+=1
+    }
+    else{
+        return false
+    }
     for(let i = 1; i<=enBuyuk+1; i++){ 
         if(tumLocalKeyler.includes(`dersIsmiValueKey${i}`) == false){
             localStorage.setItem("dersIsmiValueKey" + i, dersIsmiValue)
@@ -88,7 +98,7 @@ function soruEkleme(){
                 <h4>${localStorage.getItem("dersIsmiValueKey" + i)}</h4>
                 <h2>Kitap İsmi:</h2>
                 <h4>${localStorage.getItem("kitapIsmiValueKey" + i)}</h4>
-                <h2>Sayfa / Test No.</h2>
+                <h2>Sayfa No.</h2>
                 <h4>${localStorage.getItem("sayfaTestNoValueKey" + i)}</h4>
                 <h2>Soru No.</h2>
                 <h4>${localStorage.getItem("soruNoValueKey" + i)}</h4>
@@ -105,6 +115,7 @@ function soruEkleme(){
         `
         sorularDiv.innerHTML += olusturulacakDivler
 }
+    localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
 inputTemizleme()
 }
 function inputTemizleme(){
@@ -121,16 +132,14 @@ function toDoQuestionBuyutme(id){
     const toDoQuestiondiv = document.getElementById("toDoQuestion"+id)
     const dataLeft = document.getElementById("dataLeft"+id)
     const dataRight = document.getElementById("dataRight"+id)
-
-    const sayi1 = 500
-    if(toDoQuestiondiv.style.height == "500px"){
-        toDoQuestiondiv.style.height == "500px"
+    if(dataRight.style.display == 'block'){
+        toDoQuestiondiv.style.height = '50px'
         toDoQuestiondiv.style.backgroundColor = 'red'
-        dataLeft.style.display = "none"
-        dataRight.style.display = "none"
+        dataLeft.style.display = 'none'
+        dataRight.style.display = 'none'
     }
     else{
-        toDoQuestiondiv.style.height = "500px"
+        toDoQuestiondiv.style.height = '500px'
         toDoQuestiondiv.style.backgroundColor = 'blue'
         dataLeft.style.display = 'block'
         dataRight.style.display = 'block'
