@@ -14,10 +14,7 @@ const aciklamaText = document.getElementById("aciklama")
 
 // ? Todolar :
 
-const toDoQuestiondiv = document.getElementById("toDoQuestion")
-const sorularDiv = document.getElementById("sorularDiv")
-const dataLeft = document.getElementById("dataLeft")
-const dataRight = document.getElementById("dataRight")
+
 
 localStorage.setItem("dersIsmiValueKey0",0)
 localStorage.setItem("kitapIsmiValueKey0",0)
@@ -83,10 +80,10 @@ function soruEkleme(){
             localStorage.setItem("aciklamaTextValueKey" + i, aciklamaTextValue)
         }
         olusturulacakDivler = `
-        <div class="toDoQuestion" onclick="toDoQuestionBuyutme()" id="toDoQuestion ${i}">
+        <div class="toDoQuestion" onclick="toDoQuestionBuyutme(${i})" id="toDoQuestion${i}">
         <h2 style="text-align: center; margin-left: 10px;font-family: 'Mcgannahan', sans-serif;font-size: 38px; letter-spacing: 2px;">${i}. Soru</h2>
         <div class="questionData">
-            <div class="dataLeft" id="dataLeft">
+            <div class="dataLeft" id="dataLeft${i}">
                 <h2>Ders İsmi:</h2>
                 <h4>${localStorage.getItem("dersIsmiValueKey" + i)}</h4>
                 <h2>Kitap İsmi:</h2>
@@ -96,7 +93,7 @@ function soruEkleme(){
                 <h2>Soru No.</h2>
                 <h4>${localStorage.getItem("soruNoValueKey" + i)}</h4>
             </div>
-            <div class="dataRight" id="dataRight">
+            <div class="dataRight" id="dataRight${i}">
                 <h2>Çözme Tarihi:</h2>
                 <h4>${localStorage.getItem("cozmeTarihiValueKey" + i)}</h4>
                 <h2>Açıklama:</h2>
@@ -108,7 +105,7 @@ function soruEkleme(){
         `
         sorularDiv.innerHTML += olusturulacakDivler
 }
-
+inputTemizleme()
 }
 function inputTemizleme(){
     dersIsmi.value = ""
@@ -119,9 +116,23 @@ function inputTemizleme(){
     aciklamaText.value = ""
 }
 
-function toDoQuestionBuyutme(){
-    toDoQuestiondiv.style.height = '500px'
-    toDoQuestiondiv.style.backgroundColor = 'blue'
-    dataLeft.style.display = 'block'
-    dataRight.style.display = 'block'
+function toDoQuestionBuyutme(id){
+    console.log(id)
+    const toDoQuestiondiv = document.getElementById("toDoQuestion"+id)
+    const dataLeft = document.getElementById("dataLeft"+id)
+    const dataRight = document.getElementById("dataRight"+id)
+
+    const sayi1 = 500
+    if(toDoQuestiondiv.style.height == "500px"){
+        toDoQuestiondiv.style.height == "500px"
+        toDoQuestiondiv.style.backgroundColor = 'red'
+        dataLeft.style.display = "none"
+        dataRight.style.display = "none"
+    }
+    else{
+        toDoQuestiondiv.style.height = "500px"
+        toDoQuestiondiv.style.backgroundColor = 'blue'
+        dataLeft.style.display = 'block'
+        dataRight.style.display = 'block'
+    }
 }
