@@ -50,28 +50,41 @@
             <div class="left animate__animated animate__fadeIn" id="left">
                 <form class="formLeft ">
                     <h2>Ders İsmi:</h2>
-                    <input type="text">
+                    <input type="text" id="dersIsmi">
                     <h2>Kitap İsmi</h2>
-                    <input type="text">
+                    <input type="text" id="kitapIsmi">
                     <h2>Sayfa / Test No.</h2>
-                    <input type="number">
+                    <input type="text" id="sayfa/testNo">
                     <h2>Soru No.</h2>
-                    <input type="number">
-
+                    <input type="text" id="soruNo">
                 </form>
             </div>
             <div class="right animate__animated animate__fadeIn" id="right" style="display: none;">
                 <form class="formLeft">
                     <h2>Çözme Tarihi:</h2>
-                    <input type="date">
+                    <input type="date" id="cozmeTarihi">
                     <h2>Açıklama</h2>
-                    <textarea class="textAreaLeft"></textarea>
-                    <button class="lastButton">Temizle</button>
-                    <button class="lastButton" onclick="soruEkleme()">Gönder</button>
+                    <textarea class="textAreaLeft" id="aciklama"></textarea>
+                    <button class="lastButton" onclick="inputTemizleme(); return false">Temizle</button>
+                    <button class="lastButton" onclick="soruEkleme(); return false">Gönder</button>
                 </form>
             </div>
-            <div class="sorular">
-
+            <div class="sorular" id="sorularDiv">
+                <!-- <div class="toDoQuestion" onclick="toDoQuestionBuyutme()" id="toDoQuestion ${i}">
+                    <h2 style="text-align: center; margin-left: 10px;font-family: 'Mcgannahan', sans-serif;font-size: 38px; letter-spacing: 2px;">${i}. Soru</h2>
+                    <div class="questionData">
+                        <div class="dataLeft">
+                            <h2>Ders İsmi:</h2>
+                            <h4></h4>
+                            <h2>Kitap İsmi</h2>
+                            <h4></h4>
+                            <h2>Sayfa / Test No.</h2>
+                            <h4></h4>
+                            <h2>Soru No.</h2>
+                            <h4></h4>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>

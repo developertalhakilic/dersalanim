@@ -5,7 +5,7 @@
 }
 .container{
     width: 1200px;
-    height: 100vh;
+    height: 6000px;
     background-color: #050505;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@
     justify-content: center;
     background-color: red;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .soruekle i{
@@ -48,7 +48,7 @@
     color: white;
 }
 .soruBilgiAdd{
-    transition: 0.3s;
+    transition: 0.2s;
     width: 760px;
     border-radius: 25px;
     margin-top: 80px;
@@ -161,4 +161,107 @@
 input[type="date"]::-webkit-calendar-picker-indicator{
     color: white;
     background-color: white;
+}
+
+.sorular{
+    width: 760px;
+    height: 550px;
+    position: absolute;
+    margin-top: 420px;
+    overflow-y: scroll;
+    border-radius: 15px;
+    background-color: #050505;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-box-shadow: 0px 0px 25px 0px rgb(54, 17, 129);
+    -moz-box-shadow: 0px 0px 25px 0px rgb(54, 17, 129);
+    box-shadow: 0px 0px 25px 0px rgb(54, 17, 129);
+}
+
+.toDoQuestion{
+    width: 700px;
+    border-radius: 10px;
+    margin: 5px;
+    margin-top: 25px;
+    height: 50px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    z-index: 9999;
+    background-color: red;
+    transition: 0.2s;
+    
+}
+
+/* .toDoQuestion:hover{
+    background-color: blue;
+    height: 500px;
+}
+
+.toDoQuestion:hover .dataLeft{
+    display: block;
+}
+
+.toDoQuestion:hover .dataRight{
+    display: block;
+} */
+
+.dataLeft{
+     display: none;
+     height: 350px;
+     margin-top: 55px;
+     margin-left: -105px;
+     text-align: center;
+     padding-right: 10px;
+     padding-bottom: 15px;
+     border-right: 1px solid rgb(146, 47, 47);
+}
+.dataLeft h2,.dataRight h2{
+    font-family: 'Bunya PERSONAL', sans-serif;
+}
+.dataLeft h4,.dataRight h4{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #101010;
+    font-family: 'KG Crossing A Line', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: 0.4s;
+    color: white;
+    font-size: 24px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.dataRight{
+    position: absolute;
+    display: none;
+    height: 350px;
+    text-align: center;
+    margin-top: -350px;
+    padding-right: 10px;
+    margin-left: 235px;
+    padding-bottom: 15px;
+}
+
+.dataRight p{
+    outline: 4px solid red;
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+    background-color: #101010;
+    font-family: 'KG Crossing A Line', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 100;
+    color: white;
+    font-size: 21px;
+    padding: 5px;
 }
