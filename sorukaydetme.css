@@ -5,7 +5,7 @@
 }
 .container{
     width: 1200px;
-    height: 6000px;
+    height: 1400px;
     background-color: #050505;
     display: flex;
     justify-content: center;
@@ -264,4 +264,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     color: white;
     font-size: 21px;
     padding: 5px;
+}
+
+.pdfButon{
+    position: absolute;
+    z-index: 9999;
+    margin-top: 1100px;
+    width: 250px;
 }

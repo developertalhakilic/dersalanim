@@ -11,10 +11,13 @@ const sayfaTestNo = document.getElementById("sayfa/testNo")
 const soruNo = document.getElementById("soruNo")
 const cozmeTarihi = document.getElementById("cozmeTarihi")
 const aciklamaText = document.getElementById("aciklama")
-let kontrolSayi = 0
+const sorularDiv = document.getElementById("sorularDiv")
+
 let sorularHTML = localStorage.getItem("SorularHTML")
 console.log(sorularHTML)
-sorularDiv.innerHTML += sorularHTML
+sorularDiv.innerHTML = `${sorularHTML}`
+console.log("----")
+console.log(sorularDiv.innerHTML)
 // ? Todolar :
 
 
@@ -26,7 +29,6 @@ localStorage.setItem("soruNoValueKey0",0)
 localStorage.setItem("cozmeTarihiValueKey0",0)
 localStorage.setItem("aciklamaTextValueKey0",0)
 
-soruEkleme()
 function soruEkleBasma(){
     if (soruEkleDiv.style.height == "450px"){
         soruEkleDiv.style.height = "65px"
@@ -139,9 +141,26 @@ function toDoQuestionBuyutme(id){
         dataRight.style.display = 'none'
     }
     else{
-        toDoQuestiondiv.style.height = '500px'
+        toDoQuestiondiv.style.height = '400px'
         toDoQuestiondiv.style.backgroundColor = 'blue'
         dataLeft.style.display = 'block'
         dataRight.style.display = 'block'
     }
+}
+
+function convertToPdf(){
+    let tumLocalKeyler = Object.keys(localStorage)
+    let keyNumbers = []
+    tumLocalKeyler.forEach(function kontrolSayiGen(key){
+        try{
+            if(key == "SorularHTML"){
+                return false
+            }
+            keyNumbers.push(localStorage.getItem(key))
+        }
+        catch{
+            undefined
+        }
+    })
+    console.log(keyNumbers)
 }
