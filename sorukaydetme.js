@@ -1,3 +1,4 @@
+
 const soruEkleDiv = document.getElementById("soruEkle")
 const soruBilgiAdd = document.getElementById("soruBilgiAdd")
 const leftSide = document.getElementById("left")
@@ -14,10 +15,7 @@ const aciklamaText = document.getElementById("aciklama")
 const sorularDiv = document.getElementById("sorularDiv")
 
 let sorularHTML = localStorage.getItem("SorularHTML")
-console.log(sorularHTML)
 sorularDiv.innerHTML = `${sorularHTML}`
-console.log("----")
-console.log(sorularDiv.innerHTML)
 // ? Todolar :
 
 
@@ -66,8 +64,7 @@ function soruEkleme(){
     let cozmeTarihiValue = cozmeTarihi.value
     let aciklamaTextValue = aciklamaText.value
     if(dersIsmiValue != "" && kitapIsmiValue != "" && sayfaTestNoValue != "" && soruNoValue != "" && cozmeTarihiValue != "" && aciklamaTextValue != ""){
-        console.log("continueing")
-        kontrolSayi+=1
+        null
     }
     else{
         return false
@@ -130,7 +127,6 @@ function inputTemizleme(){
 }
 
 function toDoQuestionBuyutme(id){
-    console.log(id)
     const toDoQuestiondiv = document.getElementById("toDoQuestion"+id)
     const dataLeft = document.getElementById("dataLeft"+id)
     const dataRight = document.getElementById("dataRight"+id)
@@ -147,20 +143,34 @@ function toDoQuestionBuyutme(id){
         dataRight.style.display = 'block'
     }
 }
-
 function convertToPdf(){
     let tumLocalKeyler = Object.keys(localStorage)
     let keyNumbers = []
     tumLocalKeyler.forEach(function kontrolSayiGen(key){
         try{
-            if(key == "SorularHTML"){
-                return false
-            }
-            keyNumbers.push(localStorage.getItem(key))
+            keyNumbers.push(Number(key.match(/\d+$/)[0]))
         }
         catch{
             undefined
         }
     })
-    console.log(keyNumbers)
-}
+    let enBuyuk = keyNumbers.reduce((acc, currentValue) => Math.max(acc, currentValue), -Infinity);
+    let metin = ""
+    for(let i = 1; i<=enBuyuk; i++){
+        metin += "\n"
+        metin += `Soru ${i}`+ "\n\n"
+        metin += "Ders İsmi: " + localStorage.getItem(`dersIsmiValueKey${i}`)+ "\n"
+        metin += "Kitap İsmi: " + localStorage.getItem(`kitapIsmiValueKey${i}`)+ "\n"
+        metin += "Sayfa No: " + localStorage.getItem(`sayfaTestNoValueKey${i}`)+ "\n"
+        metin += "Soru No: " + localStorage.getItem(`soruNoValueKey${i}`)+ "\n"
+        metin += "Çözme Tarihi: " + localStorage.getItem(`cozmeTarihiValueKey${i}`)+ "\n"
+        metin += "Açıklama: " + localStorage.getItem(`aciklamaTextValueKey${i}`)+ "\n"
+    }
+
+    var docDefinition = {
+        content: [
+            metin
+        ],
+    };
+    pdfMake.createPdf(docDefinition).download("Kayitli_Sorular.pdf");    
+}   
