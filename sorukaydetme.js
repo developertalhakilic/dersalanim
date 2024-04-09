@@ -88,9 +88,14 @@ function soruEkleme(){
         if(tumLocalKeyler.includes(`aciklamaTextValueKey${i}`) == false){
             localStorage.setItem("aciklamaTextValueKey" + i, aciklamaTextValue)
         }
-        olusturulacakDivler = `
+        olusturulacakDivler = `<div class="kontrolDiv" id="kontrolDiv${i}">
         <div class="toDoQuestion" onclick="toDoQuestionBuyutme(${i})" id="toDoQuestion${i}">
-        <h2 style="text-align: center; margin-left: 10px;font-family: 'Mcgannahan', sans-serif;font-size: 38px; letter-spacing: 2px;">${i}. Soru</h2>
+        <div class="rightSide">
+            <h2 style="text-align: center; margin-left: 10px;font-family: 'Mcgannahan', sans-serif;font-size: 38px; letter-spacing: 2px;">${i}. Soru</h2>
+        </div>
+        <div class="leftSide">
+            <button class="deleteButton" id="${i}" onclick="todoSil(${i})"><i class="fa-solid fa-trash"></i></button>
+        </div>
         <div class="questionData">
             <div class="dataLeft" id="dataLeft${i}">
                 <h2>Ders İsmi:</h2>
@@ -111,7 +116,7 @@ function soruEkleme(){
         </div>
     </div>
 
-        `
+    </div>`
         sorularDiv.innerHTML += olusturulacakDivler
 }
     localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
@@ -143,6 +148,20 @@ function toDoQuestionBuyutme(id){
         dataRight.style.display = 'block'
     }
 }
+
+function todoSil(elementId){
+    localStorage.removeItem(`dersIsmiValueKey${elementId}`)
+    localStorage.removeItem(`kitapIsmiValueKey${elementId}`)
+    localStorage.removeItem(`sayfaTestNoValueKey${elementId}`)
+    localStorage.removeItem(`soruNoValueKey${elementId}`)
+    localStorage.removeItem(`cozmeTarihiValueKey${elementId}`)
+    localStorage.removeItem(`aciklamaTextValueKey${elementId}`)
+    let kontrolDiv = document.getElementById(`kontrolDiv${elementId}`)
+    kontrolDiv.remove()
+    console.log(sorularDiv.innerHTML)
+    localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
+}
+
 function convertToPdf(){
     let tumLocalKeyler = Object.keys(localStorage)
     let keyNumbers = []
@@ -157,6 +176,7 @@ function convertToPdf(){
     let enBuyuk = keyNumbers.reduce((acc, currentValue) => Math.max(acc, currentValue), -Infinity);
     let metin = ""
     for(let i = 1; i<=enBuyuk; i++){
+
         metin += "\n"
         metin += `Soru ${i}`+ "\n\n"
         metin += "Ders İsmi: " + localStorage.getItem(`dersIsmiValueKey${i}`)+ "\n"
