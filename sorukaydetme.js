@@ -18,14 +18,22 @@ let sorularHTML = localStorage.getItem("SorularHTML")
 sorularDiv.innerHTML = `${sorularHTML}`
 // ? Todolar :
 
-
-
 localStorage.setItem("dersIsmiValueKey0",0)
 localStorage.setItem("kitapIsmiValueKey0",0)
 localStorage.setItem("sayfaTestNoValueKey0",0)
 localStorage.setItem("soruNoValueKey0",0)
 localStorage.setItem("cozmeTarihiValueKey0",0)
 localStorage.setItem("aciklamaTextValueKey0",0)
+
+if(localStorage.getItem("kaydedilenSoru") == null){
+    localStorage.setItem("kaydedilenSoru",0)
+}
+if(localStorage.getItem("cikarilanSoru") == null){
+    localStorage.setItem("cikarilanSoru",0)
+}
+if(localStorage.getItem("pdfAlmaSayisi") == null){
+    localStorage.setItem("pdfAlmaSayisi",0)
+}
 
 function soruEkleBasma(){
     if (soruEkleDiv.style.height == "450px"){
@@ -45,7 +53,6 @@ function soruEkleBasma(){
 
 function soruEkleme(){
     let olusturulacakDivler = ""
-    sorularDiv.innerHTML = ""
     let tumLocalKeyler = Object.keys(localStorage)
     let keyNumbers = []
     tumLocalKeyler.forEach(function kontrolSayiGen(key){
@@ -69,6 +76,7 @@ function soruEkleme(){
     else{
         return false
     }
+    sorularDiv.innerHTML = ""
     for(let i = 1; i<=enBuyuk+1; i++){ 
         if(tumLocalKeyler.includes(`dersIsmiValueKey${i}`) == false){
             localStorage.setItem("dersIsmiValueKey" + i, dersIsmiValue)
@@ -88,6 +96,9 @@ function soruEkleme(){
         if(tumLocalKeyler.includes(`aciklamaTextValueKey${i}`) == false){
             localStorage.setItem("aciklamaTextValueKey" + i, aciklamaTextValue)
         }
+        let soruSayisi = Number(localStorage.getItem("kaydedilenSoru"))
+        soruSayisi += 1
+        localStorage.setItem("kaydedilenSoru",soruSayisi)
         olusturulacakDivler = `<div class="kontrolDiv" id="kontrolDiv${i}">
         <div class="toDoQuestion" onclick="toDoQuestionBuyutme(${i})" id="toDoQuestion${i}">
         <div class="rightSide">
@@ -160,6 +171,9 @@ function todoSil(elementId){
     kontrolDiv.remove()
     console.log(sorularDiv.innerHTML)
     localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
+    let silinenSoruSayi = Number(localStorage.getItem("cikarilanSoru"))
+    silinenSoruSayi += 1
+    localStorage.setItem("cikarilanSoru",silinenSoruSayi)
 }
 
 function convertToPdf(){
@@ -193,4 +207,8 @@ function convertToPdf(){
         ],
     };
     pdfMake.createPdf(docDefinition).download("Kayitli_Sorular.pdf");    
+
+    let pdfSayi = Number(localStorage.getItem("pdfAlmaSayisi"))
+    pdfSayi += 1
+    localStorage.setItem("pdfAlmaSayisi",pdfSayi)
 }   
