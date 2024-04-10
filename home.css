@@ -102,6 +102,18 @@ body{
     position: absolute;
     margin-left: 283px;
 }
+.statsInfo .section4 h2{
+    position: absolute;
+    margin-left: 210px;
+}
+.statsInfo .section5 h2{
+    position: absolute;
+    margin-left: 270px;
+}
+.statsInfo .section6 h2{
+    position: absolute;
+    margin-left: 289px;
+}
 .statsInfo .section p{
     color: white;
     margin-top: 35px;
@@ -118,6 +130,18 @@ body{
     margin-left: 470px;
 }
 .statsInfo .section3 p{
+    position: absolute;
+    margin-left: 475px;
+}
+.statsInfo .section4 p{
+    position: absolute;
+    margin-left: 475px;
+}
+.statsInfo .section5 p{
+    position: absolute;
+    margin-left: 475px;
+}
+.statsInfo .section6 p{
     position: absolute;
     margin-left: 475px;
 }
