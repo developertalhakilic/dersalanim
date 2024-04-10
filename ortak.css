@@ -68,7 +68,21 @@
     }
   }
     
-  
+  body::-webkit-scrollbar {
+    width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #1f1e1e;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+  border: 3px solid transparent;
+   background-clip: content-box;
+    background-color: #d55959;
+}
   .bn5:hover:before {
     opacity: 1;
   }
