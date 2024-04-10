@@ -27,6 +27,7 @@
     <meta name=”keywords” content="dersalanim, ders sayfası, ders, türkçe, matematik, fen, sosyal, fizik, tyt, lgs, ders çalışma, okul, pomodoro, todolist" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1887290760315028"
      crossorigin="anonymous"></script>
+     <script src="particles.js"></script>
 </head>
 
 <body>
@@ -54,71 +55,742 @@
     <h2 class="basYazi">Hizmetlerimiz</h2>
     <div class="container">
         <div class="firstline line">
-            <div class="element" onclick="slide(pomodoroTimerDiv)" id="pomodoroTimer">
+            <div class="element" onclick="slide(pomodoroTimerDiv)" id="particlesimage1">
                 <h2>Pomodoro Zamanlayıcı</h2>
+                <script>
+                    particlesJS("particlesimage1", {
+  "particles": {
+    "number": {
+      "value": 30,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 1.0,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 5,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 3,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 1500,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+                </script>
             </div>
-            <div class="element" onclick="slide(timerDiv)" id="timer">
+            <div class="element particlesimage" onclick="slide(timerDiv)" id="particlesimage2" >
                 <h2>Zaman Tutucu</h2>
             </div>
+            <script>
+                particlesJS("particlesimage2", {
+"particles": {
+"number": {
+  "value": 30,
+  "density": {
+    "enable": true,
+    "value_area": 800
+  }
+},
+"color": {
+  "value": "#ffffff"
+},
+"shape": {
+  "type": "circle",
+  "stroke": {
+    "width": 0,
+    "color": "#000000"
+  },
+  "polygon": {
+    "nb_sides": 5
+  },
+  "image": {
+    "src": "img/github.svg",
+    "width": 100,
+    "height": 100
+  }
+},
+"opacity": {
+  "value": 1.0,
+  "random": false,
+  "anim": {
+    "enable": false,
+    "speed": 1,
+    "opacity_min": 0.1,
+    "sync": false
+  }
+},
+"size": {
+  "value": 5,
+  "random": true,
+  "anim": {
+    "enable": false,
+    "speed": 40,
+    "size_min": 0.1,
+    "sync": false
+  }
+},
+"line_linked": {
+  "enable": true,
+  "distance": 150,
+  "color": "#ffffff",
+  "opacity": 0.4,
+  "width": 1
+},
+"move": {
+  "enable": true,
+  "speed": 3,
+  "direction": "none",
+  "random": false,
+  "straight": false,
+  "out_mode": "out",
+  "bounce": false,
+  "attract": {
+    "enable": false,
+    "rotateX": 600,
+    "rotateY": 1200
+  }
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+  "onhover": {
+    "enable": true,
+    "mode": "grab"
+  },
+  "onclick": {
+    "enable": true,
+    "mode": "push"
+  },
+  "resize": true
+},
+"modes": {
+  "grab": {
+    "distance": 140,
+    "line_linked": {
+      "opacity": 1
+    }
+  },
+  "bubble": {
+    "distance": 1500,
+    "size": 40,
+    "duration": 2,
+    "opacity": 8,
+    "speed": 3
+  },
+  "repulse": {
+    "distance": 200,
+    "duration": 0.4
+  },
+  "push": {
+    "particles_nb": 4
+  },
+  "remove": {
+    "particles_nb": 2
+  }
+}
+},
+"retina_detect": true
+});
+
+            </script>
         </div>
         <div class="secondline line">
-            <div class="element" onclick="slide(questionSaverDiv)" id="questionSaver">
+            <div class="element" onclick="slide(questionSaverDiv)" id="particlesimage3">
                 <h2>Soru Kaydedici</h2>
             </div>
-            <div class="element" onclick="slide(slide(todoListDiv))" id="todoList">
+            <script>
+                particlesJS("particlesimage3", {
+"particles": {
+"number": {
+  "value": 30,
+  "density": {
+    "enable": true,
+    "value_area": 800
+  }
+},
+"color": {
+  "value": "#ffffff"
+},
+"shape": {
+  "type": "circle",
+  "stroke": {
+    "width": 0,
+    "color": "#000000"
+  },
+  "polygon": {
+    "nb_sides": 5
+  },
+  "image": {
+    "src": "img/github.svg",
+    "width": 20,
+    "height": 20
+  }
+},
+"opacity": {
+  "value": 1.0,
+  "random": false,
+  "anim": {
+    "enable": false,
+    "speed": 1,
+    "opacity_min": 0.1,
+    "sync": false
+  }
+},
+"size": {
+  "value": 5,
+  "random": true,
+  "anim": {
+    "enable": false,
+    "speed": 40,
+    "size_min": 0.1,
+    "sync": false
+  }
+},
+"line_linked": {
+  "enable": true,
+  "distance": 150,
+  "color": "#ffffff",
+  "opacity": 0.4,
+  "width": 1
+},
+"move": {
+  "enable": true,
+  "speed": 3,
+  "direction": "none",
+  "random": false,
+  "straight": false,
+  "out_mode": "out",
+  "bounce": false,
+  "attract": {
+    "enable": false,
+    "rotateX": 600,
+    "rotateY": 1200
+  }
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+  "onhover": {
+    "enable": true,
+    "mode": "grab"
+  },
+  "onclick": {
+    "enable": true,
+    "mode": "push"
+  },
+  "resize": true
+},
+"modes": {
+  "grab": {
+    "distance": 140,
+    "line_linked": {
+      "opacity": 1
+    }
+  },
+  "bubble": {
+    "distance": 1500,
+    "size": 40,
+    "duration": 2,
+    "opacity": 8,
+    "speed": 3
+  },
+  "repulse": {
+    "distance": 200,
+    "duration": 0.4
+  },
+  "push": {
+    "particles_nb": 4
+  },
+  "remove": {
+    "particles_nb": 2
+  }
+}
+},
+"retina_detect": true
+});
+
+            </script>
+            <div class="element" onclick="slide(slide(todoListDiv))" id="particlesimage4">
                 <h2>Yapılacaklar Listesi</h2>
             </div>
+            <script>
+                particlesJS("particlesimage4", {
+"particles": {
+"number": {
+  "value": 30,
+  "density": {
+    "enable": true,
+    "value_area": 800
+  }
+},
+"color": {
+  "value": "#ffffff"
+},
+"shape": {
+  "type": "circle",
+  "stroke": {
+    "width": 0,
+    "color": "#000000"
+  },
+  "polygon": {
+    "nb_sides": 5
+  },
+  "image": {
+    "src": "img/github.svg",
+    "width": 100,
+    "height": 100
+  }
+},
+"opacity": {
+  "value": 1.0,
+  "random": false,
+  "anim": {
+    "enable": false,
+    "speed": 1,
+    "opacity_min": 0.1,
+    "sync": false
+  }
+},
+"size": {
+  "value": 5,
+  "random": true,
+  "anim": {
+    "enable": false,
+    "speed": 40,
+    "size_min": 0.1,
+    "sync": false
+  }
+},
+"line_linked": {
+  "enable": true,
+  "distance": 150,
+  "color": "#ffffff",
+  "opacity": 0.4,
+  "width": 1
+},
+"move": {
+  "enable": true,
+  "speed": 3,
+  "direction": "none",
+  "random": false,
+  "straight": false,
+  "out_mode": "out",
+  "bounce": false,
+  "attract": {
+    "enable": false,
+    "rotateX": 600,
+    "rotateY": 1200
+  }
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+  "onhover": {
+    "enable": true,
+    "mode": "grab"
+  },
+  "onclick": {
+    "enable": true,
+    "mode": "push"
+  },
+  "resize": true
+},
+"modes": {
+  "grab": {
+    "distance": 140,
+    "line_linked": {
+      "opacity": 1
+    }
+  },
+  "bubble": {
+    "distance": 1500,
+    "size": 40,
+    "duration": 2,
+    "opacity": 8,
+    "speed": 3
+  },
+  "repulse": {
+    "distance": 200,
+    "duration": 0.4
+  },
+  "push": {
+    "particles_nb": 4
+  },
+  "remove": {
+    "particles_nb": 2
+  }
+}
+},
+"retina_detect": true
+});
+
+            </script>
         </div>
         <div class="thirdline line">
-            <div class="element" onclick="slide(statsDiv)" id="stats">
+            <div class="element" onclick="slide(statsDiv)" id="particlesimage5">
                 <h2>İstatistikler</h2>
             </div>
-            <div class="element" onclick="slide(googleClassroomDiv)" id="googleClassroom">
+            <script>
+              particlesJS("particlesimage5", {
+"particles": {
+"number": {
+"value": 30,
+"density": {
+  "enable": true,
+  "value_area": 800
+}
+},
+"color": {
+"value": "#ffffff"
+},
+"shape": {
+"type": "circle",
+"stroke": {
+  "width": 0,
+  "color": "#000000"
+},
+"polygon": {
+  "nb_sides": 5
+},
+"image": {
+  "src": "img/github.svg",
+  "width": 100,
+  "height": 100
+}
+},
+"opacity": {
+"value": 1.0,
+"random": false,
+"anim": {
+  "enable": false,
+  "speed": 1,
+  "opacity_min": 0.1,
+  "sync": false
+}
+},
+"size": {
+"value": 5,
+"random": true,
+"anim": {
+  "enable": false,
+  "speed": 40,
+  "size_min": 0.1,
+  "sync": false
+}
+},
+"line_linked": {
+"enable": true,
+"distance": 150,
+"color": "#ffffff",
+"opacity": 0.4,
+"width": 1
+},
+"move": {
+"enable": true,
+"speed": 3,
+"direction": "none",
+"random": false,
+"straight": false,
+"out_mode": "out",
+"bounce": false,
+"attract": {
+  "enable": false,
+  "rotateX": 600,
+  "rotateY": 1200
+}
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+"onhover": {
+  "enable": true,
+  "mode": "grab"
+},
+"onclick": {
+  "enable": true,
+  "mode": "push"
+},
+"resize": true
+},
+"modes": {
+"grab": {
+  "distance": 140,
+  "line_linked": {
+    "opacity": 1
+  }
+},
+"bubble": {
+  "distance": 1500,
+  "size": 40,
+  "duration": 2,
+  "opacity": 8,
+  "speed": 3
+},
+"repulse": {
+  "distance": 200,
+  "duration": 0.4
+},
+"push": {
+  "particles_nb": 4
+},
+"remove": {
+  "particles_nb": 2
+}
+}
+},
+"retina_detect": true
+});
+          </script>
+            <div class="element" onclick="slide(googleClassroomDiv)" id="particlesimage6">
                 <h2>Google Clasroom</h2>
+                <script>
+                  particlesJS("particlesimage6", {
+  "particles": {
+  "number": {
+    "value": 30,
+    "density": {
+      "enable": true,
+      "value_area": 800
+    }
+  },
+  "color": {
+    "value": "#ffffff"
+  },
+  "shape": {
+    "type": "circle",
+    "stroke": {
+      "width": 0,
+      "color": "#000000"
+    },
+    "polygon": {
+      "nb_sides": 5
+    },
+    "image": {
+      "src": "img/github.svg",
+      "width": 100,
+      "height": 100
+    }
+  },
+  "opacity": {
+    "value": 1.0,
+    "random": false,
+    "anim": {
+      "enable": false,
+      "speed": 1,
+      "opacity_min": 0.1,
+      "sync": false
+    }
+  },
+  "size": {
+    "value": 5,
+    "random": true,
+    "anim": {
+      "enable": false,
+      "speed": 40,
+      "size_min": 0.1,
+      "sync": false
+    }
+  },
+  "line_linked": {
+    "enable": true,
+    "distance": 150,
+    "color": "#ffffff",
+    "opacity": 0.4,
+    "width": 1
+  },
+  "move": {
+    "enable": true,
+    "speed": 3,
+    "direction": "none",
+    "random": false,
+    "straight": false,
+    "out_mode": "out",
+    "bounce": false,
+    "attract": {
+      "enable": false,
+      "rotateX": 600,
+      "rotateY": 1200
+    }
+  }
+  },
+  "interactivity": {
+  "detect_on": "canvas",
+  "events": {
+    "onhover": {
+      "enable": true,
+      "mode": "grab"
+    },
+    "onclick": {
+      "enable": true,
+      "mode": "push"
+    },
+    "resize": true
+  },
+  "modes": {
+    "grab": {
+      "distance": 140,
+      "line_linked": {
+        "opacity": 1
+      }
+    },
+    "bubble": {
+      "distance": 1500,
+      "size": 40,
+      "duration": 2,
+      "opacity": 8,
+      "speed": 3
+    },
+    "repulse": {
+      "distance": 200,
+      "duration": 0.4
+    },
+    "push": {
+      "particles_nb": 4
+    },
+    "remove": {
+      "particles_nb": 2
+    }
+  }
+  },
+  "retina_detect": true
+  });
+  
+              </script>
             </div>
         </div>
     </div>
 
 
     <div class="statsInfo">
-        <div class="section1 section" id="pomodoroTimerDiv">
+        <div class="section1 section animation" id="pomodoroTimerDiv">
             <img src="Images/timer icon.png" class="sectionIcon" alt="">
             <h2>Pomodoro Zamanlayıcı Hizmetimiz</h2>
             <p>Pomodoro Zamanlayıcı bir öğrenci için en önemli şeylerdendir. Uzmanların oluşturduğu taktik ile 25 dakika<br>ders 5 dakika mola ile normal çalışmalarızdan kat kat daha verimli çalışmanız mümkün. Bu taktik için<br>sitemizin "Pomodoro Zamanlayıcı" hizmetini kullanabilirsiniz</p>
-        </div>
-        <div class="section2 section" id="questionSaverDiv">
+        </div> 
+        <div class="section2 section animation" id="questionSaverDiv">
             <img src="Images/soruisareti.png" class="sectionIcon" alt="">
             <h2>Soru Kaydetme Hizmetimiz</h2>
             <p>Soru Kaydetme hizmetiz sayesinde anlamadığınız, beğendiğiniz veya hocalara sormayı planladığınız soruları, sitemizdeki<br>"Soru Kaydetme" bölümüne girip kaydedebilirsiniz. Ardından ise "PDF Çıktısı" al özelliğimiz sayesinde kaydettiğiniz<br>soruların detaylarını çıktı alabilirsiniz böylece hocalara soru sormak vb. işlerinizi daha kolay hale getirebilirsiniz.</p>
         </div>
-        <div class="section3 section" id="statsDiv">
+        <div class="section3 section animation" id="statsDiv">
             <img src="Images/analizicon.png" class="sectionIcon" alt="">
             <h2>Ders Çalışmanızın İstatistikleri</h2>
             <p>Ders çalışma sürecinizin tamamını istatistikler halinde kaydederiz, bu istatistiklere bakarak ne kadar çalıştığınızı<br>detaylıca öğrenebilirsiniz. Bu şekilde çalışma planlarınızı oluşturabilir, motive olabilir ve çalışma disiplini<br>kazanabilirsiniz. Bu sayede çalıştığınız alanda çok daha başarılı olursunuz.</p>
         </div>
-        <div class="section4 section" id="timerDiv">
+        <div class="section4 section animation" id="timerDiv">
             <img src="Images/timeicon2.png" class="sectionIcon" alt="">
             <h2>Zaman Tutucu Hizmetimiz</h2>
-            <p>Soru Kaydetme hizmetiz sayesinde anlamadığınız, beğendiğiniz veya hocalara sormayı planladığınız soruları, sitemizdeki<br>"Soru Kaydetme" bölümüne girip kaydedebilirsiniz. Ardından ise "PDF Çıktısı" al özelliğimiz sayesinde kaydettiğiniz<br>soruların detaylarını çıktı alabilirsiniz böylece hocalara soru sormak vb. işlerinizi daha kolay hale getirebilirsiniz.</p>
+            <p>Zaman Tutucu hizmetimiz sayesinde ders çalışırken istediğiniz vakit kadar zaman tutabilirsiniz.<br>Ayarlanmış sınav süreleri sayesinde de gerçek sınav zamanlarını (LGS,YKS vb.) tutarak çalışmalarınıza<br>ışık tutabilirsiniz böylece çalışmalarınızı güçlendirerek gireceğiniz sınavlarda daha başarılı olursunuz.</p>
         </div>
-        <div class="section5 section" id="todoListDiv">
+        <div class="section5 section animation" id="todoListDiv">
             <img src="Images/list.png" class="sectionIcon" alt="">
             <h2>Yapılacaklar Listesi Oluşturma</h2>
-            <p>Soru Kaydetme hizmetiz sayesinde anlamadığınız, beğendiğiniz veya hocalara sormayı planladığınız soruları, sitemizdeki<br>"Soru Kaydetme" bölümüne girip kaydedebilirsiniz. Ardından ise "PDF Çıktısı" al özelliğimiz sayesinde kaydettiğiniz<br>soruların detaylarını çıktı alabilirsiniz böylece hocalara soru sormak vb. işlerinizi daha kolay hale getirebilirsiniz.</p>
+            <p>Yapılacaklar Listesi Oluşturma hizmetimiz sayesinde gün gün yapmayı planladığınız aktiviteleri tek bir sayfada<br>toplayabilirsiniz. Ardından ise günlük planınızın PDF çıktısını alarak fiziksel olarak listenizi edinebilirsiniz.<br>Planlı programlı çalışacağınızdan dolayı çalışma disiplini kazanmanıza bu hizmetimiz yardımcı olur.</p>
         </div>
-        <div class="section6 section" id="googleClasroomDiv">
+        <div class="section6 section animation" id="googleClasroomDiv">
             <img src="Images/clasroom.png" class="sectionIcon" alt="">
             <h2>Google Classroom Entegrasyonu</h2>
-            <p>Soru Kaydetme hizmetiz sayesinde anlamadığınız, beğendiğiniz veya hocalara sormayı planladığınız soruları, sitemizdeki<br>"Soru Kaydetme" bölümüne girip kaydedebilirsiniz. Ardından ise "PDF Çıktısı" al özelliğimiz sayesinde kaydettiğiniz<br>soruların detaylarını çıktı alabilirsiniz böylece hocalara soru sormak vb. işlerinizi daha kolay hale getirebilirsiniz.</p>
+            <p>Google Classroom Entegrasyonu hizmetimiz sayesinde Google Classroomdan ödevlerinizi tek tıkla aktarabilir <br>sonrasında ise bu ödevlerin PDF çıktısını alabilirsiniz. Bu sayede masa başına oturduğunuz da ödevlere <br>teker teker bakmak için ekstra zaman kaybetmezsiniz. Dikkatinizi daha hızlı toplamanıza yardımcı olur.</p>
         </div>
     </div>
-    <div id="timerDiv" class="section"></div>
-    <div id="questionSaverDiv" class="section"></div>
-    <div id="todoListDiv" class="section"></div>
-    <div id="statsDiv" class="section"></div>
-    <div id="googleClasroomDiv" class="section"></div>
     </center>
-
     <script src="hamburgerMenu.js"></script>
     <script src="home.js"></script>
 </body>

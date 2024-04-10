@@ -27,6 +27,7 @@ body{
 .container{
     width: 95%;
     height: 900px;
+    border-radius: 120px;
 }
 
 .line{
@@ -54,7 +55,6 @@ body{
     text-align: center;
     z-index: 9999;
 }
-
 .element:hover{
     filter: brightness(100%);
 }
@@ -67,11 +67,17 @@ body{
     color: white;
 }
 
-#pomodoroTimer, #stats, #questionSaver{
+#particlesimage1, #particlesimage3, #particlesimage4,#particlesimage5{
     border-right: 1px solid #292929;
 }
 
-#pomodoroTimer,#questionSaver,#timer,#todoList{
+#particlesimage1{
+    border-radius: 10px 0 0 0;
+}
+#particlesimage2{
+    border-radius: 0 10px 0 0;
+}
+#particlesimage1,#particlesimage3,#particlesimage2,#particlesimage4{
     border-bottom: 1px solid #292929;
 }
 
@@ -108,7 +114,7 @@ body{
 }
 .statsInfo .section5 h2{
     position: absolute;
-    margin-left: 270px;
+    margin-left: 272px;
 }
 .statsInfo .section6 h2{
     position: absolute;
@@ -151,3 +157,6 @@ body{
     margin-top: -35px;
 }
 
+.particles-js-canvas-el{
+    margin-top: -190px;
+}
