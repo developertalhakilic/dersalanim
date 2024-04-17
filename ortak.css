@@ -111,6 +111,7 @@ body{
   width: 300px;
   height: 100vh;
   position: fixed;
+  top: 0;
   background-color: #101010;
   padding: 10px;
   padding-top: 40px;
