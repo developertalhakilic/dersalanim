@@ -9,7 +9,7 @@
 @import url('https://fonts.cdnfonts.com/css/marcovaldo-trial');       
 @import url('https://fonts.cdnfonts.com/css/kg-crossing-a-line');
 @import url('https://fonts.cdnfonts.com/css/static-bold');
-@import url('https://fonts.cdnfonts.com/css/mcgannahan');
+@import url('https://fonts.cdnfonts.com/css/bagota-los');
 *{
     margin: 0;
     padding: 0;
@@ -196,7 +196,7 @@ body{
   box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
 
-.fade-in{animation:fade-in .6s cubic-bezier(.39,.575,.565,1.000) .15s both}
+.fade-in{animation:fade-in .35s cubic-bezier(.39,.575,.565,1.000) .15s both}
 
 @keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 

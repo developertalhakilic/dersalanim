@@ -102,7 +102,7 @@ function soruEkleme(){
         olusturulacakDivler = `<div class="kontrolDiv" id="kontrolDiv${i}">
         <div class="toDoQuestion" onclick="toDoQuestionBuyutme(${i})" id="toDoQuestion${i}">
         <div class="rightSide">
-            <h2 style="text-align: center; margin-left: 10px;font-family: 'Mcgannahan', sans-serif;font-size: 38px; letter-spacing: 2px;">${i}. Soru</h2>
+            <h2 class="soruKac">${i}. Soru</h2>
         </div>
         <div class="leftSide">
             <button class="deleteButton" id="${i}" onclick="todoSil(${i})"><i class="fa-solid fa-trash"></i></button>
