@@ -102,12 +102,19 @@ body::-webkit-scrollbar-thumb {
 body{
     background-color: #000000;
 }
+.sideBarTop{
+  position: sticky;
+  top: 0;
+  z-index: 20400;
+}
 .sideBar{
   width: 300px;
   height: 100vh;
   position: absolute;
   background-color: #101010;
   padding: 10px;
+  position: sticky;
+  top: 0;
   padding-top: 40px;
   display: none;
   transition: 0.4s;
@@ -195,9 +202,9 @@ body{
 @keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
 
-.slide-in-left{animation:slide-in-left .50s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-left{animation:slide-in-left .60s cubic-bezier(.25,.46,.45,.94) both}
 
 @keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
 
-.slide-out-left{animation:slide-out-left .50s cubic-bezier(.25,.46,.45,.94) reverse both}
+.slide-out-left{animation:slide-out-left .60s cubic-bezier(.25,.46,.45,.94) reverse both}
 @keyframes slide-out-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
