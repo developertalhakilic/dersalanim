@@ -108,7 +108,7 @@ function soruEkleme(){
             <button class="deleteButton" id="${i}" onclick="todoSil(${i})"><i class="fa-solid fa-trash"></i></button>
         </div>
         <div class="questionData">
-            <div class="dataLeft" id="dataLeft${i}">
+            <div class="dataLeft fade-in" id="dataLeft${i}">
                 <h2>Ders İsmi:</h2>
                 <h4>${localStorage.getItem("dersIsmiValueKey" + i)}</h4>
                 <h2>Kitap İsmi:</h2>
@@ -118,7 +118,7 @@ function soruEkleme(){
                 <h2>Soru No.</h2>
                 <h4>${localStorage.getItem("soruNoValueKey" + i)}</h4>
             </div>
-            <div class="dataRight" id="dataRight${i}">
+            <div class="dataRight fade-in" id="dataRight${i}">
                 <h2>Çözme Tarihi:</h2>
                 <h4>${localStorage.getItem("cozmeTarihiValueKey" + i)}</h4>
                 <h2>Açıklama:</h2>

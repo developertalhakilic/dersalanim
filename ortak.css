@@ -189,3 +189,15 @@ body{
   );
   box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
+
+.fade-in{animation:fade-in .6s cubic-bezier(.39,.575,.565,1.000) .15s both}
+
+@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+
+.slide-in-left{animation:slide-in-left .45s cubic-bezier(.25,.46,.45,.94) both}
+
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+
+.slide-out-left{animation:slide-out-left .6s cubic-bezier(.25,.46,.45,.94) reverse both}
+@keyframes slide-out-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}

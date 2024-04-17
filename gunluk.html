@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
     <head>
 
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -22,61 +22,28 @@
         <meta property="og:url" content="https://wolfprogrammingapps.github.io/Ders Alanım/" />
         <meta property="og:image" content="https://wolfprogrammingapps.github.io/dersalanim/Ads%C4%B1z_tasar%C4%B1m-removebg-preview.png"/>
         <meta property="og:description" content="Ders Alanım ile Ders Çalışmak İçin Tüm Araçları Tek Sitede Bulun !"/>
-        <link rel="stylesheet" href="pomodro.css">
+        <link rel="stylesheet" href="gunluk.css">
         <link rel="stylesheet" href="ortak.css">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1887290760315028"
         crossorigin="anonymous"></script>
     </head>
+
 <body>
-    <div class="sideBarTop" id="sideBarTop">
+    <div class="sideBarTop">
         <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="sideBar" id="sideBar">
         <div class="sideBarBottom">
             <button onclick="window.location = 'home.html'"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
-            <button onclick="window.location = 'pomodro.html'" style="color: rgb(255, 140, 0);"><i class="fa-solid fa-clock"></i> Pomodro Sayacı</button>
+            <button onclick="window.location = 'pomodro.html'"><i class="fa-solid fa-clock"></i> Pomodro Sayacı</button>
             <button onclick="window.location = '.html'"><i class="fa-solid fa-bell"></i> Zaman Tutucu</button>
             <button onclick="window.location = 'sorukaydetme.html'"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button>
             <button onclick="window.location = '.html'"><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button>
-            <button onclick="window.location = 'gunluk.html'"><i class="fa-solid fa-book"></i>Günlük Tutma</button>
+            <button onclick="window.location = 'gunluk.html'" style="color: rgb(255, 140, 0);"><i class="fa-solid fa-book"></i>Günlük Tutma</button>
             <button onclick="window.location = 'istatistikler.html'"><i class="fa-solid fa-chart-simple"></i> İstatistikler</button>
         </div>
         </div>
-    <div class="section1">
-    <br>
-    <center>
-    <h2 id="basYazi">Pomodoro Zamanlayıcı</h2>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="pomodroContainer" id="pomodroContainer">
-        <button id="tamEkranButton"><i class="fa-solid fa-expand"></i></button>
-        <div class="saat">
-        <!-- <div class="dakika hourelement">
-            <h2>00</h2></div>
-        <p id="saatYazi">Saat</p> -->
-        <div class="dakika2 hourelement">
-            <h2 id="dakika">25</h2>
-            <p id="dakikaYazi" class="bilgiYazi">Dakika</p>
-        </div>
-        <div class="saniye hourelement">
-            <h2 id="saniye">00</h2>
-            <p id="saniyeYazi" class="bilgiYazi">Saniye</p>
-        </div>
-    </div>
-    </div>
-    <div class="buttons">
-        <button class="bn5 button" id="butonBaslat" onclick="hideStartButton()">Başlat</button>
-        <button class="bn5 button" id="butonDuraklat" onclick="showTheBaslatButon()">Duraklat</button>
-        <button class="bn5 button" id="butonGeriBaslat" onclick="showTheDuraklatButon()">Devam Ettir</button>
-        <button class="bn5 button" id="butonBitir" onclick="stopButton()">Bitir</button>
-        <a href="istatistikler.html" target="_blank "><button class="bn5 button">İstatistikler</button></a>
-        </div>
-    </div>
-    </center>
-    <script src="pomodro.js"></script>
+    
+    <script src="gunluk.js"></script>
     <script src="hamburgerMenu.js"></script>
 </body>
-
-</html>

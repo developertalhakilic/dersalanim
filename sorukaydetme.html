@@ -32,15 +32,16 @@
         <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="sideBar" id="sideBar">
-    <div class="sideBarBottom">
-        <button onclick="window.location = 'home.html'"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
-        <button onclick="window.location = 'pomodro.html'"><i class="fa-solid fa-clock"></i> Pomodro Sayacı</button>
-        <button onclick="window.location = '.html'"><i class="fa-solid fa-bell"></i> Zaman Tutucu</button>
-        <button onclick="window.location = 'sorukaydetme.html'" style="color: rgb(255, 140, 0);"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button>
-        <button onclick="window.location = '.html'"><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button>
-        <button onclick="window.location = 'istatistikler.html'"><i class="fa-solid fa-chart-simple"></i></i> İstatistikler</button>
-    </div>
-    </div>
+        <div class="sideBarBottom">
+            <button onclick="window.location = 'home.html'"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
+            <button onclick="window.location = 'pomodro.html'"><i class="fa-solid fa-clock"></i> Pomodro Sayacı</button>
+            <button onclick="window.location = '.html'"><i class="fa-solid fa-bell"></i> Zaman Tutucu</button>
+            <button onclick="window.location = 'sorukaydetme.html'"  style="color: rgb(255, 140, 0);"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button>
+            <button onclick="window.location = '.html'"><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button>
+            <button onclick="window.location = 'gunluk.html'"><i class="fa-solid fa-book"></i>Günlük Tutma</button>
+            <button onclick="window.location = 'istatistikler.html'"><i class="fa-solid fa-chart-simple"></i> İstatistikler</button>
+        </div>
+        </div>
     <div class="sorularContainer">
         <div class="container">
             <div class="soruekle" id="soruEkle" onclick="soruEkleBasma()">
@@ -49,7 +50,7 @@
                 <i class="fa-solid fa-caret-down colorWhite" style="margin-left: 700px; font-size: 40px;margin-top: 10px;"></i>
         </div>
         <div class="soruBilgiAdd" id="soruBilgiAdd">
-            <div class="left animate__animated animate__fadeIn" id="left">
+            <div class="left fade-in" id="left">
                 <form class="formLeft ">
                     <h2>Ders İsmi:</h2>
                     <input type="text" id="dersIsmi">
@@ -61,7 +62,7 @@
                     <input type="text" id="soruNo">
                 </form>
             </div>
-            <div class="right animate__animated animate__fadeIn" id="right" style="display: none;">
+            <div class="right fade-in" id="right" style="display: none;">
                 <form class="formLeft">
                     <h2>Çözme Tarihi:</h2>
                     <input type="date" id="cozmeTarihi">

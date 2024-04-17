@@ -6,20 +6,16 @@ function displayNone(){
 function openSideBar(){
     if(sideBarFull.style.display == "block"){
         hamburgerButton.style.color = "white"
-        sideBarFull.classList.remove("animate__fadeInLeft")
-        sideBarFull.classList.remove("animate__animated")
-        sideBarFull.classList.add("animate__animated")
-        sideBarFull.classList.add("animate__fadeOutLeft")
+        sideBarFull.classList.remove("slide-in-left")
+        sideBarFull.classList.add("slide-out-left")
         setTimeout(function() {
             sideBarFull.style.display = "none"
-        }, 1000);
+        }, 400);
     }
     else{
         sideBarFull.style.display = "block"
         hamburgerButton.style.color = "red"
-        sideBarFull.classList.remove("animate__animated")
-        sideBarFull.classList.remove("animate__fadeOutLeft")
-        sideBarFull.classList.add("animate__animated")
-        sideBarFull.classList.add("animate__fadeInLeft")
+        sideBarFull.classList.remove("slide-out-left")
+        sideBarFull.classList.add("slide-in-left")
     }
 }
