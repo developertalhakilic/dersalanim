@@ -263,7 +263,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-top:-3px;
     margin-left: 10px;
     letter-spacing: 2px;
-    font-weight: 100;
+    font-weight: 400;
 }
 .dataRight p{
     outline: 4px solid red;
