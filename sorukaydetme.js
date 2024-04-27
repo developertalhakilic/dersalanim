@@ -56,12 +56,15 @@ function soruEkleme(){
     let tumLocalKeyler = Object.keys(localStorage)
     let keyNumbers = []
     tumLocalKeyler.forEach(function kontrolSayiGen(key){
+    if(key.slice(0,6) == "cozmeT" || "acikla" || "dersIs" || "soruNo" || "kitapI" || "sayfaT"){
+
         try{
             keyNumbers.push(Number(key.match(/\d+$/)[0]))
         }
         catch{
             undefined
         }
+    }
     })
     let enBuyuk = keyNumbers.reduce((acc, currentValue) => Math.max(acc, currentValue), -Infinity);
     let dersIsmiValue = dersIsmi.value

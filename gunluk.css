@@ -1,0 +1,69 @@
+.pageTop{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pageTop .yeniSayfaEkleButton{
+    margin: 20px;
+    font-size: 30px;
+    font-family: 'Bunya PERSONAL', sans-serif;
+    border-radius:10px;
+    text-align: center;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.pageTop .yeniSayfaEkleButton i{
+    margin-right: 10px;
+    font-size: 25px;
+}
+.pageTop .yeniSayfaEkleButton:hover{
+    background-color: #383838;
+}
+.gunlukIcerikInput{
+    height: 400px;
+}
+#bugununTarihiButton{
+    margin-top: 10px;
+    font-size: 15px;
+}
+.sayfalar{
+    margin-top: 60px;
+    width: 1000px;
+}
+.sayfalarContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}       
+
+.acilanMenu{
+    padding-top:20px;
+    background-color: none;
+    border-bottom: 1px solid #2e2d2d;
+}
+.acilanMenu2{
+    border: none;
+    box-shadow: none;
+    margin-top: 10px;
+}
+.acilanMenu:focus{
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+.menuBaslik{
+    font-size: 24px;
+}
+
+.icerikBody{
+    border: none;
+}
+.icerikBaslik{
+    text-transform: capitalize;
+}
+.icerikP{
+    margin-top: -10px;
+    font-size: 20px;
+}
