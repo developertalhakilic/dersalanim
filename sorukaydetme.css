@@ -45,12 +45,14 @@
   background: #555;
 }
 
-
+.pageEnd{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .pdfButon{
     position: absolute;
     z-index: 9999;
-    display: none;
-    margin-top: 100px;
     width: 250px;
 }
 
@@ -71,7 +73,6 @@
   border-radius: 5px;
   overflow-y: scroll;
   padding-top: 10px;
-  oadd
   overflow-x: visible;
 }
 
