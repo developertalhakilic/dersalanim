@@ -12,6 +12,18 @@ const restartButon = document.getElementById("butonGeriBaslat")
 const tamEkranButton = document.getElementById('tamEkranButton');
 const hamburger = document.getElementById("hamburgerButton")
 const side = document.getElementById("sideBar")
+const bilgiButton = document.getElementById("bilgiButton")
+ekranWidthKontrolu()
+window.addEventListener("resize", function() {
+    ekranWidthKontrolu();
+  });
+function ekranWidthKontrolu() {
+    let ekranWidth = window.innerWidth;
+    if (ekranWidth <= 800) {
+        bilgiButton.click()
+    }
+}
+window.onresize = ekranWidthKontrolu();
 function tamEkran() {
     var element = document.documentElement; // Sayfanın kök elementini alı
     if (element.requestFullscreen) {

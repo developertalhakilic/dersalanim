@@ -1,4 +1,3 @@
-
 const soruEkleDiv = document.getElementById("soruEkle")
 const soruBilgiAdd = document.getElementById("soruBilgiAdd")
 const leftSide = document.getElementById("left")
@@ -15,7 +14,9 @@ const aciklamaText = document.getElementById("aciklama")
 const sorularDiv = document.getElementById("sorularDiv")
 
 let sorularHTML = localStorage.getItem("SorularHTML")
-sorularDiv.innerHTML = `${sorularHTML}`
+if(sorularHTML != null){
+  sayfalarDiv.innerHTML = `${sorularHTML}`
+}
 // ? Todolar :
 
 localStorage.setItem("dersIsmiValueKey0",0)
@@ -102,7 +103,32 @@ function soruEkleme(){
         let soruSayisi = Number(localStorage.getItem("kaydedilenSoru"))
         soruSayisi += 1
         localStorage.setItem("kaydedilenSoru",soruSayisi)
-        olusturulacakDivler = `<div class="kontrolDiv" id="kontrolDiv${i}">
+        olusturulacakDivler = `
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed acilanMenu" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
+        <h5 class="menuBaslik">Soru ${i}.</h5>
+        </button>
+      </h2>
+      <div id="collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body icerikBody">
+          <h3 class="icerikBaslik">${localStorage.getItem("baslikYaziValueKey" + i)}</h3> <br> <p class="icerikP">${localStorage.getItem("icerikYaziValueKey" + i)}</p>
+        </div>
+      </div>
+    </div>
+        
+        `
+        sorularDiv.innerHTML += olusturulacakDivler
+}
+    localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
+inputTemizleme()
+
+
+
+/*
+`
+        <div class="kontrolDiv" id="kontrolDiv${i}">
         <div class="toDoQuestion" onclick="toDoQuestionBuyutme(${i})" id="toDoQuestion${i}">
         <div class="rightSide">
             <h2 class="soruKac">${i}. Soru</h2>
@@ -131,10 +157,10 @@ function soruEkleme(){
     </div>
 
     </div>`
-        sorularDiv.innerHTML += olusturulacakDivler
-}
-    localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
-inputTemizleme()
+*/
+
+
+
 }
 function inputTemizleme(){
     dersIsmi.value = ""
