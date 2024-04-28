@@ -54,7 +54,48 @@
     width: 250px;
 }
 
-
 #aciklama{
     height: 300px;
 }
+
+.icerikBaslik{
+  text-transform: capitalize;
+}
+.icerikP{
+  text-transform: capitalize;
+}
+.icerikSpan{
+  width: 200px;
+  height: 100px;
+  background-color: #101010;
+  border-radius: 5px;
+  overflow-y: scroll;
+  padding-top: 10px;
+  oadd
+  overflow-x: visible;
+}
+
+/* .icerikSpan::-webkit-scrollbar {
+  width: 10px;
+}
+.icerikSpan::-webkit-scrollbar-button {
+  background: #222; 
+}
+.icerikSpan::-webkit-scrollbar-thumb {
+  background: #333; 
+}
+.icerikSpan::-webkit-scrollbar-thumb:hover {
+  background: #666; 
+}
+.icerikSpan::-webkit-scrollbar-track {
+  background: #000; 
+}
+.icerikSpan::-webkit-scrollbar-track-piece {
+  background: #000; 
+}
+.icerikSpan::-webkit-scrollbar-corner {
+  background: #999; 
+}
+.icerikSpan::-webkit-resizer { 
+  background: #111; 
+} */

@@ -1,10 +1,3 @@
-const soruEkleDiv = document.getElementById("soruEkle")
-const soruBilgiAdd = document.getElementById("soruBilgiAdd")
-const leftSide = document.getElementById("left")
-const rightSide = document.getElementById("right")
-
-// ? Inputlar :
-
 const dersIsmi = document.getElementById("dersIsmi")
 const kitapIsmi = document.getElementById("kitapIsmi")
 const sayfaTestNo = document.getElementById("sayfa/testNo")
@@ -15,7 +8,7 @@ const sorularDiv = document.getElementById("sorularDiv")
 
 let sorularHTML = localStorage.getItem("SorularHTML")
 if(sorularHTML != null){
-  sayfalarDiv.innerHTML = `${sorularHTML}`
+  sorularDiv.innerHTML = `${sorularHTML}`
 }
 // ? Todolar :
 
@@ -36,19 +29,19 @@ if(localStorage.getItem("pdfAlmaSayisi") == null){
     localStorage.setItem("pdfAlmaSayisi",0)
 }
 
-function soruEkleBasma(){
-    if (soruEkleDiv.style.height == "450px"){
-        soruEkleDiv.style.height = "65px"
-        soruBilgiAdd.style.height = "0px"
-        leftSide.style.display = "none"
-        rightSide.style.display = "none"
+function bugununTarihi(){
+    var today = new Date();
+    var day = today.getDate();
+    var month = today.getMonth() + 1; 
+    var year = today.getFullYear();
+    if (day < 10) {
+      day = '0' + day; 
     }
-    else{
-        soruEkleDiv.style.height = "450px"
-        soruBilgiAdd.style.height = "370px"
-        leftSide.style.display = "inline-block"
-        rightSide.style.display = "inline-block"
+    if (month < 10) {
+      month = '0' + month; 
     }
+    var bugununTarihi = year + '-' + month + '-' + day;
+    document.getElementById('cozmeTarihi').value = bugununTarihi;
 }
 
 
@@ -105,20 +98,39 @@ function soruEkleme(){
         localStorage.setItem("kaydedilenSoru",soruSayisi)
         olusturulacakDivler = `
         <div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed acilanMenu" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-        <h5 class="menuBaslik">Soru ${i}.</h5>
-        </button>
-      </h2>
-      <div id="collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body icerikBody">
-          <h3 class="icerikBaslik">${localStorage.getItem("baslikYaziValueKey" + i)}</h3> <br> <p class="icerikP">${localStorage.getItem("icerikYaziValueKey" + i)}</p>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed acilanMenu" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
+            <h5 class="menuBaslik">Soru ${i}.</h5>
+            </button>
+          </h2>
+          <div class="row">
+            <div class="col">
+              <div id="collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body col icerikBody">
+                  <h4 class="icerikBaslik">Ders İsmi:</h4>
+                  <p class="icerikP">${localStorage.getItem("dersIsmiValueKey" + i).toLowerCase()}</p>
+                  <h4 class="icerikBaslik">Kitap İsmi:</h4>
+                  <p class="icerikP">${localStorage.getItem("kitapIsmiValueKey" + i).toLowerCase()}</p>
+                  <h4 class="icerikBaslik">Sayfa No:</h4>
+                  <p class="icerikP">${localStorage.getItem("sayfaTestNoValueKey" + i).toLowerCase()}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div id="collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body col icerikBody">
+                  <h4 class="icerikBaslik">Soru No:</h4>
+                  <p class="icerikP">${localStorage.getItem("soruNoValueKey" + i).toLowerCase()}</p>
+                  <h4 class="icerikBaslik">Çözme Tarihi</h4>
+                  <p class="icerikP">${localStorage.getItem("cozmeTarihiValueKey" + i).toLowerCase()}</p>
+                  <h4 class="icerikBaslik">Açıklama</h4>
+                  <p class="icerikSpan">${localStorage.getItem("aciklamaTextValueKey" + i).toLowerCase()}</p>
+                </div>
+              </div>
+            </div>
         </div>
-      </div>
-    </div>
-        
-        `
+        </div>`
         sorularDiv.innerHTML += olusturulacakDivler
 }
     localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
@@ -169,40 +181,6 @@ function inputTemizleme(){
     soruNo.value = ""
     cozmeTarihi.value = ""
     aciklamaText.value = ""
-}
-
-function toDoQuestionBuyutme(id){
-    const toDoQuestiondiv = document.getElementById("toDoQuestion"+id)
-    const dataLeft = document.getElementById("dataLeft"+id)
-    const dataRight = document.getElementById("dataRight"+id)
-    if(dataRight.style.display == 'block'){
-        toDoQuestiondiv.style.height = '50px'
-        toDoQuestiondiv.style.backgroundColor = 'red'
-        dataLeft.style.display = 'none'
-        dataRight.style.display = 'none'
-    }
-    else{
-        toDoQuestiondiv.style.height = '400px'
-        toDoQuestiondiv.style.backgroundColor = 'blue'
-        dataLeft.style.display = 'block'
-        dataRight.style.display = 'block'
-    }
-}
-
-function todoSil(elementId){
-    localStorage.removeItem(`dersIsmiValueKey${elementId}`)
-    localStorage.removeItem(`kitapIsmiValueKey${elementId}`)
-    localStorage.removeItem(`sayfaTestNoValueKey${elementId}`)
-    localStorage.removeItem(`soruNoValueKey${elementId}`)
-    localStorage.removeItem(`cozmeTarihiValueKey${elementId}`)
-    localStorage.removeItem(`aciklamaTextValueKey${elementId}`)
-    let kontrolDiv = document.getElementById(`kontrolDiv${elementId}`)
-    kontrolDiv.remove()
-    console.log(sorularDiv.innerHTML)
-    localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
-    let silinenSoruSayi = Number(localStorage.getItem("cikarilanSoru"))
-    silinenSoruSayi += 1
-    localStorage.setItem("cikarilanSoru",silinenSoruSayi)
 }
 
 function convertToPdf(){
