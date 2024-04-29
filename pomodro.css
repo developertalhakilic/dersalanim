@@ -54,7 +54,7 @@ h2 {
   font-family: "BDP FOX", sans-serif;
 }
 .bilgiYazi {
-  margin-top: 340px;
+  margin-top: 350px;
 }
 p {
   font-size: 30px;
@@ -116,7 +116,7 @@ p {
     width: 70%;
   }
   .bilgiYazi {
-    margin-top: 305px;
+    margin-top: 325px;
   }
 }
 @media screen and (max-width: 1320px) {
@@ -145,7 +145,7 @@ p {
     height: 345px;
   }
   .bilgiYazi {
-    margin-top: 285px;
+    margin-top: 305px;
   }
 }
 @media screen and (max-width: 725px) {
@@ -160,7 +160,7 @@ p {
         height: 325px;
       }
       .bilgiYazi {
-        margin-top: 265px;
+        margin-top: 285px;
       }
 }
 @media screen and (max-width: 654px) {
@@ -180,7 +180,8 @@ p {
     height: 300px;
   }
   .bilgiYazi {
-    margin-top: 240px;
+    margin-top: 260px;
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 515px) {
@@ -195,7 +196,7 @@ p {
       height: 285px;
     }
     .bilgiYazi {
-      margin-top: 225px;
+      margin-top: 245px;
     }
 }
 @media screen and (max-width: 465px) {
@@ -205,6 +206,9 @@ p {
     }
     .hourelement h2 {
       font-size: 110px;
+    }
+    .bilgiYazi {
+      margin-top: 245px;
     }
 }
 @media screen and (max-width: 430px) {
@@ -219,7 +223,7 @@ p {
       height: 275px;
     }
     .bilgiYazi {
-      margin-top: 215px;
+      margin-top: 235px;
     }
 }
 @media screen and (max-width: 400px) {
@@ -234,7 +238,7 @@ p {
       height: 270px;
     }
     .bilgiYazi {
-      margin-top: 210px;
+      margin-top: 230px;
     }
 }
 @media screen and (max-width: 384px) {
@@ -250,8 +254,8 @@ p {
       height: 265px;
     }
     .bilgiYazi {
-      margin-top: 205px;
-      font-size: 27px;
+      font-size: 25px;
+      margin-top: 235px;
     }
 }
      

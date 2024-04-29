@@ -62,12 +62,23 @@ function yeniSayfaEkle(){
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed acilanMenu" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-        <h5 class="menuBaslik">${localStorage.getItem("tarihYaziValueKey" + i)}</h5>
+        <h5 class="menuBaslik">${localStorage.getItem("tarihYaziValueKey" + i) + " - " + bugununGunu(localStorage.getItem("tarihYaziValueKey" + i))}</h5>
         </button>
+        <!--<button>
+        <i class="bi bi-trash3"></i>
+        </button>-->
       </h2>
       <div id="collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body icerikBody">
           <h3 class="icerikBaslik">${localStorage.getItem("baslikYaziValueKey" + i)}</h3> <br> <p class="icerikP">${localStorage.getItem("icerikYaziValueKey" + i)}</p>
+          <div class="buttonContainer">
+          <button class="editButton">
+          <i class="bi bi-trash2"></i>
+          </button>
+          <button class="editButton">
+          <i class="bi bi-pencil-square"></i>
+          </button>
+          </div>
         </div>
       </div>
     </div>`
@@ -90,5 +101,12 @@ function bugununTarihi(){
     var bugununTarihi = year + '-' + month + '-' + day;
     document.getElementById('tarih').value = bugununTarihi;
 }
-
-
+function bugununGunu(tarih){
+  let gun = ""
+  let tarihBugun = new Date()
+  tarihBugun.setDate(tarih.slice(8,10))
+  tarihBugun.setFullYear(tarih.slice(0,4))
+  tarihBugun.setMonth(Number(tarih.slice(5,7))-1)
+  let gunler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]
+  return gunler[tarihBugun.getDay()]
+}

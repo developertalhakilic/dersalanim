@@ -67,3 +67,21 @@
     margin-top: -10px;
     font-size: 20px;
 }
+
+.editButton{
+    height: 50px;
+    width: 50px;
+    background: #2e2d2d;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    font-size: 23px;
+}
+.edit i{
+    color: rgb(193, 193, 215);
+}
+.buttonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
