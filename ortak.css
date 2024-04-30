@@ -12,6 +12,10 @@
 @import url('https://fonts.cdnfonts.com/css/bagota-los');
 @import url("https://fonts.cdnfonts.com/css/bdp-fox");
 @import url("https://fonts.cdnfonts.com/css/tgl-0-16");
+@import url('https://fonts.cdnfonts.com/css/gabyrose');
+@import url('https://fonts.cdnfonts.com/css/queens-display-pro');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -209,3 +213,4 @@ body{
 
 .slide-out-left{animation:slide-out-left .60s cubic-bezier(.25,.46,.45,.94) reverse both}
 @keyframes slide-out-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+
