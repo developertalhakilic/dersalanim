@@ -32,7 +32,8 @@ function yeniSayfaEkle(){
     let tumLocalKeyler = Object.keys(localStorage)
     let keyNumbers = []
     tumLocalKeyler.forEach(function kontrolSayiGen(key){
-    if(key.slice(0,6) == "tarihY" || "baslik" || "icerik"){
+    if(key.slice(0,6) == "tarihY" || key.slice(0,6) == "baslik" || key.slice(0,6) == "icerik"){
+        console.log(key)
         try{
             keyNumbers.push(Number(key.match(/\d+$/)[0]))
         }
@@ -89,13 +90,18 @@ function yeniSayfaEkle(){
         <div class="accordion-body icerikBody">
           <h3 class="icerikBaslik"  id="menuBaslik${i}">${localStorage.getItem("baslikYaziValueKey" + i)}</h3> <br> <p class="icerikP" id="menuIcerik${i}">${localStorage.getItem("icerikYaziValueKey" + i)}</p>
           <div class="buttonContainer">
-          <button class="editButton" onclick="elementSil(${i})">
-          <i class="bi bi-trash2"></i>
+          <button class="deleteButton button" onclick="elementSil(${i})">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2" viewBox="0 0 16 16">
+          <path d="M14 3a.7.7 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.7.7 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2M3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5s-3.69-.311-4.785-.793"/>
+        </svg>
           </button>
-          <button class="editButton" onclick="elementDuzenle(${i},${localStorage.getItem("tarihYaziValueKey" + i)})">
-          <i class="bi bi-pencil-square"></i>
+          <button class="editButton button" onclick="elementDuzenle(${i},${localStorage.getItem("tarihYaziValueKey" + i)})">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+        </svg>
           </button>
-          </div>
+      </div>
         </div>
       </div>
     </div>`

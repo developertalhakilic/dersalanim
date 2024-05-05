@@ -61,7 +61,7 @@
 #pdfButton:hover{
   background-color: #2c3b4b;
 }
-#aciklama{
+.aciklama{
     height: 300px;
 }
 
@@ -72,36 +72,55 @@
   text-transform: capitalize;
 }
 .icerikSpan{
-  width: 200px;
-  height: 100px;
-  background-color: #101010;
-  border-radius: 5px;
+  white-space: pre-wrap;        
+  white-space: -moz-pre-wrap;   
+  white-space: -pre-wrap;       
+  white-space: -o-pre-wrap;      
+  word-wrap: break-word;      
+  display: block;
+  height: 200px;
+  max-height: 200px;
   overflow-y: scroll;
-  padding-top: 10px;
-  overflow-x: visible;
+  padding-right: 30px;
+}
+.button{
+  height: 60px;
+  width: 60px;
+  background: #2e2d2d;
+  border: none;
+  margin-bottom: 20px;
+}
+.editButton{
+  border-radius: 0 10px 10px 0;
+}
+.deleteButton{
+  border-right: 2px solid #292929;
+  border-radius: 10px 0px 0px 10px;
+}
+.edit .icon{
+  color: rgb(193, 193, 215);
+}
+.icon{
+  width: 60px;
+  height: 26px;
+}
+.buttonContainer{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+  justify-self: flex-end;
+  justify-content: flex-end;
+  padding-right: 20px;
+  margin-top: 20%;
 }
 
-/* .icerikSpan::-webkit-scrollbar {
-  width: 10px;
+.icerikSpan::-webkit-scrollbar{
+  width: 4px;
+  background-color: #424141;
 }
-.icerikSpan::-webkit-scrollbar-button {
-  background: #222; 
+
+.icerikSpan::-webkit-scrollbar-thumb{
+  background-color: #6d6d6d;
+  border-radius: 5px;
 }
-.icerikSpan::-webkit-scrollbar-thumb {
-  background: #333; 
-}
-.icerikSpan::-webkit-scrollbar-thumb:hover {
-  background: #666; 
-}
-.icerikSpan::-webkit-scrollbar-track {
-  background: #000; 
-}
-.icerikSpan::-webkit-scrollbar-track-piece {
-  background: #000; 
-}
-.icerikSpan::-webkit-scrollbar-corner {
-  background: #999; 
-}
-.icerikSpan::-webkit-resizer { 
-  background: #111; 
-} */
