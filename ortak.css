@@ -216,28 +216,43 @@ body{
 
 
 @media screen and (max-width:1000px) {
+  .sideBarBottom i{
+    font-size: 25px;
+  }
   .sideBarBottom button{
     font-size: 28px;
   }
 }
 @media screen and (max-width:800px) {
+  .sideBarBottom i{
+    font-size: 24px;
+  }
+  .sideBarBottom button{
+    font-size: 27px;
+  }
+}
+@media screen and (max-width:600px) {
+  .sideBarBottom i{
+    font-size: 23px;
+  }
   .sideBarBottom button{
     font-size: 26px;
   }
 }
-@media screen and (max-width:600px) {
-  .sideBarBottom button{
-    font-size: 24px;
-  }
-}
 @media screen and (max-width:400px) {
-  .sideBarBottom button{
+  .sideBarBottom i{
     font-size: 22px;
+  }
+  .sideBarBottom button{
+    font-size: 25px;
   }
 }
 @media screen and (max-width:200px) {
+  .sideBarBottom i{
+    font-size: 21px;
+  }
   .sideBarBottom button{
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
