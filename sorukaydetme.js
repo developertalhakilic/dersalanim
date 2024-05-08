@@ -24,8 +24,8 @@ let sorularHTML = localStorage.getItem("SorularHTML")
 if(sorularHTML != null){
   sorularDiv.innerHTML = `${sorularHTML}`
 }
-if(localStorage.getItem("silinenIdler") == null){
-  localStorage.setItem("silinenIdler","")
+if(localStorage.getItem("silinenIdlerGunluk") == null){
+  localStorage.setItem("silinenIdlerGunluk","")
 }
 // ? Todolar :
 
@@ -97,7 +97,7 @@ function soruEkleme(){
     }
     sorularDiv.innerHTML = ""
     for(let i = 1; i<=enBuyuk+1; i++){
-        if(localStorage.getItem("silinenIdler").includes(i)){
+        if(localStorage.getItem("silinenIdlerGunluk").includes(i)){
           continue
         }
         if(tumLocalKeyler.includes(`dersIsmiValueKey${i}`) == false){
@@ -211,9 +211,9 @@ function elementDuzenle(elementId){
         localStorage.setItem(`soruNoValueKey${elementId}`,"")
         localStorage.setItem(`aciklamaTextValueKey${elementId}`,"")
         localStorage.setItem(`cozmeTarihiValueKey${elementId}`,"")
-      let silinenIdListe = localStorage.getItem("silinenIdler")
+      let silinenIdListe = localStorage.getItem("silinenIdlerGunluk")
       silinenIdListe += elementId
-      localStorage.setItem("silinenIdler", silinenIdListe)
+      localStorage.setItem("silinenIdlerGunluk", silinenIdListe)
       iptalButton.click()
     })
 

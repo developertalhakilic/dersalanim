@@ -21,8 +21,8 @@ if(gunlukHTML != null){
 if(localStorage.getItem("yaziTarihleri") == null){
   localStorage.setItem("yaziTarihleri","")
 }
-if(localStorage.getItem("silinenIdler") == null){
-  localStorage.setItem("silinenIdler","")
+if(localStorage.getItem("silinenIdlerSoru") == null){
+  localStorage.setItem("silinenIdlerSoru","")
 }
 localStorage.setItem("icerikYaziValueKey0",0)
 localStorage.setItem("baslikYaziValueKey0",0)
@@ -63,7 +63,7 @@ function yeniSayfaEkle(){
     }
     sayfalarDiv.innerHTML = ""
     for(let i = 1; i<=enBuyuk+1; i++){ 
-        if(localStorage.getItem("silinenIdler").includes(i)){
+        if(localStorage.getItem("silinenIdlerSoru").includes(i)){
           continue
         }
         if(tumLocalKeyler.includes(`tarihYaziValueKey${i}`) == false){
@@ -141,9 +141,9 @@ function elementSil(elementId){
   silmeButton.addEventListener("click",function(){
     document.getElementById(`gunlukElement${elementId}`).remove()
     localStorage.setItem("GunlukHTML",sayfalarDiv.innerHTML)
-    let silinenIdListe = localStorage.getItem("silinenIdler")
+    let silinenIdListe = localStorage.getItem("silinenIdlerSoru")
     silinenIdListe += elementId
-    localStorage.setItem("silinenIdler", silinenIdListe)
+    localStorage.setItem("silinenIdlerSoru", silinenIdListe)
     iptalButton.click()
   })
 
