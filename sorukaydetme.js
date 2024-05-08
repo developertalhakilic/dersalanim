@@ -1,5 +1,6 @@
 const dersIsmi = document.getElementById("dersIsmi")
 const kitapIsmi = document.getElementById("kitapIsmi")
+const soruIsmi = document.getElementById("soruIsmi")
 const sayfaTestNo = document.getElementById("sayfa/testNo")
 const soruNo = document.getElementById("soruNo")
 const cozmeTarihi = document.getElementById("cozmeTarihi")
@@ -18,6 +19,7 @@ const duzenlemeSayfaNoInput = document.getElementById("duzenlemeSayfaNoInput")
 const duzenlemeSoruNoInput = document.getElementById("duzenlemeSoruNoInput")
 const duzenlemeCozmeTarihiInput = document.getElementById("duzenlemeCozmeTarihiInput")
 const duzenlemeAciklamaInput = document.getElementById("duzenlemeAciklamaInput")
+const duzenlemeSoruIsmiInput = document.getElementById("duzenlemesoruIsmiInput")
 
 const sayfayiDuzenleButton = document.getElementById("sayfayiDuzenleButton")
 let sorularHTML = localStorage.getItem("SorularHTML")
@@ -27,8 +29,11 @@ if(sorularHTML != null){
 if(localStorage.getItem("silinenIdlerGunluk") == null){
   localStorage.setItem("silinenIdlerGunluk","")
 }
+
+
 // ? Todolar :
 
+localStorage.setItem("soruIsmiValueKey0",0)
 localStorage.setItem("dersIsmiValueKey0",0)
 localStorage.setItem("kitapIsmiValueKey0",0)
 localStorage.setItem("sayfaTestNoValueKey0",0)
@@ -73,7 +78,6 @@ function soruEkleme(){
     let keyNumbers = []
     tumLocalKeyler.forEach(function kontrolSayiGen(key){
     if(key.slice(0,6) == "cozmeT" || key.slice(0,6) == "acikla" || key.slice(0,6) == "dersIs" || key.slice(0,6) == "soruNo" || key.slice(0,6) == "kitapI" || key.slice(0,6) == "sayfaT"){
-        console.log(key)
         try{
             keyNumbers.push(Number(key.match(/\d+$/)[0]))
         }
@@ -89,7 +93,8 @@ function soruEkleme(){
     let soruNoValue = soruNo.value
     let cozmeTarihiValue = cozmeTarihi.value
     let aciklamaTextValue = aciklamaText.value
-    if(dersIsmiValue != "" && kitapIsmiValue != "" && sayfaTestNoValue != "" && soruNoValue != "" && cozmeTarihiValue != "" && aciklamaTextValue != ""){
+    let soruIsmiTextValue = soruIsmi.value
+    if(dersIsmiValue != "" && kitapIsmiValue != "" && sayfaTestNoValue != "" && soruNoValue != "" && cozmeTarihiValue != "" && aciklamaTextValue != "" && soruIsmiTextValue != ""){
         null
     }
     else{
@@ -118,6 +123,9 @@ function soruEkleme(){
         if(tumLocalKeyler.includes(`aciklamaTextValueKey${i}`) == false){
             localStorage.setItem("aciklamaTextValueKey" + i, aciklamaTextValue)
         }
+        if(tumLocalKeyler.includes(`soruIsmiValueKey${i}`) == false){
+          localStorage.setItem("soruIsmiValueKey" + i, aciklamaTextValue)
+      }
         let soruSayisi = Number(localStorage.getItem("kaydedilenSoru"))
         soruSayisi += 1
         localStorage.setItem("kaydedilenSoru",soruSayisi)
@@ -126,7 +134,7 @@ function soruEkleme(){
         <div class="accordion-item" id="soruElement${i}">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed acilanMenu" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-            <h5 class="menuBaslik">Soru ${i}.</h5>
+            <h5 class="menuBaslik" id="soruIsmi${i}">${localStorage.getItem("soruIsmiValueKey" + i)}</h5>
             </button>
           </h2>
           <div class="row">
@@ -177,7 +185,9 @@ inputTemizleme()
 
 function elementDuzenle(elementId){
     sayfaDuzenleButton.click()
-    duzenlemeBaslik.innerText = `"Soru ${elementId}." Öğesini Düzenle`
+    console.log(elementId)
+    duzenlemeBaslik.innerText = `"${localStorage.getItem("soruIsmiValueKey" + elementId)}" Öğesini Düzenle`
+    duzenlemeSoruIsmiInput.value = localStorage.getItem("soruIsmiValueKey" + elementId)
     duzenlemeDersIsmiInput.value = localStorage.getItem("dersIsmiValueKey" + elementId)
     duzenlemeKitapIsmiInput.value = localStorage.getItem("kitapIsmiValueKey" + elementId)
     duzenlemeSayfaNoInput.value = localStorage.getItem("sayfaTestNoValueKey" + elementId)
@@ -185,6 +195,7 @@ function elementDuzenle(elementId){
     duzenlemeAciklamaInput.value = localStorage.getItem("aciklamaTextValueKey" + elementId)
     duzenlemeCozmeTarihiInput.value = localStorage.getItem("cozmeTarihiValueKey" + elementId) 
     sayfayiDuzenleButton.addEventListener("click",function(){
+        localStorage.setItem(`soruIsmiValueKey${elementId}`,duzenlemeSoruIsmiInput.value)
         localStorage.setItem(`dersIsmiValueKey${elementId}`,duzenlemeDersIsmiInput.value)
         localStorage.setItem(`kitapIsmiValueKey${elementId}`, duzenlemeKitapIsmiInput.value)
         localStorage.setItem(`sayfaTestNoValueKey${elementId}`,duzenlemeSayfaNoInput.value)
@@ -192,6 +203,7 @@ function elementDuzenle(elementId){
         localStorage.setItem(`aciklamaTextValueKey${elementId}`,duzenlemeAciklamaInput.value)
         localStorage.setItem(`cozmeTarihiValueKey${elementId}`,duzenlemeCozmeTarihiInput.value)
 
+        document.getElementById(`soruIsmi${elementId}`).innerText = localStorage.getItem(`soruIsmiValueKey${elementId}`)
         document.getElementById(`dersIsmi${elementId}`).innerText = localStorage.getItem(`dersIsmiValueKey${elementId}`)
         document.getElementById(`kitapIsmi${elementId}`).innerText = localStorage.getItem(`kitapIsmiValueKey${elementId}`)
         document.getElementById(`sayfaTestNo${elementId}`).innerText = localStorage.getItem(`sayfaTestNoValueKey${elementId}`)
@@ -205,6 +217,7 @@ function elementDuzenle(elementId){
     silmeOnayButton.click()
     silmeButton.addEventListener("click",function(){
         document.getElementById(`soruElement${elementId}`).remove()
+        localStorage.setItem(`soruIsmiValueKey${elementId}`,"")
         localStorage.setItem(`dersIsmiValueKey${elementId}`,"")
         localStorage.setItem(`kitapIsmiValueKey${elementId}`,"")
         localStorage.setItem(`sayfaTestNoValueKey${elementId}`,"")
@@ -213,6 +226,8 @@ function elementDuzenle(elementId){
         localStorage.setItem(`cozmeTarihiValueKey${elementId}`,"")
       let silinenIdListe = localStorage.getItem("silinenIdlerGunluk")
       silinenIdListe += elementId
+      silmeIcerikOnayYazi.innerText = `Bu Soru Silinsin mi?`
+      localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
       localStorage.setItem("silinenIdlerGunluk", silinenIdListe)
       iptalButton.click()
     })

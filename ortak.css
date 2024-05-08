@@ -151,10 +151,9 @@ body{
   height: 40px;
   margin-top: 13px;
   margin-left: 12PX;
-  background-color: #101010;
+  background-color: #00ffd500;
   color: white;
   position: absolute;
-  z-index: 25000;
   transition: 0.3s;
 }
 .sideBarBottom i{
