@@ -214,3 +214,30 @@ body{
 .slide-out-left{animation:slide-out-left .60s cubic-bezier(.25,.46,.45,.94) reverse both}
 @keyframes slide-out-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
 
+
+@media screen and (max-width:1000px) {
+  .sideBarBottom button{
+    font-size: 28px;
+  }
+}
+@media screen and (max-width:800px) {
+  .sideBarBottom button{
+    font-size: 26px;
+  }
+}
+@media screen and (max-width:600px) {
+  .sideBarBottom button{
+    font-size: 24px;
+  }
+}
+@media screen and (max-width:400px) {
+  .sideBarBottom button{
+    font-size: 22px;
+  }
+}
+@media screen and (max-width:200px) {
+  .sideBarBottom button{
+    font-size: 22px;
+  }
+}
+
