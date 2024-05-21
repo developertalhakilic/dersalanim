@@ -5,7 +5,7 @@ h2 {
 }
 .pomodroContainer {
   display: flex;
-  width: 58%;
+  width: 55%;
   justify-content: space-around;
   border-radius: 50px;
   height: 400px;

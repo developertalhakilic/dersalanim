@@ -36,29 +36,29 @@ function tamEkran() {
         element.msRequestFullscreen();
     }
 }
-tamEkranButton.addEventListener('click', () => {
-    const body = document.body;
+// tamEkranButton.addEventListener('click', () => {
+//     const body = document.body;
 
-    if (!document.fullscreenElement) {
-        body.requestFullscreen().then(() => {
-            tamEkranButton.style.color = "red"
-            basYazi.style.display = "none"
-            pomodroContainer.style.marginTop = "170px"
-            pomodroContainer.style.width = "90%"
-            hamburger.style.color = "white"
-            hamburger.style.display = "none"
-            side.style.display = "none"
-        });
-    } else {
-        document.exitFullscreen().then(() => {
-            tamEkranButton.style.color = "white"
-            basYazi.style.display = "block"
-            pomodroContainer.style.marginTop = "0px"
-            pomodroContainer.style.width = "58%"
-            hamburger.style.display = "block"
-        });
-    }
-});
+//     if (!document.fullscreenElement) {
+//         body.requestFullscreen().then(() => {
+//             tamEkranButton.style.color = "red"
+//             basYazi.style.display = "none"
+//             pomodroContainer.style.marginTop = "170px"
+//             pomodroContainer.style.width = "90%"
+//             hamburger.style.color = "white"
+//             hamburger.style.display = "none"
+//             side.style.display = "none"
+//         });
+//     } else {
+//         document.exitFullscreen().then(() => {
+//             tamEkranButton.style.color = "white"
+//             basYazi.style.display = "block"
+//             pomodroContainer.style.marginTop = "0px"
+//             pomodroContainer.style.width = "58%"
+//             hamburger.style.display = "block"
+//         });
+//     }
+// });
 let kontrolSayi = 2;
 if(localStorage.getItem("pomodoroSayisi") == null){
     localStorage.setItem("pomodoroSayisi",0)

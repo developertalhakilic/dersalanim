@@ -87,4 +87,181 @@ h2 {
   #butonGeriBaslat {
     display: none;
   }
+
+
+  @media screen and (max-width: 1720px) {
+    .hourelement {
+      width: 260px;
+      height: 260px;
+    }
+    .hourelement h2 {
+      font-size: 160px;
+    }
+    .pomodroContainer {
+      height: 385px;
+    }
+    .bilgiYazi {
+      margin-top: 325px;
+    }
+  }
+  @media screen and (max-width: 1498px) {
+    .hourelement {
+      width: 250px;
+      height: 250px;
+    }
+    .hourelement h2 {
+      font-size: 150px;
+    }
+    .pomodroContainer {
+      height: 365px;
+      width: 70%;
+    }
+    .bilgiYazi {
+      margin-top: 325px;
+    }
+  }
+  @media screen and (max-width: 1320px) {
+      .pomodroContainer button{
+          display: none;
+      }
+    .pomodroContainer {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 1150px) {
+    .pomodroContainer {
+      width: 85%;
+    }
+  }
+  
+  @media screen and (max-width: 945px) {
+    .hourelement {
+      width: 220px;
+      height: 220px;
+    }
+    .hourelement h2 {
+      font-size: 140px;
+    }
+    .pomodroContainer {
+      height: 345px;
+    }
+    .bilgiYazi {
+      margin-top: 305px;
+    }
+  }
+  @media screen and (max-width: 725px) {
+      .hourelement {
+          width: 200px;
+          height: 200px;
+        }
+        .hourelement h2 {
+          font-size: 135px;
+        }
+        .pomodroContainer {
+          height: 325px;
+        }
+        .bilgiYazi {
+          margin-top: 285px;
+        }
+  }
+  @media screen and (max-width: 654px) {
+    .pomodroContainer {
+      width: 95%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .hourelement {
+      width: 185px;
+      height: 185px;
+    }
+    .hourelement h2 {
+      font-size: 125px;
+    }
+    .pomodroContainer {
+      height: 300px;
+    }
+    .bilgiYazi {
+      margin-top: 260px;
+      font-size: 28px;
+    }
+  }
+  @media screen and (max-width: 515px) {
+      .hourelement {
+        width: 170px;
+        height: 170px;
+      }
+      .hourelement h2 {
+        font-size: 120px;
+      }
+      .pomodroContainer {
+        height: 285px;
+      }
+      .bilgiYazi {
+        margin-top: 245px;
+      }
+  }
+  @media screen and (max-width: 465px) {
+      .hourelement {
+        width: 160px;
+        height: 160px;
+      }
+      .hourelement h2 {
+        font-size: 110px;
+      }
+      .bilgiYazi {
+        margin-top: 245px;
+      }
+  }
+  @media screen and (max-width: 430px) {
+      .hourelement {
+        width: 150px;
+        height: 150px;
+      }
+      .hourelement h2 {
+        font-size: 100px;
+      }
+      .pomodroContainer {
+        height: 275px;
+      }
+      .bilgiYazi {
+        margin-top: 235px;
+      }
+  }
+  @media screen and (max-width: 400px) {
+      .hourelement {
+        width: 140px;
+        height: 140px;
+      }
+      .hourelement h2 {
+        font-size: 95px;
+      }
+      .pomodroContainer {
+        height: 270px;
+      }
+      .bilgiYazi {
+        margin-top: 230px;
+      }
+  }
+  @media screen and (max-width: 384px) {
+      .hourelement {
+        width: 160px;
+        height: 150px;
+        margin-top: -5px;
+      }
+      .hourelement h2 {
+        font-size: 80px;
+      }
+      .pomodroContainer {
+        height: 265px;
+      }
+      .bilgiYazi {
+        font-size: 25px;
+        margin-top: 235px;
+      }
+  }
+       
+  
+         
+  
+    
   
