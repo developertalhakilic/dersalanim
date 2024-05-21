@@ -101,7 +101,7 @@ h2 {
       height: 385px;
     }
     .bilgiYazi {
-      margin-top: 325px;
+      margin-top: 320px;
     }
   }
   @media screen and (max-width: 1498px) {
@@ -117,7 +117,7 @@ h2 {
       width: 70%;
     }
     .bilgiYazi {
-      margin-top: 325px;
+      margin-top: 310px;
     }
   }
   @media screen and (max-width: 1320px) {
@@ -136,32 +136,32 @@ h2 {
   
   @media screen and (max-width: 945px) {
     .hourelement {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
     }
     .hourelement h2 {
-      font-size: 140px;
+      font-size: 135px;
     }
     .pomodroContainer {
       height: 345px;
     }
     .bilgiYazi {
-      margin-top: 305px;
+      margin-top: 285px;
     }
   }
-  @media screen and (max-width: 725px) {
+  @media screen and (max-width: 870px) {
       .hourelement {
-          width: 200px;
-          height: 200px;
+          width: 190px;
+          height: 190px;
         }
         .hourelement h2 {
-          font-size: 135px;
+          font-size: 125px;
         }
         .pomodroContainer {
           height: 325px;
         }
         .bilgiYazi {
-          margin-top: 285px;
+          margin-top: 275px;
         }
   }
   @media screen and (max-width: 654px) {
@@ -169,38 +169,23 @@ h2 {
       width: 95%;
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 630px) {
     .hourelement {
-      width: 185px;
-      height: 185px;
+      width: 175px;
+      height: 175px;
     }
     .hourelement h2 {
-      font-size: 125px;
+      font-size: 115px;
     }
     .pomodroContainer {
       height: 300px;
     }
     .bilgiYazi {
-      margin-top: 260px;
-      font-size: 28px;
+      margin-top: 240px;
+      font-size: 26px;
     }
   }
-  @media screen and (max-width: 515px) {
-      .hourelement {
-        width: 170px;
-        height: 170px;
-      }
-      .hourelement h2 {
-        font-size: 120px;
-      }
-      .pomodroContainer {
-        height: 285px;
-      }
-      .bilgiYazi {
-        margin-top: 245px;
-      }
-  }
-  @media screen and (max-width: 465px) {
+  @media screen and (max-width: 590px) {
       .hourelement {
         width: 160px;
         height: 160px;
@@ -208,23 +193,27 @@ h2 {
       .hourelement h2 {
         font-size: 110px;
       }
-      .bilgiYazi {
-        margin-top: 245px;
-      }
-  }
-  @media screen and (max-width: 430px) {
-      .hourelement {
-        width: 150px;
-        height: 150px;
-      }
-      .hourelement h2 {
-        font-size: 100px;
-      }
       .pomodroContainer {
         height: 275px;
       }
       .bilgiYazi {
-        margin-top: 235px;
+        margin-top: 225px;
+        font-size: 24px;
+      }
+  }
+  @media screen and (max-width: 465px) {
+      .hourelement {
+        width: 160px;
+        height: 150px;
+      }
+      .pomodroContainer{
+        height: 265px;
+      }
+      .hourelement h2 {
+        font-size: 100px;
+      }
+      .bilgiYazi {
+        margin-top: 215px;
       }
   }
   @media screen and (max-width: 400px) {
@@ -233,30 +222,28 @@ h2 {
         height: 140px;
       }
       .hourelement h2 {
-        font-size: 95px;
+        font-size: 90px;
       }
       .pomodroContainer {
-        height: 270px;
+        height: 260px;
       }
       .bilgiYazi {
-        margin-top: 230px;
+        margin-top: 210px;
       }
   }
-  @media screen and (max-width: 384px) {
+  @media screen and (max-width: 378px) {
       .hourelement {
-        width: 160px;
-        height: 150px;
         margin-top: -5px;
       }
       .hourelement h2 {
         font-size: 80px;
       }
       .pomodroContainer {
-        height: 265px;
+        height: 245px;
       }
       .bilgiYazi {
         font-size: 25px;
-        margin-top: 235px;
+        margin-top: 205px;
       }
   }
        
