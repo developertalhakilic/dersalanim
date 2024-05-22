@@ -1,254 +1,137 @@
 h2 {
-    color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 40px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+}
+
+.pomodroContainer {
+  display: flex;
+  /* width: 58%; */
+
+  /* Değişiklikler */
+  width: 85%;
+  max-width: 950px;
+  align-items: center;
+
+  justify-content: space-around;
+  border-radius: 50px;
+  height: 350px;
+  border: 3px solid blue;
+  box-shadow: 0px 0px 49px 0px #030eed;
+}
+
+.pomodroContainer .bilgiYazilar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  margin-top: 260px;
+  width: 1100px;
+  border-radius: 0 0 50px 50px;
+  height: 100px;
+}
+
+.pomodroContainer button {
+  font-size: 40px;
+  height: 70px;
+  border: none;
+  margin-top: 9px;
+  z-index: 9999;
+  cursor: pointer;
+  margin-left: 90%;
+  background-color: black;
+  color: white;
+  transition: 0.4s ease;
+}
+
+.section1 {
+  height: 100vh;
+  background-color: black;
+}
+
+.hourelement {
+  height: 275px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0px 10px;
+  background-color: #130f13;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hourelement h2 {
+  font-size: 130px;
+  font-family: "BDP FOX", sans-serif;
+}
+
+.bilgiYazi {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 7px;
+}
+
+p {
+  font-size: 30px;
+  color: #9d9b9d;
+  position: absolute;
+  font-family: "TGL 0-17 Alt", sans-serif;
+  text-transform: uppercase;
+}
+
+.saat {
+  width: 100%;
+  padding: 20px;  
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.buttons {
+  margin-top: 40px;
+}
+
+.button {
+  font-size: 20px;
+  margin: 10px;
+}
+
+#butonDuraklat {
+  display: none;
+}
+
+#butonBitir {
+  display: none;
+}
+
+#butonGeriBaslat {
+  display: none;
+}
+
+@media screen and (max-width: 610px) {  
+  .pomodroContainer{
+      flex-direction: column;
+      height: 100%;
   }
-  .pomodroContainer {
-    display: flex;
-    width: 58%;
-    justify-content: space-around;
-    border-radius: 50px;
-    height: 400px;
-    border: 3px solid blue;
-    box-shadow: 0px 0px 49px 0px #030eed;
+
+  .hourelement{
+      height: auto;
+      margin: 10px 0px;
+      padding: 40px;
   }
-  .pomodroContainer .bilgiYazilar {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position: absolute;
-    margin-top: 260px;
-    width: 1100px;
-    border-radius: 0 0 50px 50px;
-    height: 100px;
+
+  .saat{
+      display: flex;
+      flex-direction: column;
   }
-  .pomodroContainer button {
-    font-size: 40px;
-    height: 70px;
-    border: none;
-    margin-top: 9px;
-    z-index: 9999;
-    cursor: pointer;
-    margin-left: 90%;
-    background-color: black;
-    color: white;
-    transition: 0.4s ease;
-  }
-  .section1 {
-    height: 100vh;
-    background-color: black;
-  }
-  .hourelement {
-    width: 275px;
-    height: 274px;
-    display: inline-flex;
-    margin: 15px;
-    margin-top: 10px;
-    background-color: #130f13;
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
-  }
+
   .hourelement h2 {
-    font-size: 175px;
-    font-family: "BDP FOX", sans-serif;
-  }
-  .bilgiYazi {
-    margin-top: 340px;
-  }
-  p {
-    font-size: 30px;
-    color: #9d9b9d;
-    position: absolute;
-    font-family: "TGL 0-17 Alt", sans-serif;
-    text-transform: uppercase;
-  }
-  .saat {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
-    width: 80%;
-    border-radius: 25px;
-  }
-  .buttons {
-    margin-top: 40px;
-  }
-  .button {
-    font-size: 20px;
-    margin: 10px;
-  } 
-  #butonDuraklat {
-    display: none;
-  }
-  #butonBitir {
-    display: none;
-  }
-  #butonGeriBaslat {
-    display: none;
+      font-size: 50px;
   }
 
-
-  @media screen and (max-width: 1720px) {
-    .hourelement {
-      width: 260px;
-      height: 260px;
-    }
-    .hourelement h2 {
-      font-size: 160px;
-    }
-    .pomodroContainer {
-      height: 385px;
-    }
-    .bilgiYazi {
-      margin-top: 320px;
-    }
-  }
-  @media screen and (max-width: 1498px) {
-    .hourelement {
-      width: 250px;
-      height: 250px;
-    }
-    .hourelement h2 {
-      font-size: 150px;
-    }
-    .pomodroContainer {
-      height: 365px;
-      width: 70%;
-    }
-    .bilgiYazi {
-      margin-top: 310px;
-    }
-  }
-  @media screen and (max-width: 1320px) {
-      .pomodroContainer button{
-          display: none;
-      }
-    .pomodroContainer {
-      width: 80%;
-    }
-  }
-  @media screen and (max-width: 1150px) {
-    .pomodroContainer {
-      width: 85%;
-    }
-  }
-  
-  @media screen and (max-width: 945px) {
-    .hourelement {
-      width: 200px;
-      height: 200px;
-    }
-    .hourelement h2 {
-      font-size: 135px;
-    }
-    .pomodroContainer {
-      height: 345px;
-    }
-    .bilgiYazi {
-      margin-top: 285px;
-    }
-  }
-  @media screen and (max-width: 870px) {
-      .hourelement {
-          width: 190px;
-          height: 190px;
-        }
-        .hourelement h2 {
-          font-size: 125px;
-        }
-        .pomodroContainer {
-          height: 325px;
-        }
-        .bilgiYazi {
-          margin-top: 275px;
-        }
-  }
-  @media screen and (max-width: 654px) {
-    .pomodroContainer {
-      width: 95%;
-    }
-  }
-  @media screen and (max-width: 630px) {
-    .hourelement {
-      width: 175px;
-      height: 175px;
-    }
-    .hourelement h2 {
-      font-size: 115px;
-    }
-    .pomodroContainer {
-      height: 300px;
-    }
-    .bilgiYazi {
-      margin-top: 240px;
+  .bilgiYazi{
       font-size: 26px;
-    }
   }
-  @media screen and (max-width: 590px) {
-      .hourelement {
-        width: 160px;
-        height: 160px;
-      }
-      .hourelement h2 {
-        font-size: 110px;
-      }
-      .pomodroContainer {
-        height: 275px;
-      }
-      .bilgiYazi {
-        margin-top: 225px;
-        font-size: 24px;
-      }
-  }
-  @media screen and (max-width: 465px) {
-      .hourelement {
-        width: 160px;
-        height: 150px;
-      }
-      .pomodroContainer{
-        height: 265px;
-      }
-      .hourelement h2 {
-        font-size: 100px;
-      }
-      .bilgiYazi {
-        margin-top: 215px;
-      }
-  }
-  @media screen and (max-width: 400px) {
-      .hourelement {
-        width: 140px;
-        height: 140px;
-      }
-      .hourelement h2 {
-        font-size: 90px;
-      }
-      .pomodroContainer {
-        height: 260px;
-      }
-      .bilgiYazi {
-        margin-top: 210px;
-      }
-  }
-  @media screen and (max-width: 378px) {
-      .hourelement {
-        margin-top: -5px;
-      }
-      .hourelement h2 {
-        font-size: 80px;
-      }
-      .pomodroContainer {
-        height: 245px;
-      }
-      .bilgiYazi {
-        font-size: 25px;
-        margin-top: 205px;
-      }
-  }
-       
-  
-         
-  
-    
-  
+}
