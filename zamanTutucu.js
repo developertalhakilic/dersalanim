@@ -13,6 +13,9 @@ const restartButon = document.getElementById("butonGeriBaslat")
 const tamEkranButton = document.getElementById('tamEkranButton');
 const hamburger = document.getElementById("hamburgerButton")
 const side = document.getElementById("sideBar")
+const saatInput = document.getElementById("saatInput")
+const dakikaInput = document.getElementById("dakikaInput")
+const saniyeInput = document.getElementById("saniyeInput")
 function tamEkran() {
     var element = document.documentElement; // Sayfanın kök elementini alı
     if (element.requestFullscreen) {
@@ -57,6 +60,18 @@ if(localStorage.getItem("dersSaniyesi") == null){
 }
 let pomodoroSayisi = Number(localStorage.getItem("pomodoroSayisi"))
 let dersSaniyesi = Number(localStorage.getItem("dersSaniyesi"))
+
+function kronometreAyar(){
+    saatInputValue = saatInput.value
+    dakikaInputValue = dakikaInput.value
+    saniyeInputValue = saniyeInput.value
+
+    saatcon.innerText = saatInputValue
+    dakikacon.innerText = dakikaInputValue
+    saniyecon.innerText = saniyeInputValue
+
+    baslatButon.click()
+}
 function zamanlayiciBaslat(){
     if(saniyecon.innerText==0 && dakikacon.innerText != -1){
         let yeniVar = Number(dakikacon.innerText)
@@ -74,6 +89,9 @@ function zamanlayiciBaslat(){
         if(dakikacon.innerText.length == 1){
             dakikacon.innerText = "0" + dakikacon.innerText
         }
+        if(saatcon.innerText.length == 1){
+            saatcon.innerText = "0" + saatcon.innerText
+        }
     }
     if(dakikacon.innerText == -1 && kontrolSayi % 2 == 0){
         kontrolSayi+=1
@@ -82,27 +100,28 @@ function zamanlayiciBaslat(){
         dakikacon.innerText = "59"
         saniyecon.innerText = "59"
     }
-    if(dakikacon.innerText== -1 && kontrolSayi % 2 != 0){
-        kontrolSayi+=1
-        dakikacon.innerText = "25"
+    if(saatcon.innerText == -1){
         saniyecon.innerText = "00"
-        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #030eed"
-        pomodroContainer.style.border = "3px solid blue"
+        dakikacon.innerText = "00"
+        saatcon.innerText = "00"
+        kontrolSayi = 2
+        showTheBaslatButon()
+        bitirButon.style.display = "none"
     }
 }
 
 baslatButon.addEventListener('click', function() {
-    zamanlayici = setInterval(zamanlayiciBaslat, 1);
+    zamanlayici = setInterval(zamanlayiciBaslat, 1000);
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
 });
 restartButon.addEventListener('click', function() {
-    zamanlayici = setInterval(zamanlayiciBaslat, 1);
+    zamanlayici = setInterval(zamanlayiciBaslat, 1000);
 });
 bitirButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
-    saatcon.innerText = "01"
+    saatcon.innerText = "00 "
     dakikacon.innerText = "00"
     saniyecon.innerText = "00"
 });

@@ -112,6 +112,39 @@ p {
   display: none;
 }
 
+.ozelSayaclarYazi{
+  font-size: 26px;
+  margin-top: 25px;
+}
+
+.inputRowlar input{
+  text-align: center;
+  font-size: 18px;
+  font-size: 600;
+}
+
+.sinavSayaci{
+  width: 120px;
+  margin: 10px;
+  border-radius: 15px;
+  height: 50px;
+  background-color: #202020;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.sinavSayaci h4{
+  font-size: 19px;
+  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sayacSatir{
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 610px) {  
   .pomodroContainer{
       flex-direction: column;
