@@ -109,6 +109,7 @@ function yeniSayfaEkle(){
 
 }
     localStorage.setItem("GunlukHTML",sayfalarDiv.innerHTML)
+    inputTemizleme()
 }
 
 
@@ -173,3 +174,9 @@ function bugununGunu(tarih){
   return gunler[tarihBugun.getDay()]
 }
 
+
+function inputTemizleme(){
+  baslikYazi.value = ""
+  tarihYazi.value = ""
+  icerikYazi.value = ""
+}

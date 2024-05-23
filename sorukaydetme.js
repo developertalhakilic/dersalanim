@@ -236,6 +236,7 @@ function elementDuzenle(elementId){
 
 
 function inputTemizleme(){
+    soruIsmi.value = ""
     dersIsmi.value = ""
     kitapIsmi.value = ""
     sayfaTestNo.value = ""
