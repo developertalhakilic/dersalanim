@@ -134,6 +134,7 @@ p {
   justify-content: center;
   align-items: center;
   border: none;
+  transition: 0.3s;
 }
 .sinavSayaciSecili{
   background-color: #000000;

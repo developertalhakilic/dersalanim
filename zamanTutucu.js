@@ -95,13 +95,23 @@ function sinavAyar(sinavIsmi){
     document.getElementById(sinavIsmi).classList.add("sinavSayaciSecili")
     event.preventDefault();
 }
-
+function inputTemizleme(){
+    saatInput.value = ""
+    dakikaInput.value = ""
+    saniyeInput.value = ""
+}
 function kronometreAyar(){
     saatInputValue = saatInput.value
     dakikaInputValue = dakikaInput.value
     saniyeInputValue = saniyeInput.value
-
-    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59){
+    inputTemizleme()
+    document.getElementById("LGS").classList.remove("sinavSayaciSecili")
+    document.getElementById("YKS").classList.remove("sinavSayaciSecili")
+    document.getElementById("KPSS").classList.remove("sinavSayaciSecili")
+    document.getElementById("MSÜ").classList.remove("sinavSayaciSecili")
+    document.getElementById("ALES").classList.remove("sinavSayaciSecili")
+    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0 ){
+        alert("Lütfen geçerli bir zaman giriniz.")
         return null;
     }
 
@@ -121,6 +131,9 @@ function kronometreAyar(){
     }
 }
 function zamanlayiciBaslat(){
+    if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
+        return null;
+    }
     if(kontrolSayi != 1){
         saniyecon.innerText - 1
     }
@@ -165,7 +178,11 @@ function zamanlayiciBaslat(){
 }
 
 baslatButon.addEventListener('click', function() {
+    if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
+        return null;
+    }
     zamanlayici = setInterval(zamanlayiciBaslat,1000);
+    
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
@@ -180,6 +197,10 @@ bitirButon.addEventListener('click', function() {
     saniyecon.innerText = "00"
 });
 function hideStartButton(){
+    if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
+        alert("Lütfen düzenleme bölümünden geçerli bir zaman giriniz.")
+        return null;
+    }
     baslatButon.style.display = "none"
     duraklatButon.style.display = "inline-block"
     bitirButon.style.display = "inline-block"
