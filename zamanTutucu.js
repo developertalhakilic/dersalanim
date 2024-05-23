@@ -61,22 +61,91 @@ if(localStorage.getItem("dersSaniyesi") == null){
 let pomodoroSayisi = Number(localStorage.getItem("pomodoroSayisi"))
 let dersSaniyesi = Number(localStorage.getItem("dersSaniyesi"))
 
+function sinavAyar(sinavIsmi){
+    if(sinavIsmi == "LGS"){
+        saatInput.value = 2
+        dakikaInput.value = 35
+        saniyeInput.value = 0
+    }
+    if(sinavIsmi == "YKS"){
+        saatInput.value = 3
+        dakikaInput.value = 0
+        saniyeInput.value = 0
+    }
+    if(sinavIsmi == "KPSS"){
+        saatInput.value = 2
+        dakikaInput.value = 10
+        saniyeInput.value = 0
+    }
+    if(sinavIsmi == "MSÜ"){
+        saatInput.value = 2
+        dakikaInput.value = 45
+        saniyeInput.value = 0
+    }
+    if(sinavIsmi == "ALES"){
+        saatInput.value = 2
+        dakikaInput.value = 30
+        saniyeInput.value = 0
+    }
+    document.getElementById("LGS").classList.remove("sinavSayaciSecili")
+    document.getElementById("YKS").classList.remove("sinavSayaciSecili")
+    document.getElementById("KPSS").classList.remove("sinavSayaciSecili")
+    document.getElementById("MSÜ").classList.remove("sinavSayaciSecili")
+    document.getElementById("ALES").classList.remove("sinavSayaciSecili")
+    document.getElementById(sinavIsmi).classList.add("sinavSayaciSecili")
+    event.preventDefault();
+}
+
 function kronometreAyar(){
     saatInputValue = saatInput.value
     dakikaInputValue = dakikaInput.value
     saniyeInputValue = saniyeInput.value
 
+    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59){
+        return null;
+    }
+
     saatcon.innerText = saatInputValue
     dakikacon.innerText = dakikaInputValue
     saniyecon.innerText = saniyeInputValue
-
-    baslatButon.click()
+    dersSaniyesi+=1
+    localStorage.setItem("dersSaniyesi",dersSaniyesi)
+    if(saniyecon.innerText.length == 1){
+        saniyecon.innerText = "0" + saniyecon.innerText
+    }
+    if(dakikacon.innerText.length == 1){
+        dakikacon.innerText = "0" + dakikacon.innerText
+    }
+    if(saatcon.innerText.length == 1){
+        saatcon.innerText = "0" + saatcon.innerText
+    }
 }
 function zamanlayiciBaslat(){
-    if(saniyecon.innerText==0 && dakikacon.innerText != -1){
-        let yeniVar = Number(dakikacon.innerText)
-        dakikacon.innerText = yeniVar-1
+    if(kontrolSayi != 1){
+        saniyecon.innerText - 1
+    }
+    if(saniyecon.innerText == "00"){
+        saniyecon.innerText = -1
+        let kontrolSayi = 1
+    }
+
+    if(saniyecon.innerText == -1){
         saniyecon.innerText = "60"
+        dakikacon.innerText = dakikacon.innerText - 1
+        if(dakikacon.innerText == "00"){
+            dakikacon.innerText = -1
+        }
+    }
+    if(dakikacon.innerText == -1){
+        saniyecon.innerText == "59"
+        dakikacon.innerText = "59"
+        saatcon.innerText = saatcon.innerText -1
+    }
+    if(saatcon.innerText == -1){
+        saatcon.innerText = "00"
+        dakikacon.innerText = "00"
+        saniyecon.innerText = "00"
+        return null
     }
     if(saniyecon.innerText>0){
         let yeniVar2 = Number(saniyecon.innerText)
@@ -93,25 +162,10 @@ function zamanlayiciBaslat(){
             saatcon.innerText = "0" + saatcon.innerText
         }
     }
-    if(dakikacon.innerText == -1 && kontrolSayi % 2 == 0){
-        kontrolSayi+=1
-        pomodoroSayisi+=1
-        saatcon.innerText = Number(saatcon.innerText)-1
-        dakikacon.innerText = "59"
-        saniyecon.innerText = "59"
-    }
-    if(saatcon.innerText == -1){
-        saniyecon.innerText = "00"
-        dakikacon.innerText = "00"
-        saatcon.innerText = "00"
-        kontrolSayi = 2
-        showTheBaslatButon()
-        bitirButon.style.display = "none"
-    }
 }
 
 baslatButon.addEventListener('click', function() {
-    zamanlayici = setInterval(zamanlayiciBaslat, 1000);
+    zamanlayici = setInterval(zamanlayiciBaslat,1000);
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
