@@ -99,8 +99,9 @@
   border-right: 2px solid #292929;
   border-radius: 10px 0px 0px 10px;
 }
-.edit .icon{
+.buttonContainer{
   color: rgb(193, 193, 215);
+  font-size: 26px;
 }
 .icon{
   width: 60px;
@@ -125,4 +126,14 @@
 .icerikSpan::-webkit-scrollbar-thumb{
   background-color: #6d6d6d;
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 700px) { 
+  .icon{
+    font-size: 22px;
+  }
+  .button{
+    width: 50px;
+    height: 50px;
+  }
 }
