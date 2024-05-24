@@ -30,22 +30,24 @@
     </head>
 
 <body>
-    <div class="sideBarTop">
-        <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
-    </div>
-    <div class="sideBar" id="sideBar">
-        <div class="sideBarBottom">
-            <a href="home.html" class="sideBarLink"><button><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
-            <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
-            <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
-            <a href="sorukaydetme.html" class="sideBarLink"><button><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
-            <a href=".html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
-            <a href="gunluk.html" class="sideBarLink"><button><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
-            <a href="istatistikler.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
-        </div>
-        </div>
     <div class="row">
-        <div class="col-10" style="background-color: red; z-index: 9999;">
+        <div class="col-10" style="background-color: red;">
+
+            <div class="sideBarTop">
+                <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="sideBar" id="sideBar">
+                <div class="sideBarBottom">
+                    <a href="home.html" class="sideBarLink"><button><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
+                    <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
+                    <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
+                    <a href="sorukaydetme.html" class="sideBarLink"><button><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
+                    <a href=".html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
+                    <a href="gunluk.html" class="sideBarLink"><button><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
+                    <a href="istatistikler.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
+                </div>
+                </div>
+
                 <!--TODO İSTATİSTİKLER HAKKINDA-------------------------------------->
                 <div class="statsInfo" id="statsInfo">
                     <h2>DENEME</h2>
@@ -53,7 +55,7 @@
                 <!--TODO POMODORO İSTATİSTİKLERİ-------------------------------------->
                 <div class="pomodoroStats statsDiv" id="pomodoroStats">
                    <canvas id="pomodoroStatsChart" style="background-color: antiquewhite;">
-                    <h2 style="color: black;">DENEME</h2>
+                    <h2>DENEME</h2>
                    </canvas>
                 </div>
                 <!--TODO ZAMAN TUTUCU İSTATİSTİKLERİ-------------------------------------->
