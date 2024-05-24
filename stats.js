@@ -12,18 +12,6 @@ const zamanTutucu = document.getElementById("zamanTutucu")
 const soruKaydetmeStats = document.getElementById("soruKaydetmeStats")
 const todoListStats = document.getElementById("todoListStats")
 
-// TODO ---- DİVLER ---
-
-// TODO ---- POMODORO STATS ---
-const pomodoroSaat = document.getElementById("pomodoroSaat")
-const pomodoroDakika = document.getElementById("pomodoroDakika")
-const pomodoroSaniye = document.getElementById("pomodoroSaniye")
-const kacPomodoro = document.getElementById("kacPomodoro")
-
-// TODO ---- SORU SAVE STATS ---
-const kacSoru = document.getElementById("kacSoru")
-const soruCikarma = document.getElementById("soruCikarma")
-const soruPDFSayi = document.getElementById("soruPDFSayi")
 
 function showStatsInfo(){
     statsInfo.style.display = "block"
@@ -51,15 +39,6 @@ function showPomodoroStats(){
     zamanTutucuButton.style.color = "#fff"
     soruKaydetmeStatsButton.style.color = "#fff"
     todoListStatsButton.style.color = "#fff"
-
-    dersSaniye = localStorage.getItem("dersSaniyesi")
-    dersDakika = dersSaniye/60
-    dersSaat = dersDakika/60
-
-    pomodoroSaniye.innerText = dersSaniye
-    pomodoroDakika.innerText = parseInt(dersDakika)
-    pomodoroSaat.innerText = parseInt(dersSaat)
-    kacPomodoro.innerText = localStorage.getItem("pomodoroSayisi")
 }
 
 function showZamanTutucu(){
@@ -88,9 +67,6 @@ function showSoruKaydetmeStats(){
     zamanTutucuButton.style.color = "#fff"
     soruKaydetmeStatsButton.style.color = "#0baee4"
     todoListStatsButton.style.color = "#fff"
-    kacSoru.innerText = localStorage.getItem("kaydedilenSoru")
-    soruCikarma.innerText = localStorage.getItem("cikarilanSoru")
-    soruPDFSayi.innerText = localStorage.getItem("pdfAlmaSayisi")
 }
 
 function showTodoListStats(){

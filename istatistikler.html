@@ -22,6 +22,7 @@
         <meta property="og:url" content="https://wolfprogrammingapps.github.io/Ders Alanım/" />
         <meta property="og:image" content="https://wolfprogrammingapps.github.io/dersalanim/Ads%C4%B1z_tasar%C4%B1m-removebg-preview.png"/>
         <meta property="og:description" content="Ders Alanım ile Ders Çalışmak İçin Tüm Araçları Tek Sitede Bulun !"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="stats.css">
         <link rel="stylesheet" href="ortak.css">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1887290760315028"
@@ -43,92 +44,45 @@
             <a href="istatistikler.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
         </div>
         </div>
+    <div class="row">
+        <div class="col-10" style="background-color: red; z-index: 9999;">
+                <!--TODO İSTATİSTİKLER HAKKINDA-------------------------------------->
+                <div class="statsInfo" id="statsInfo">
+                    <h2>DENEME</h2>
+                </div>
+                <!--TODO POMODORO İSTATİSTİKLERİ-------------------------------------->
+                <div class="pomodoroStats statsDiv" id="pomodoroStats">
+                   <canvas id="pomodoroStatsChart" style="background-color: antiquewhite;">
+                    <h2 style="color: black;">DENEME</h2>
+                   </canvas>
+                </div>
+                <!--TODO ZAMAN TUTUCU İSTATİSTİKLERİ-------------------------------------->
+                <div class="zamanTutucu statsDiv" id="zamanTutucu">
 
-    <div class="sideBar2">
-        <div class="sideBarButtons">
-            <button class="menuButton" id="statsInfoButton" onclick="showStatsInfo()" style="color: #0baee4">İstatistikler Hakkında</button>
-            <button class="menuButton" id="pomodoroStatsButton" onclick="showPomodoroStats()">Pomodoro İstatistikleri</button>
-            <button class="menuButton" id="zamanTutucuButton" onclick="showZamanTutucu()">Zaman Tutucu İstatistikleri</button>
-            <button class="menuButton" id="soruKaydetmeStatsButton" onclick="showSoruKaydetmeStats()">Soru Kaydetme İstatistikleri</button>
-            <button class="menuButton" id="todoListStatsButton" onclick="showTodoListStats()" style="border-bottom: none;">Yapılacaklar Listesi İstatistikleri</button>
-        </div>
-    </div>
-    <!--TODO İSTATİSTİKLER HAKKINDA-------------------------------------->
-    <div class="statsInfo" id="statsInfo">
-        <div class="section1 section">
-            <img src="Images/Bir_başlık_ekleyin-removebg-preview.png" class="questionMark" alt="">
-            <h2>İstatistikler Ne İşe Yarar?</h2>
-            <p>İstatistikler sayesinde ders çalışma planı oluşturabilirsiniz. Ders çalışmadan ne kadar verim aldığınızı görebilirsiniz. <br>İstatistiklerinize göre ders çalışma planları oluşturabilirsiniz. Detaylı bir şekilde istatistiklerinizi gördüğünüz <br>için motive olursunuz.</p>
-        </div>
-        <div class="section2 section">
-            <img src="Images/S-removebg-preview.png" class="todoList" alt="">
-            <h2>İstatistikler İle Program Nasıl Oluşturulur?</h2>
-            <p>İstatistikleriniz sayesinde çalışma planınızı gözden geçirerek size özel programlar oluşturabilirsiniz. Bu <br> süreçte yapay zekadan yardım alabilirsiniz veya yakında gelecek olan program oluşturma robotumuzu <br> kullanabilirsiniz.</p>
-        </div>
-        <div class="section3 section">
-            <img src="Images/S__1_-removebg-preview.png" class="succesLogo" alt="">
-            <h2>İstatistiklerin Bilimsel Yararları Nelerdir?</h2>
-            <p>İstatistikleriniz belirleyerek plan ve programlar oluşturmak sizi motive edeceği, zayıf alanlarınızın tespitini yapmanızı <br>sağlayacağı, stresi azaltacağı, zaman yönetimini güçlendireceği bilimsel olarak kanıtlanmış yararlarıdır. Bu yüzden <br>istatistiklerinize değer vermelii onlara göre programlar yapmalısınız.</p>
-        </div>
-    </div>
-    <!--TODO POMODORO İSTATİSTİKLERİ-------------------------------------->
-    <div class="pomodoroStats statsDiv" id="pomodoroStats">
-        <h2 style="text-align: center; margin-left: -210px; padding-top: 25px; font-family: 'SF Orson Casual Heavy', sans-serif;">Bugüne Kadar</h2>
-        <div class="boxsection">
-            <div class="boxes">
-                <div class="kacPomodoro boxKac1">
-                    <p style="color: black; font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="kacPomodoro">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">Pomodoro Yaptın</p>
                 </div>
-                <div class="kacSaat boxKac1">
-                    <p style="color: black; font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="pomodoroSaat">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">Saat Çalıştın</p>
+                <!--TODO SORU KAYDETME İSTATİSTİKLERİ-------------------------------------->
+                <div class="soruKaydetmeStats statsDiv" id="soruKaydetmeStats">
+                
                 </div>
+                <!--TODO YAPILACAKLAR LİSTESİ İSTATİSTİKLERİ-------------------------------------->
+                <div class="todoListStats statsDiv" id="todoListStats">
             </div>
         </div>
-        <h2 style="text-align: center; margin-left: 758px;  margin-top: 315px; position: absolute;font-family: 'Camilla Ahoy', sans-serif;">Yani</h2>
-        <div class="boxsection2">
-            <div class="boxes">
-                <div class="kacDakika boxKac2 boxKac1">
-                    <p style="color: black;font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="pomodoroDakika">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">Dakika Çalıştın</p>
+
+        <div class="col-2" style="background-color: green; padding: 0px;">
+                <div class="sideBarButtons">
+                    <button class="menuButton" id="statsInfoButton" onclick="showStatsInfo()" style="color: #0baee4">İstatistikler Hakkında</button>
+                    <button class="menuButton" id="pomodoroStatsButton" onclick="showPomodoroStats()">Pomodoro İstatistikleri</button>
+                    <button class="menuButton" id="zamanTutucuButton" onclick="showZamanTutucu()">Zaman Tutucu İstatistikleri</button>
+                    <button class="menuButton" id="soruKaydetmeStatsButton" onclick="showSoruKaydetmeStats()">Soru Kaydetme İstatistikleri</button>
+                    <button class="menuButton" id="todoListStatsButton" onclick="showTodoListStats()" style="border-bottom: none;">Yapılacaklar Listesi İstatistikleri</button>
                 </div>
-                <div class="kacDakika boxKac2 boxKac1">
-                    <p style="color: black;font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="pomodoroSaniye">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">Saniye Çalıştın</p>
-                </div>
-            </div>
         </div>
-    </div>
-    <!--TODO ZAMAN TUTUCU İSTATİSTİKLERİ-------------------------------------->
-    <div class="zamanTutucu statsDiv" id="zamanTutucu">
-        <h2>Zaman Tutucu İstatistikleri</h2>
-    </div>
-    <!--TODO SORU KAYDETME İSTATİSTİKLERİ-------------------------------------->
-    <div class="soruKaydetmeStats statsDiv" id="soruKaydetmeStats">
-        <h2 style="text-align: center; margin-left: -210px; padding-top: 25px; font-family: 'SF Orson Casual Heavy', sans-serif;">Bugüne Kadar</h2>
-        <div class="boxsection">
-            <div class="boxes">
-                <div class="kacPomodoro boxKac1">
-                    <p style="color: black; font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="kacSoru">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">Soru Kaydettin</p>
-                </div>
-                <div class="kacSaat boxKac1">
-                    <p style="color: black; font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="soruCikarma">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">Soruyu Çıkardın</p>
-                </div>
-            </div>
-        </div>
-        <h2 style="text-align: center; margin-left: 725px;  margin-top: 315px; position: absolute;font-family: 'Camilla Ahoy', sans-serif;">Toplam</h2>
-        <div class="boxsection2">
-            <div class="boxes">
-                <div class="kacDakika boxKac2 boxKac1">
-                    <p style="color: black;font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="soruPDFSayi">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">PDF Çıktısı Aldın</p>
-                </div>
-                <div class="kacDakika boxKac2 boxKac1">
-                    <p style="color: black;font-family: 'cafeta', sans-serif;letter-spacing: 3px;" id="?">0</p><p style="font-family: 'Bunya PERSONAL', sans-serif;">??</p>
-                </div>
-            </div>  
-    </div>
-    <!--TODO YAPILACAKLAR LİSTESİ İSTATİSTİKLERİ-------------------------------------->
-    <div class="todoListStats statsDiv" id="todoListStats">
-        <h2>Yapılacaklar Listesi İstatistikleri</h2>
     </div>
     <script src="stats.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>   
     <script src="hamburgerMenu.js"></script>
 </body>
 
