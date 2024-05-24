@@ -210,6 +210,9 @@ function elementDuzenle(elementId){
   }
   function elementSil(elementId){
     silmeOnayButton.click()
+    silmeIcerikOnayYazi.innerHTML = `
+    <label for="message-text" class="col-form-label text-white"><b>"${localStorage.getItem("soruIsmiValueKey" + elementId)}"</b> İsimli Soru Silinsin mi?</label>
+    `
     silmeButton.addEventListener("click",function(){
         document.getElementById(`soruElement${elementId}`).remove()
         localStorage.setItem(`soruIsmiValueKey${elementId}`,"")
@@ -221,7 +224,6 @@ function elementDuzenle(elementId){
         localStorage.setItem(`cozmeTarihiValueKey${elementId}`,"")
       let silinenIdListe = localStorage.getItem("silinenIdlerGunluk")
       silinenIdListe += elementId
-      silmeIcerikOnayYazi.innerText = `Bu Soru Silinsin mi?`
       localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
       localStorage.setItem("silinenIdlerGunluk", silinenIdListe)
       iptalButton.click()
@@ -259,8 +261,8 @@ function convertToPdf(){
         if(localStorage.getItem("dersIsmiValueKey" + i ) == ""){
           continue
         }
-        metin += "\n"
-        metin += `Soru ${i}`+ "\n\n"
+        metin += "\n\n"
+        metin += localStorage.getItem(`dersIsmiValueKey${i}`)+ "\n"
         metin += "Ders İsmi: " + localStorage.getItem(`dersIsmiValueKey${i}`)+ "\n"
         metin += "Kitap İsmi: " + localStorage.getItem(`kitapIsmiValueKey${i}`)+ "\n"
         metin += "Sayfa No: " + localStorage.getItem(`sayfaTestNoValueKey${i}`)+ "\n"

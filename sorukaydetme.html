@@ -33,16 +33,16 @@
         <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="sideBar" id="sideBar">
-        <div class="sideBarBottom">
-            <button onclick="window.location = 'home.html'"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
-            <button onclick="window.location = 'pomodro.html'"><i class="fa-solid fa-clock"></i> Pomodro Sayacı</button>
-            <button onclick="window.location = 'zamantutucu.html'"><i class="fa-solid fa-bell"></i> Zaman Tutucu</button>
-            <button onclick="window.location = 'sorukaydetme.html'" style="color: rgb(255, 140, 0);"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button>
-            <button onclick="window.location = '.html'"><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button>
-            <button onclick="window.location = 'gunluk.html'"><i class="fa-solid fa-book"></i>Günlük Tutma</button>
-            <button onclick="window.location = 'istatistikler.html'"><i class="fa-solid fa-chart-simple"></i> İstatistikler</button>
-        </div>
-        </div>
+      <div class="sideBarBottom">
+          <a href="home.html" class="sideBarLink"><button><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
+          <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
+          <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
+          <a href="sorukaydetme.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
+          <a href=".html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
+          <a href="gunluk.html" class="sideBarLink"><button><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
+          <a href="istatistikler.html" class="sideBarLink"><button><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
+      </div>
+      </div>
 
         <div class="modal fade" data-bs-theme="dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -80,8 +80,8 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Geri Dön</button>
-                  <button type="button" class="btn btn-primary" onclick="inputTemizleme(); return false;">Temizle</button>
-                  <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="soruEkleme(); return false;">Soruyu Ekle</button>
+                  <button type="button" class="btn btn-primary" onclick="inputTemizleme();">Temizle</button>
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="soruEkleme();">Soruyu Ekle</button>
                 </div>
               </div>
             </div>
@@ -95,7 +95,6 @@
                 <div class="card">
                     <h5 class="card-header">Soru Kaydetme</h5>
                     <div class="card-body">
-                      <i class="bi bi-1-square"></i>
                       <h5 class="card-title">Kaydetmeye Başlayın !</h5>
                       <p class="card-text">Anlamadığınız, beğendiğiniz, birine soracağınız soruları tek bir yerde kaydederek düzenli olun.</p>
                       <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" class="btn btn-primary">İlk Soruyu Kaydet</a>
@@ -158,7 +157,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="icerikOnay">
-              <label for="message-text" class="col-form-label text-white"></label>
+              
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="iptalButton">İptal</button>

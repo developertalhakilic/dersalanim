@@ -5,7 +5,7 @@
     justify-content: flex-end;
     height: 100vh;
     position: absolute;
-    z-index: 2;
+    z-index: 0;
 }
 .sideBarButtons{
     display: flex;

@@ -112,7 +112,7 @@ body{
 .sideBarTop{
   position: sticky;
   top: 0;
-  z-index: 12502;
+  z-index: 10;
 }
 .sideBar{
   width: 300px;
@@ -124,7 +124,7 @@ body{
   padding-top: 40px;
   display: none;
   transition: 0.4s;
-  z-index: 9999;
+  z-index: 1;
   
 }
 .sideBarBottom button{
@@ -256,3 +256,6 @@ body{
   }
 }
 
+.sideBarLink{
+  text-decoration: none;
+}
