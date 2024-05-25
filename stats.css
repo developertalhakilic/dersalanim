@@ -1,24 +1,87 @@
-.sideBarButtons{
+.firstStatsHeaderContainer{
     display: flex;
-    flex-direction: column;
-    display: flex;
-    justify-content: flex-end;
-    height: 100vh;
-    background-color: aqua;
-    width: 99%;
+    padding-left: 75px;
+    color: rgba(255, 255, 255, 0.85);
 }
-.sideBarButtons>.menuButton{
+.firstStatsDivContainer{
+    display: flex;
     width: 100%;
-    background-color: #101010;
-    border: none;
-    border-bottom: 2px solid #403f3f;
-    border-left: 2px solid #403f3f;
-    margin: 0px;
-    height: 100%;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+#hamburgerButton{
+    margin-top: 6px;
+}
+.firstStatsDivHeader{
+    display: flex;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    font-family: 'Benz Grotesk', sans-serif;
+}
+.firstStatsDivHeader h2{
+    text-align: center;
+    font-size: 30px;
+    color: #eeecec;
+}
+.firstStatsDivContent{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.firstStatsDiv{
+    width: 15%;
+    width: 335px;
+    min-width: 200px;
+    max-width: 335px;
+    margin: 20px;
+    margin-top: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: white;
-    font-size: 26px;
-    font-family: 'Bunya PERSONAL', sans-serif;
-    letter-spacing: 3px;
+    border-radius: 15px;
+    font-family: 'SF Pro Display', sans-serif;
+                                           
+}
+.firstStatsDiv h2{
+    font-weight: 700; 
+}
+.firstStatsDiv p{
+    font-weight: 400;
+    font-size: 17.5px;
 }
 
+.firstStatsDiv:nth-child(even){
+    background: linear-gradient(105deg, #4b006e, #001f4d);
+}
+.firstStatsDiv:nth-child(odd){
+    background: linear-gradient(-25deg, #000428, #004e92);
+}
+
+.graphStatsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.graphStatsDiv canvas{
+    width: 48%;
+    min-width: 47%;
+    margin: 1%;
+    height: 500px;
+    border: 2px solid #202020;
+}
+
+@media screen and (max-width:380px) {
+    .firstStatsDiv{
+        width: 90%;
+    }
+}
+@media screen and (max-width:1180px) {
+    .graphStatsDiv canvas{
+        width: 100%;
+    }
+}
