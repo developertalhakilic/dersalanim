@@ -55,7 +55,22 @@ let kontrolSayi = 2;
 if(localStorage.getItem("zamanlayiciDersDakikasi") == null){
     localStorage.setItem("zamanlayiciDersDakikasi",0)
 }
+if(localStorage.getItem("sonSaat") != null){
+    saatcon.innerText = localStorage.getItem("sonSaat")
+}
+if(localStorage.getItem("sonDakika") != null){
+    dakikacon.innerText = localStorage.getItem("sonDakika")
+}
+if(localStorage.getItem("sonSaniye") != null){
+    saniyecon.innerText = localStorage.getItem("sonSaniye")
+}
 let zamanlayiciDersDakikasi = Number(localStorage.getItem("zamanlayiciDersDakikasi"))
+
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem("sonSaat",saatcon.innerText)
+    localStorage.setItem("sonDakika",dakikacon.innerText)
+    localStorage.setItem("sonSaniye",saniyecon.innerText)
+});
 
 function sinavAyar(sinavIsmi){
     if(sinavIsmi == "LGS"){
@@ -125,7 +140,9 @@ function kronometreAyar(){
     }
 }
 function zamanlayiciBaslat(){
+    debugger
     if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
+        bitirButon.click()
         return null;
     }
     if(kontrolSayi != 1){
@@ -150,12 +167,6 @@ function zamanlayiciBaslat(){
         saniyecon.innerText == "59"
         dakikacon.innerText = "59"
         saatcon.innerText = saatcon.innerText -1
-    }
-    if(saatcon.innerText == -1){
-        saatcon.innerText = "00"
-        dakikacon.innerText = "00"
-        saniyecon.innerText = "00"
-        return null
     }
     if(saniyecon.innerText>0){
         let yeniVar2 = Number(saniyecon.innerText)

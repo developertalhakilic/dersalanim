@@ -13,6 +13,19 @@ const tamEkranButton = document.getElementById('tamEkranButton');
 const hamburger = document.getElementById("hamburgerButton")
 const side = document.getElementById("sideBar")
 const bilgiButton = document.getElementById("bilgiButton")
+
+if(localStorage.getItem("sonDakikaPomodoro") != null){
+    dakikacon.innerText = localStorage.getItem("sonDakikaPomodoro")
+}
+if(localStorage.getItem("sonSaniyePomodoro") != null){
+    saniyecon.innerText = localStorage.getItem("sonSaniyePomodoro")
+}
+
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem("sonDakikaPomodoro",dakikacon.innerText)
+    localStorage.setItem("sonSaniyePomodoro",saniyecon.innerText)
+});
+
 // tamEkranButton.addEventListener('click', () => {
 //     const body = document.body;
 
