@@ -176,14 +176,14 @@ baslatButon.addEventListener('click', function() {
     if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
         return null;
     }
-    zamanlayici = setInterval(zamanlayiciBaslat,1);
+    zamanlayici = setInterval(zamanlayiciBaslat,1000);
     
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
 });
 restartButon.addEventListener('click', function() {
-    zamanlayici = setInterval(zamanlayiciBaslat, 1);
+    zamanlayici = setInterval(zamanlayiciBaslat, 1000);
 });
 bitirButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
