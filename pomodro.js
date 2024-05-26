@@ -37,25 +37,21 @@ const bilgiButton = document.getElementById("bilgiButton")
 //     }
 // });
 let kontrolSayi = 2;
-if(localStorage.getItem("pomodoroSayisi") == null){
-    localStorage.setItem("pomodoroSayisi",0)
+if(localStorage.getItem("pomodoroDersDakikasi") == null){
+    localStorage.setItem("pomodoroDersDakikasi",0)
 }
-if(localStorage.getItem("dersSaniyesi") == null){
-    localStorage.setItem("dersSaniyesi",0)
-}
-let pomodoroSayisi = Number(localStorage.getItem("pomodoroSayisi"))
-let dersSaniyesi = Number(localStorage.getItem("dersSaniyesi"))
+let pomodoroDersDakikasi = Number(localStorage.getItem("pomodoroDersDakikasi"))
 function zamanlayiciBaslat(){
     if(saniyecon.innerText==0 && dakikacon.innerText != -1){
         let yeniVar = Number(dakikacon.innerText)
         dakikacon.innerText = yeniVar-1
+        pomodoroDersDakikasi += 1
+        localStorage.setItem("pomodoroDersDakikasi",pomodoroDersDakikasi)
         saniyecon.innerText = "60"
     }
     if(saniyecon.innerText>0){
         let yeniVar2 = Number(saniyecon.innerText)
         saniyecon.innerText = yeniVar2-=1
-        dersSaniyesi+=1
-        localStorage.setItem("dersSaniyesi",dersSaniyesi)
         if(saniyecon.innerText.length == 1){
             saniyecon.innerText = "0" + saniyecon.innerText
         }
@@ -66,7 +62,6 @@ function zamanlayiciBaslat(){
     if(dakikacon.innerText == -1 && kontrolSayi % 2 == 0){
         kontrolSayi+=1
         pomodoroSayisi+=1
-        localStorage.setItem("pomodoroSayisi",pomodoroSayisi)
         dakikacon.innerText = "4"
         saniyecon.innerText = "59"
         pomodroContainer.style.boxShadow = "0px 0px 49px 0px #ed0303"

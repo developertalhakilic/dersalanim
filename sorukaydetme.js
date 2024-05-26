@@ -30,6 +30,11 @@ if(localStorage.getItem("silinenIdlerGunluk") == null){
   localStorage.setItem("silinenIdlerGunluk","")
 }
 
+if(localStorage.getItem("kaydedilenSoru") == null){
+  localStorage.setItem("kaydedilenSoru",0)
+}
+
+let kaydedilenSoru = Number(localStorage.getItem("kaydedilenSoru"))
 
 // ? Todolar :
 
@@ -101,6 +106,8 @@ function soruEkleme(){
         return false
     }
     sorularDiv.innerHTML = ""
+    kaydedilenSoru += 1
+    localStorage.setItem("kaydedilenSoru",kaydedilenSoru)
     for(let i = 1; i<=enBuyuk+1; i++){
         if(localStorage.getItem("silinenIdlerGunluk").includes(i)){
           continue
@@ -126,9 +133,6 @@ function soruEkleme(){
         if(tumLocalKeyler.includes(`soruIsmiValueKey${i}`) == false){
           localStorage.setItem("soruIsmiValueKey" + i, aciklamaTextValue)
       }
-        let soruSayisi = Number(localStorage.getItem("kaydedilenSoru"))
-        soruSayisi += 1
-        localStorage.setItem("kaydedilenSoru",soruSayisi)
         olusturulacakDivler = `
         <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item" id="soruElement${i}">

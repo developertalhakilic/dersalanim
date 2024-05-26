@@ -52,14 +52,10 @@ function tamEkran() {
 //     }
 // });
 let kontrolSayi = 2;
-if(localStorage.getItem("pomodoroSayisi") == null){
-    localStorage.setItem("pomodoroSayisi",0)
+if(localStorage.getItem("zamanlayiciDersDakikasi") == null){
+    localStorage.setItem("zamanlayiciDersDakikasi",0)
 }
-if(localStorage.getItem("dersSaniyesi") == null){
-    localStorage.setItem("dersSaniyesi",0)
-}
-let pomodoroSayisi = Number(localStorage.getItem("pomodoroSayisi"))
-let dersSaniyesi = Number(localStorage.getItem("dersSaniyesi"))
+let zamanlayiciDersDakikasi = Number(localStorage.getItem("zamanlayiciDersDakikasi"))
 
 function sinavAyar(sinavIsmi){
     if(sinavIsmi == "LGS"){
@@ -118,8 +114,6 @@ function kronometreAyar(){
     saatcon.innerText = saatInputValue
     dakikacon.innerText = dakikaInputValue
     saniyecon.innerText = saniyeInputValue
-    dersSaniyesi+=1
-    localStorage.setItem("dersSaniyesi",dersSaniyesi)
     if(saniyecon.innerText.length == 1){
         saniyecon.innerText = "0" + saniyecon.innerText
     }
@@ -138,6 +132,9 @@ function zamanlayiciBaslat(){
         saniyecon.innerText - 1
     }
     if(saniyecon.innerText == "00"){
+        zamanlayiciDersDakikasi += 1
+        console.log(zamanlayiciDersDakikasi)
+        localStorage.setItem("zamanlayiciDersDakikasi",zamanlayiciDersDakikasi)
         saniyecon.innerText = -1
         let kontrolSayi = 1
     }
@@ -163,8 +160,6 @@ function zamanlayiciBaslat(){
     if(saniyecon.innerText>0){
         let yeniVar2 = Number(saniyecon.innerText)
         saniyecon.innerText = yeniVar2-=1
-        dersSaniyesi+=1
-        localStorage.setItem("dersSaniyesi",dersSaniyesi)
         if(saniyecon.innerText.length == 1){
             saniyecon.innerText = "0" + saniyecon.innerText
         }
@@ -181,14 +176,14 @@ baslatButon.addEventListener('click', function() {
     if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
         return null;
     }
-    zamanlayici = setInterval(zamanlayiciBaslat,1000);
+    zamanlayici = setInterval(zamanlayiciBaslat,1);
     
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
 });
 restartButon.addEventListener('click', function() {
-    zamanlayici = setInterval(zamanlayiciBaslat, 1000);
+    zamanlayici = setInterval(zamanlayiciBaslat, 1);
 });
 bitirButon.addEventListener('click', function() {
     clearInterval(zamanlayici)

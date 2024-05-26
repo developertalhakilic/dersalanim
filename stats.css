@@ -17,11 +17,12 @@
     display: flex;
     border-radius: 15px;
     letter-spacing: 1px;
-    font-family: 'Benz Grotesk', sans-serif;
 }
 .firstStatsDivHeader h2{
     text-align: center;
-    font-size: 30px;
+    font-family:"Forte",sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
     color: #eeecec;
 }
 .firstStatsDivContent{
@@ -69,7 +70,7 @@
 }
 .graphStatsDiv canvas{
     width: 48%;
-    min-width: 47%;
+    max-height: 500px;
     margin: 1%;
     height: 500px;
     border: 2px solid #202020;

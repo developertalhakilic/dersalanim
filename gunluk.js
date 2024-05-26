@@ -24,6 +24,11 @@ if(localStorage.getItem("yaziTarihleri") == null){
 if(localStorage.getItem("silinenIdlerSoru") == null){
   localStorage.setItem("silinenIdlerSoru","")
 }
+if(localStorage.getItem("sayfaSayisi") == null){
+  localStorage.setItem("sayfaSayisi",0)
+}
+
+let sayfaSayisi = Number(localStorage.getItem("sayfaSayisi"))
 localStorage.setItem("icerikYaziValueKey0",0)
 localStorage.setItem("baslikYaziValueKey0",0)
 localStorage.setItem("tarihYaziValueKey0",0)
@@ -62,6 +67,8 @@ function yeniSayfaEkle(){
         return false
     }
     sayfalarDiv.innerHTML = ""
+    sayfaSayisi += 1
+    localStorage.setItem("sayfaSayisi",sayfaSayisi)
     for(let i = 1; i<=enBuyuk+1; i++){ 
         if(localStorage.getItem("silinenIdlerSoru").includes(i)){
           continue
