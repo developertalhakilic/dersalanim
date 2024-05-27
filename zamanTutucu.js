@@ -16,6 +16,7 @@ const side = document.getElementById("sideBar")
 const saatInput = document.getElementById("saatInput")
 const dakikaInput = document.getElementById("dakikaInput")
 const saniyeInput = document.getElementById("saniyeInput")
+let tarih = new Date()
 function tamEkran() {
     var element = document.documentElement; // Sayfanın kök elementini alı
     if (element.requestFullscreen) {
@@ -64,6 +65,32 @@ if(localStorage.getItem("sonDakika") != null){
 if(localStorage.getItem("sonSaniye") != null){
     saniyecon.innerText = localStorage.getItem("sonSaniye")
 }
+
+
+
+if(localStorage.getItem("zamanTutucuPazartesiVerisi") == null){
+    localStorage.setItem("zamanTutucuPazartesiVerisi",0)
+}
+if(localStorage.getItem("zamanTutucuSaliVerisi") == null){
+    localStorage.setItem("zamanTutucuSaliVerisi",0)
+}
+if(localStorage.getItem("zamanTutucuCarsambaVerisi") == null){
+    localStorage.setItem("zamanTutucuCarsambaVerisi",0)
+}
+if(localStorage.getItem("zamanTutucuPersembeVerisi") == null){
+    localStorage.setItem("zamanTutucuPersembeVerisi",0)
+}
+if(localStorage.getItem("zamanTutucuCumaVerisi") == null){
+    localStorage.setItem("zamanTutucuCumaVerisi",0)
+}
+if(localStorage.getItem("zamanTutucuCumartesiVerisi") == null){
+    localStorage.setItem("zamanTutucuCumartesiVerisi",0)
+}
+if(localStorage.getItem("zamanTutucuPazarVerisi") == null){
+    localStorage.setItem("zamanTutucuPazarVerisi",0)
+}
+
+
 let zamanlayiciDersDakikasi = Number(localStorage.getItem("zamanlayiciDersDakikasi"))
 
 window.addEventListener('beforeunload', function() {
@@ -121,7 +148,7 @@ function kronometreAyar(){
     document.getElementById("KPSS").classList.remove("sinavSayaciSecili")
     document.getElementById("MSÜ").classList.remove("sinavSayaciSecili")
     document.getElementById("ALES").classList.remove("sinavSayaciSecili")
-    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0 ){
+    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0 || Number(saatInputValue) == "" || Number(saniyeInputValue) == "" || Number(dakikaInputValue) == ""){
         alert("Lütfen geçerli bir zaman giriniz.")
         return null;
     }
@@ -140,7 +167,6 @@ function kronometreAyar(){
     }
 }
 function zamanlayiciBaslat(){
-    debugger
     if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
         bitirButon.click()
         return null;
@@ -150,8 +176,33 @@ function zamanlayiciBaslat(){
     }
     if(saniyecon.innerText == "00"){
         zamanlayiciDersDakikasi += 1
-        console.log(zamanlayiciDersDakikasi)
         localStorage.setItem("zamanlayiciDersDakikasi",zamanlayiciDersDakikasi)
+
+        let gunler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]
+        let gun = gunler[tarih.getDay()]
+        if(gun == "Pazartesi"){
+            localStorage.setItem("zamanTutucuPazartesiVerisi",Number(localStorage.getItem("zamanTutucuPazartesiVerisi")) + 1)
+        }
+        if(gun == "Salı"){
+            localStorage.setItem("zamanTutucuSaliVerisi",Number(localStorage.getItem("zamanTutucuSaliVerisi")) + 1)
+        }
+        if(gun == "Çarşamba"){
+            localStorage.setItem("zamanTutucuCarsambaVerisi",Number(localStorage.getItem("zamanTutucuCarsambaVerisi")) + 1)
+        }
+        if(gun == "Perşembe"){
+            localStorage.setItem("zamanTutucuPersembeVerisi",Number(localStorage.getItem("zamanTutucuPersembeVerisi")) + 1)
+        }
+        if(gun == "Cuma"){
+            localStorage.setItem("zamanTutucuCumaVerisi",Number(localStorage.getItem("zamanTutucuCumaVerisi")) + 1)
+        }
+        if(gun == "Cumartesi"){
+            localStorage.setItem("zamanTutucuCumartesiVerisi",Number(localStorage.getItem("zamanTutucuCumartesiVerisi")) + 1)
+        }
+        if(gun == "Pazar"){
+            localStorage.setItem("zamanTutucuPazarVerisi",Number(localStorage.getItem("zamanTutucuPazarVerisi")) + 1)
+        }
+        console.log(gun)
+        console.log(tarih.getDay())
         saniyecon.innerText = -1
         let kontrolSayi = 1
     }
@@ -180,6 +231,11 @@ function zamanlayiciBaslat(){
         if(saatcon.innerText.length == 1){
             saatcon.innerText = "0" + saatcon.innerText
         }
+    }
+    if(saatcon == -1){
+        saatcon.innerText = "00"
+        dakikacon.innerText = "00"
+        saniyecon.innerText == "00"
     }
 }
 

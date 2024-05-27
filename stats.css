@@ -69,11 +69,17 @@
     width: 100%;
 }
 .graphStatsDiv canvas{
-    width: 48%;
-    max-height: 500px;
+    width: 98%;
+    max-width: 98%;
+    max-height: 98vh;
+    background-color: #050505;
+    border: #202020 1px solid ;
+    padding-right: 1%;
+    border-radius: 30px;
+    padding-left: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     margin: 1%;
-    height: 500px;
-    border: 2px solid #202020;
 }
 
 .footerButtonDiv{
