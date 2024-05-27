@@ -107,8 +107,3 @@
         width: 90%;
     }
 }
-@media screen and (max-width:1180px) {
-    .graphStatsDiv canvas{
-        width: 100%;
-    }
-}
