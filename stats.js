@@ -16,8 +16,8 @@ if(localStorage.getItem("kaydedilenSoru") != null){
 // if(localStorage.getItem("pomodoroDersDakikasi") != null){
 //     yapilacakİsYazi.innerText = localStorage.getItem("pomodoroDersDakikasi")
 // }
-if(localStorage.getItem("pomodoroDersDakikasi") != null){
-    sayfaSayiYazi.innerText = localStorage.getItem("pomodoroDersDakikasi")
+if(localStorage.getItem("sayfaSayisi") != null){
+    sayfaSayiYazi.innerText = localStorage.getItem("sayfaSayisi")
 }
 
 const timerDiv = document.getElementById('timer');
