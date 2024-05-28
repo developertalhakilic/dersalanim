@@ -201,8 +201,6 @@ function zamanlayiciBaslat(){
         if(gun == "Pazar"){
             localStorage.setItem("zamanTutucuPazarVerisi",Number(localStorage.getItem("zamanTutucuPazarVerisi")) + 1)
         }
-        console.log(gun)
-        console.log(tarih.getDay())
         saniyecon.innerText = -1
         let kontrolSayi = 1
     }

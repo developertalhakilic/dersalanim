@@ -13,6 +13,7 @@ const tamEkranButton = document.getElementById('tamEkranButton');
 const hamburger = document.getElementById("hamburgerButton")
 const side = document.getElementById("sideBar")
 const bilgiButton = document.getElementById("bilgiButton")
+let tarih = new Date()
 
 if(localStorage.getItem("sonDakikaPomodoro") != null){
     dakikacon.innerText = localStorage.getItem("sonDakikaPomodoro")
@@ -26,29 +27,28 @@ window.addEventListener('beforeunload', function() {
     localStorage.setItem("sonSaniyePomodoro",saniyecon.innerText)
 });
 
-// tamEkranButton.addEventListener('click', () => {
-//     const body = document.body;
+if(localStorage.getItem("pomodoroPazartesiVerisi") == null){
+    localStorage.setItem("pomodoroPazartesiVerisi",0)
+}
+if(localStorage.getItem("pomodoroSaliVerisi") == null){
+    localStorage.setItem("pomodoroSaliVerisi",0)
+}
+if(localStorage.getItem("pomodoroCarsambaVerisi") == null){
+    localStorage.setItem("pomodoroCarsambaVerisi",0)
+}
+if(localStorage.getItem("pomodoroPersembeVerisi") == null){
+    localStorage.setItem("pomodoroPersembeVerisi",0)
+}
+if(localStorage.getItem("pomodoroCumaVerisi") == null){
+    localStorage.setItem("pomodoroCumaVerisi",0)
+}
+if(localStorage.getItem("pomodoroCumartesiVerisi") == null){
+    localStorage.setItem("pomodoroCumartesiVerisi",0)
+}
+if(localStorage.getItem("pomodoroPazarVerisi") == null){
+    localStorage.setItem("pomodoroPazarVerisi",0)
+}
 
-//     if (!document.fullscreenElement) {
-//         body.requestFullscreen().then(() => {
-//             tamEkranButton.style.color = "red"
-//             basYazi.style.display = "none"
-//             pomodroContainer.style.marginTop = "170px"
-//             pomodroContainer.style.width = "90%"
-//             hamburger.style.color = "white"
-//             hamburger.style.display = "none"
-//             side.style.display = "none"
-//         });
-//     } else {
-//         document.exitFullscreen().then(() => {
-//             tamEkranButton.style.color = "white"
-//             basYazi.style.display = "block"
-//             pomodroContainer.style.marginTop = "0px"
-//             pomodroContainer.style.width = "58%"
-//             hamburger.style.display = "block"
-//         });
-//     }
-// });
 let kontrolSayi = 2;
 if(localStorage.getItem("pomodoroDersDakikasi") == null){
     localStorage.setItem("pomodoroDersDakikasi",0)
@@ -60,6 +60,29 @@ function zamanlayiciBaslat(){
         dakikacon.innerText = yeniVar-1
         pomodoroDersDakikasi += 1
         localStorage.setItem("pomodoroDersDakikasi",pomodoroDersDakikasi)
+        let gunler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]
+        let gun = gunler[tarih.getDay()]
+        if(gun == "Pazartesi"){
+            localStorage.setItem("pomodoroPazartesiVerisi",Number(localStorage.getItem("pomodoroPazartesiVerisi")) + 1)
+        }
+        if(gun == "Salı"){
+            localStorage.setItem("pomodoroSaliVerisi",Number(localStorage.getItem("pomodoroSaliVerisi")) + 1)
+        }
+        if(gun == "Çarşamba"){
+            localStorage.setItem("pomodoroCarsambaVerisi",Number(localStorage.getItem("pomodoroCarsambaVerisi")) + 1)
+        }
+        if(gun == "Perşembe"){
+            localStorage.setItem("pomodoroPersembeVerisi",Number(localStorage.getItem("pomodoroPersembeVerisi")) + 1)
+        }
+        if(gun == "Cuma"){
+            localStorage.setItem("pomodoroCumaVerisi",Number(localStorage.getItem("pomodoroCumaVerisi")) + 1)
+        }
+        if(gun == "Cumartesi"){
+            localStorage.setItem("pomodoroCumartesiVerisi",Number(localStorage.getItem("pomodoroCumartesiVerisi")) + 1)
+        }
+        if(gun == "Pazar"){
+            localStorage.setItem("pomodoroPazarVerisi",Number(localStorage.getItem("pomodoroPazarVerisi")) + 1)
+        }
         saniyecon.innerText = "60"
     }
     if(saniyecon.innerText>0){

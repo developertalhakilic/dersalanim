@@ -2,7 +2,6 @@ const tarihYazi = document.getElementById("tarih")
 const baslikYazi = document.getElementById("baslik")
 const icerikYazi = document.getElementById("icerik")
 const sayfalarDiv = document.getElementById("sayfalarDiv")
-
 const iptalButton = document.getElementById("iptalButton")
 const silmeButton = document.getElementById("silmeButton")
 const silmeIcerikOnayYazi = document.getElementById("icerikOnay")
@@ -13,6 +12,29 @@ const duzenlemeBaslikInput = document.getElementById("duzenlemeBaslikInput")
 const duzenlemeTarihInput = document.getElementById("duzenlemeTarihInput")
 const duzenlemeIcerikInput = document.getElementById("duzenlemeIcerikInput")
 const sayfayiDuzenleButton = document.getElementById("sayfayiDuzenleButton")
+let tarih = new Date()
+if(localStorage.getItem("gunlukPazartesiVerisi") == null){
+  localStorage.setItem("gunlukPazartesiVerisi",0)
+}
+if(localStorage.getItem("gunlukSaliVerisi") == null){
+  localStorage.setItem("gunlukSaliVerisi",0)
+}
+if(localStorage.getItem("gunlukCarsambaVerisi") == null){
+  localStorage.setItem("gunlukCarsambaVerisi",0)
+}
+if(localStorage.getItem("gunlukPersembeVerisi") == null){
+  localStorage.setItem("gunlukPersembeVerisi",0)
+}
+if(localStorage.getItem("gunlukCumaVerisi") == null){
+  localStorage.setItem("gunlukCumaVerisi",0)
+}
+if(localStorage.getItem("gunlukCumartesiVerisi") == null){
+  localStorage.setItem("gunlukCumartesiVerisi",0)
+}
+if(localStorage.getItem("gunlukPazarVerisi") == null){
+  localStorage.setItem("gunlukPazarVerisi",0)
+}
+
 let gunlukHTML = localStorage.getItem("GunlukHTML")
 if(gunlukHTML != null){
   sayfalarDiv.innerHTML = `${gunlukHTML}`
@@ -69,6 +91,29 @@ function yeniSayfaEkle(){
     sayfalarDiv.innerHTML = ""
     sayfaSayisi += 1
     localStorage.setItem("sayfaSayisi",sayfaSayisi)
+    let gunler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]
+    let gun = gunler[tarih.getDay()]
+    if(gun == "Pazartesi"){
+        localStorage.setItem("gunlukPazartesiVerisi",Number(localStorage.getItem("gunlukPazartesiVerisi")) + 1)
+    }
+    if(gun == "Salı"){
+        localStorage.setItem("gunlukSaliVerisi",Number(localStorage.getItem("gunlukSaliVerisi")) + 1)
+    }
+    if(gun == "Çarşamba"){
+        localStorage.setItem("gunlukCarsambaVerisi",Number(localStorage.getItem("gunlukCarsambaVerisi")) + 1)
+    }
+    if(gun == "Perşembe"){
+        localStorage.setItem("gunlukPersembeVerisi",Number(localStorage.getItem("gunlukPersembeVerisi")) + 1)
+    }
+    if(gun == "Cuma"){
+        localStorage.setItem("gunlukCumaVerisi",Number(localStorage.getItem("gunlukCumaVerisi")) + 1)
+    }
+    if(gun == "Cumartesi"){
+        localStorage.setItem("gunlukCumartesiVerisi",Number(localStorage.getItem("gunlukCumartesiVerisi")) + 1)
+    }
+    if(gun == "Pazar"){
+        localStorage.setItem("gunlukPazarVerisi",Number(localStorage.getItem("gunlukPazarVerisi")) + 1)
+    }
     for(let i = 1; i<=enBuyuk+1; i++){ 
         if(localStorage.getItem("silinenIdlerSoru").includes(i)){
           continue
