@@ -17,6 +17,8 @@
     display: flex;
     border-radius: 15px;
     letter-spacing: 1px;
+    width: 100%;
+    justify-content: center;
 }
 .firstStatsDivHeader h2{
     text-align: center;
