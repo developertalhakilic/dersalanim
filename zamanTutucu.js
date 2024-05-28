@@ -17,6 +17,7 @@ const saatInput = document.getElementById("saatInput")
 const dakikaInput = document.getElementById("dakikaInput")
 const saniyeInput = document.getElementById("saniyeInput")
 let tarih = new Date()
+let noSleep = new NoSleep();
 function tamEkran() {
     var element = document.documentElement; // Sayfanın kök elementini alı
     if (element.requestFullscreen) {
@@ -148,7 +149,7 @@ function kronometreAyar(){
     document.getElementById("KPSS").classList.remove("sinavSayaciSecili")
     document.getElementById("MSÜ").classList.remove("sinavSayaciSecili")
     document.getElementById("ALES").classList.remove("sinavSayaciSecili")
-    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0 || Number(saatInputValue) == "" || Number(saniyeInputValue) == "" || Number(dakikaInputValue) == ""){
+    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0 || Number(saatInputValue) === "" || Number(saniyeInputValue) ==="" || Number(dakikaInputValue) === ""){
         alert("Lütfen geçerli bir zaman giriniz.")
         return null;
     }
@@ -242,19 +243,23 @@ baslatButon.addEventListener('click', function() {
         return null;
     }
     zamanlayici = setInterval(zamanlayiciBaslat,1000);
+    noSleep.enable()
     
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
+    noSleep.disable()
 });
 restartButon.addEventListener('click', function() {
     zamanlayici = setInterval(zamanlayiciBaslat, 1000);
+    noSleep.enable()
 });
 bitirButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
     saatcon.innerText = "00 "
     dakikacon.innerText = "00"
     saniyecon.innerText = "00"
+    noSleep.disable()
 });
 function hideStartButton(){
     if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){

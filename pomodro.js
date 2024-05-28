@@ -14,7 +14,7 @@ const hamburger = document.getElementById("hamburgerButton")
 const side = document.getElementById("sideBar")
 const bilgiButton = document.getElementById("bilgiButton")
 let tarih = new Date()
-
+let noSleep = new NoSleep();
 if(localStorage.getItem("sonDakikaPomodoro") != null){
     dakikacon.innerText = localStorage.getItem("sonDakikaPomodoro")
 }
@@ -114,17 +114,21 @@ function zamanlayiciBaslat(){
 
 baslatButon.addEventListener('click', function() {
     zamanlayici = setInterval(zamanlayiciBaslat, 1000);
+    noSleep.enable()
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
+    noSleep.disable()
 });
 restartButon.addEventListener('click', function() {
     zamanlayici = setInterval(zamanlayiciBaslat, 1000);
+    noSleep.enable()
 });
 bitirButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
     dakikacon.innerText = "25"
     saniyecon.innerText = "00"
+    noSleep.disable()
 });
 function hideStartButton(){
     baslatButon.style.display = "none"
