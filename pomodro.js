@@ -13,6 +13,12 @@ const tamEkranButton = document.getElementById('tamEkranButton');
 const hamburger = document.getElementById("hamburgerButton")
 const side = document.getElementById("sideBar")
 const bilgiButton = document.getElementById("bilgiButton")
+function beforeUnloadListener(event) {
+    const message = 'Çıkmak istediğinize emin misiniz?';
+    event.preventDefault();
+    event.returnValue = message;
+    return message;
+}
 let tarih = new Date()
 let noSleep = new NoSleep();
 if(localStorage.getItem("sonDakikaPomodoro") != null){
@@ -115,20 +121,24 @@ function zamanlayiciBaslat(){
 baslatButon.addEventListener('click', function() {
     zamanlayici = setInterval(zamanlayiciBaslat, 1000);
     noSleep.enable()
+    window.addEventListener('beforeunload', beforeUnloadListener);
 });
 duraklatButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
     noSleep.disable()
+    window.removeEventListener('beforeunload', beforeUnloadListener);
 });
 restartButon.addEventListener('click', function() {
     zamanlayici = setInterval(zamanlayiciBaslat, 1000);
     noSleep.enable()
+    window.addEventListener('beforeunload', beforeUnloadListener);
 });
 bitirButon.addEventListener('click', function() {
     clearInterval(zamanlayici)
     dakikacon.innerText = "25"
     saniyecon.innerText = "00"
     noSleep.disable()
+    window.removeEventListener('beforeunload', beforeUnloadListener);
 });
 function hideStartButton(){
     baslatButon.style.display = "none"
