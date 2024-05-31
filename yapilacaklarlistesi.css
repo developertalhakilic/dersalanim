@@ -52,7 +52,8 @@
   min-width: 28px;
 }
 .mid-side{
-  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
 }
 .right-side{
   /* background-color: blue; */

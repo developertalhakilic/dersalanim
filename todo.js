@@ -1,6 +1,7 @@
 const baslik = document.getElementById("baslik")
 const icerik = document.getElementById("icerik")
 const renk = document.getElementById("todoRenk")
+const color = document.querySelectorAll(".color")
 const yapilmamisTodolarDiv = document.getElementById("yapilmamisTodolarDiv")
 const yapilmisTodolarDiv = document.getElementById("yapilmisTodolarDiv")
 const suresiGecmisTodolarDiv = document.getElementById("suresiGecmisTodolarDiv")
@@ -10,8 +11,12 @@ const suresiGecmislerButton = document.getElementById("suresiGecmislerButton")
 let tarih = new Date()
 
 let yapilmamisHTML = localStorage.getItem("yapilmamisHTML")
+let yapilmisHTML = localStorage.getItem("yapilmisHTML")
 if(yapilmamisHTML != null){
   yapilmamisTodolarDiv.innerHTML = `${yapilmamisHTML}`
+}
+if(yapilmisHTML != null){
+  yapilmisTodolarDiv.innerHTML = `${yapilmisHTML}`
 }
 
 if(localStorage.getItem("todoPazartesiVerisi") == null){
@@ -95,9 +100,9 @@ function yeniGörevEkle(){
     }
     yapilmamisTodolarDiv.innerHTML = ""
     for(let i = 1; i<=enBuyuk+1; i++){ 
-        // if(localStorage.getItem("todoSilinenIdlerSoru").includes(i)){
-        //   continue
-        // }
+        if(String(localStorage.getItem("gonderilenTodolar")).includes(i)){
+          continue
+        }
         if(tumLocalKeyler.includes(`todoBaslikYaziValueKey${i}`) == false){
             localStorage.setItem("todoBaslikYaziValueKey" + i, sonTodoBaslikYaziValue)
         }
@@ -108,11 +113,11 @@ function yeniGörevEkle(){
             localStorage.setItem("todoRenkValueKey" + i, sonTodoRenkValue)
         }
     olusturulacakDivler = `
-    <ul class="list-group yapilmamisTodolar">
+    <ul class="list-group yapilmamisTodolar" id="ul${i}">
     <li class="list-group-item todo">
       <div class="row">
         <div class="col-1 left-side">
-          <input class="form-check-input me-1 color" style="background-color:${localStorage.getItem("todoRenkValueKey" + i)}" type="checkbox" id="firstCheckbox">
+          <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${i})" style="background-color:${localStorage.getItem("todoRenkValueKey" + i)}" type="checkbox" id="firstCheckbox">
         </div>
         <div class="col-7 mid-side">
           <label class="form-check-label" for="firstCheckbox">${localStorage.getItem("todoBaslikYaziValueKey" + i)}</label>
@@ -136,14 +141,48 @@ function yeniGörevEkle(){
 }
 
 function yapilmisDivShow(){
-    yapilmamisTodolarDiv.style.display = "none"
     yapilmisTodolarDiv.style.display = "block"
+    yapilmamisTodolarDiv.style.display = "none"
     yapilanlarButton.style.color = "#4d9bdf"
     yapilacaklarButton.style.color = "#fff"
 }
 function yapilmamisDivShow(){
-    yapilmisTodolarDiv.style.display = "none"
     yapilmamisTodolarDiv.style.display = "block"
+    yapilmisTodolarDiv.style.display = "none"
     yapilacaklarButton.style.color = "#4d9bdf"
     yapilanlarButton.style.color = "#fff"
 }
+
+function yapilmislaraGonder(id){
+  console.log(yapilmisTodolarDiv)
+  document.getElementById(`ul${id}`).remove()
+  yapilmisTodolarDiv.innerHTML += `
+  <ul class="list-group yapilmamisTodolar" id="ul${id}">
+  <li class="list-group-item todo">
+    <div class="row">
+      <div class="col-1 left-side">
+        <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${id})" style="background-color:${localStorage.getItem("todoRenkValueKey" + id)}" type="checkbox" id="firstCheckbox">
+      </div>
+      <div class="col-7 mid-side">
+        <label class="form-check-label" for="firstCheckbox">${localStorage.getItem("todoBaslikYaziValueKey" + id)}</label>
+        <p class="form-check-p">${localStorage.getItem("todoIcerikYaziValueKey" + id)}</p>
+      </div>
+      <div class="col-4 right-side">
+        <!-- <div class="buttonContainer">
+          <button class="deleteButton button"><i class="bi bi-trash2 icon"></i></button>
+          <button class="editButton button"><i class="bi bi-pencil-square icon"></i></button>
+        </div> -->
+      </div>
+    </div>
+  </li>
+</ul> 
+  `
+  let gonderilenTodolar = localStorage.getItem("gonderilenTodolar")
+  gonderilenTodolar += id
+  localStorage.setItem("gonderilenTodolar",gonderilenTodolar)
+  localStorage.setItem("yapilmisHTML",yapilmisTodolarDiv.innerHTML)
+  localStorage.setItem("yapilmamisHTML",yapilmamisTodolarDiv.innerHTML)
+
+}
+
+
