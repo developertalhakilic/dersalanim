@@ -21,8 +21,8 @@
     justify-content: center;
 }
 .sorular{
-    margin: 20px 20px 0px;
-    width: 1000px;
+  margin: 20px 20px 0px;
+  width: 1000px;
 }
 
 
@@ -67,7 +67,24 @@
 .aciklama{
     height: 300px;
 }
-
+.acilanMenu{
+  padding-top:20px;
+  background-color: none;
+  border-bottom: 1px solid #2e2d2d;
+}
+.acilanMenu2{
+  border: none;
+  box-shadow: none;
+  margin-top: 10px;
+}
+.acilanMenu:focus{
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+}
+.menuBaslik{
+  font-size: 24px;
+}
 .icerikBaslik{
   text-transform: capitalize;
 }

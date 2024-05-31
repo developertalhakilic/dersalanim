@@ -1,0 +1,156 @@
+.pageTop{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pageTop .soruEkleButton{
+    margin: 20px;
+    font-size: 30px;
+    font-family: 'Bunya PERSONAL', sans-serif;
+    border-radius:10px;
+    text-align: center;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.todolarContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.todolar{
+    margin: 20px 20px 0px;
+    width: 1000px;
+}
+
+.todo{
+  height: 80px;
+  padding: 7px;
+  padding-left: 9px;
+}
+.color{
+  width: 25px;
+  height: 25px;
+}
+.todo label{
+  margin-top: 1px;
+  font-size: 19px;
+  text-transform: capitalize;
+}
+.todo p{
+  margin-top: 2px;
+  font-size: 16px;  
+  text-transform: capitalize;
+} 
+.left-side{
+  /* background-color: red; */
+  display: flex;
+  align-items: flex-start;
+  width: 3.3%;
+  min-width: 28px;
+}
+.mid-side{
+  /* background-color: green; */
+}
+.right-side{
+  /* background-color: blue; */
+}
+.buttons{
+  display: none;
+}
+.todo:hover .buttons{
+  display: flex;
+}
+.todo input[type="checkbox"] {
+  border-radius: 50%;
+  color: white;
+  outline:none;
+}
+.todolar::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+.todolar::-webkit-scrollbar-track {
+  background: #888;
+}
+
+/* Handle */
+.todolar::-webkit-scrollbar-thumb {
+  background: #d12626;
+  height: 1px;
+}
+
+/* Handle on hover */
+.todolar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.pageEnd{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.todoShowButtonsDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.todoShowButtonsDiv button{
+    background: none;
+    color: white;
+    border: none;
+    margin: 10px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-family: 'Bunya PERSONAL', sans-serif;
+    border-bottom: 2px solid #0081f2;
+}
+.todoRenk {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .todoRenk::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }
+  .todoRenk::-moz-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }
+.colorDiv{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+  
+  @media only screen and (max-width: 700px) { 
+    .icon{
+      font-size: 21px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+      .color{
+        width: 20px;
+        height: 20px;
+      }
+      .todo label{
+        font-size: 17px;
+      }
+      .todo p{
+        font-size: 14px;
+      }
+  }

@@ -44,10 +44,88 @@
             <a href="istatistikler.html" class="sideBarLink"><button><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
         </div>
         </div>
-        <br></br>
-        <div class="ComingSoon" style="width: 100%; display: flex; justify-content: center; color: white;">
-            <h1>Çok Yakında Bu Sayfamız Erişime Açılacaktır</h1>
+        
+        <div class="pageTop">
+            <button class="soruEkleButton btn btn-dark container-sm"data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" id="yeniSayfaEkleButton"><i class="fa-solid fa-plus"></i> Yeni Görev Ekle</button>
         </div>
+        <div class="todoShowButtonsDiv">
+            <button id="yapilacaklarButton" onclick="yapilmamisDivShow()" style="color: #4d9bdf">Yapılacaklar</button>
+            <button id="yapilanlarButton" onclick="yapilmisDivShow()">Yapılmışlar</button>
+        </div>
+        <div class="todolarContainer" data-bs-theme="dark" id="soruBilgiAdd">
+            <div class="todolar" id="yapilmamisTodolarDiv">
+                <div class="card">
+                    <h5 class="card-header">Yapılacaklar Listesi</h5>
+                    <div class="card-body">
+                      <h5 class="card-title">Kaydetmeye Başlayın !</h5>
+                      <p class="card-text">Yapmak istediğiniz, yapmayı planladığınız görevleri kaydedin.</p>
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" class="btn btn-primary">İlk Görevi Kaydet</a>
+                    </div>
+                  </div>
+                  <!-- <ul class="list-group yapilmamisTodolar">
+                    <li class="list-group-item todo">
+                      <div class="row">
+                        <div class="col-1 left-side">
+                          <input class="form-check-input me-1 color" type="checkbox" id="firstCheckbox">
+                        </div>
+                        <div class="col-7 mid-side">
+                          <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+                          <p class="form-check-p">First description</p>
+                        </div>
+                        <div class="col-4 right-side">
+                           <div class="buttonContainer">
+                            <button class="deleteButton button"><i class="bi bi-trash2 icon"></i></button>
+                            <button class="editButton button"><i class="bi bi-pencil-square icon"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul> 
+                </div> -->
+                  <div class="todolar" id="yapilmisTodolarDiv" style="display: none;">
+                    <div class="card">
+                        <h5 class="card-header">Yapılacaklar Listesi</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">Kaydetmeye Başlayın !</h5>
+                          <p class="card-text">Yapmak istediğiniz, yapmayı planladığınız görevleri kaydedin.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" class="btn btn-primary">İlk Görevi Kaydet</a>
+                        </div>
+                      </div>
+                   </div>
+            </div>
+
+
+        <div class="modal fade"data-bs-theme="dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content pencere">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Yeni Görev</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label text-white">Başlık:</label>
+                      <input type="text" class="form-control" id="baslik" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label text-white">İçerik</label>
+                      <input class="form-control gunlukIcerikInput" id="icerik" id="message-text"></input>
+                    </div>
+                    <div class="mb-3 colorDiv">
+                        <label for="message-text" class="col-form-label text-white">Renk:</label>
+                        <input type="color" id="todoRenk" class="todoRenk" value="#000"></input>
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" onclick="" data-bs-dismiss="modal">iptal</button>
+                  <button type="button" class="btn btn-primary" onclick="inputTemizleme();">Temizle</button>
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="yeniGörevEkle()">Görevi Ekle</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <script src="todo.js"></script>
         <script src="statsClean.js"></script>
