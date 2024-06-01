@@ -29,6 +29,7 @@
   height: 80px;
   padding: 7px;
   padding-left: 9px;
+  transition: 0.2s;
 }
 .color{
   width: 25px;

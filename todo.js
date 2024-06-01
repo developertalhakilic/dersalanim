@@ -8,6 +8,9 @@ const suresiGecmisTodolarDiv = document.getElementById("suresiGecmisTodolarDiv")
 const yapilacaklarButton = document.getElementById("yapilacaklarButton")
 const yapilanlarButton = document.getElementById("yapilanlarButton")
 const suresiGecmislerButton = document.getElementById("suresiGecmislerButton")
+
+renk.setAttribute("value",randomHexOlustur())
+
 let tarih = new Date()
 
 let yapilmamisHTML = localStorage.getItem("yapilmamisHTML")
@@ -114,10 +117,10 @@ function yeniGörevEkle(){
         }
     olusturulacakDivler = `
     <ul class="list-group yapilmamisTodolar" id="ul${i}">
-    <li class="list-group-item todo">
+    <li class="list-group-item todo" onmouseover="mouseOverUl(${i})" id="todo${i}" onmouseout="mouseOutUl(${i})">
       <div class="row">
         <div class="col-1 left-side">
-          <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${i})" style="background-color:${localStorage.getItem("todoRenkValueKey" + i)}" type="checkbox" id="firstCheckbox">
+          <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${i})" style="background-color:${localStorage.getItem("todoRenkValueKey" + i)}" type="checkbox" id="checkBox${i}">
         </div>
         <div class="col-7 mid-side">
           <label class="form-check-label" for="firstCheckbox">${localStorage.getItem("todoBaslikYaziValueKey" + i)}</label>
@@ -186,3 +189,24 @@ function yapilmislaraGonder(id){
 }
 
 
+function mouseOverUl(elementId){
+  document.getElementById("checkBox" + elementId).checked = true
+  document.getElementById("todo" + elementId).style.backgroundColor = "#1E2023"
+
+}
+function mouseOutUl(elementId){
+  document.getElementById("checkBox" + elementId).checked = false
+  document.getElementById("todo" + elementId).style.backgroundColor = "#212529"
+}
+
+
+function randomHexOlustur() {
+  let hexCode = '#';
+  const hexCharacters = '0123456789ABCDEF';
+
+  for (let i = 0; i < 6; i++) {
+      hexCode += hexCharacters[Math.floor(Math.random() * 16)];
+  }
+
+  return hexCode;
+}
