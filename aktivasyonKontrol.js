@@ -2,7 +2,7 @@ const input = document.querySelector(".aktivasyonInput")
 const kontrolLabel = document.getElementById("kontrolLabel")
 const zaman = document.getElementById("zaman")
 const bilgiYazi = document.getElementById("bilgiYazi")
-const aktivasyonKodlari = localStorage.getItem("aktivasyonKodlari")
+const aktivasyonKodlari = localStorage.getItem("aktivasyonKodlari") 
 
 
 if(localStorage.getItem("active") == null){
@@ -18,7 +18,7 @@ function zamanAzaltma(){
 function aktivasyonKontrol(){
     const aktiveKodu = input.value
 
-    if(aktivasyonKodlari.includes(aktiveKodu)){
+    if(String(aktivasyonKodlari).includes(aktiveKodu)){
         bilgiYazi.style.display = "block"
         zaman.innerText = "3"
         kontrolLabel.style.color = "#16EA0E"
