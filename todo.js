@@ -50,7 +50,7 @@ localStorage.setItem("todoRenkValueKey0",0)
 function inputTemizleme(){
     baslik.value = ""
     icerik.value = ""
-    renk.value = "#000"
+    renk.value = randomHexOlustur()
 }
 
 function yeniGörevEkle(){
@@ -59,8 +59,7 @@ function yeniGörevEkle(){
     let keyNumbers = []
     tumLocalKeyler.forEach(function kontrolSayiGen(key){
     if(key.slice(0,6) == "todoIc" || key.slice(0,6) == "todoBa" || key.slice(0,6) == "todoRe"){
-        console.log(key)
-        try{
+        try{  
             keyNumbers.push(Number(key.match(/\d+$/)[0]))
         }
         catch{
@@ -116,21 +115,27 @@ function yeniGörevEkle(){
             localStorage.setItem("todoRenkValueKey" + i, sonTodoRenkValue)
         }
     olusturulacakDivler = `
-    <ul class="list-group yapilmamisTodolar" id="ul${i}">
-    <li class="list-group-item todo" onmouseover="mouseOverUl(${i})" id="todo${i}" onmouseout="mouseOutUl(${i})">
+    <ul class="list-group yapilmamisTodolar animate__animated" id="ul${i}">
+    <li class="list-group-item todo" onclick="yapilmislaraGonder(${i})" onmouseover="mouseOverUl(${i})" id="todo${i}" onmouseout="mouseOutUl(${i})">
       <div class="row">
-        <div class="col-1 left-side">
-          <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${i})" style="background-color:${localStorage.getItem("todoRenkValueKey" + i)}" type="checkbox" id="checkBox${i}">
-        </div>
-        <div class="col-7 mid-side">
+        <div class="col-8 left-side">
+        <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${i})" style="background-color:${localStorage.getItem("todoRenkValueKey" + i)}" type="checkbox" id="checkBox${i}">
+        <div class="labelDesc">
           <label class="form-check-label" for="firstCheckbox">${localStorage.getItem("todoBaslikYaziValueKey" + i)}</label>
           <p class="form-check-p">${localStorage.getItem("todoIcerikYaziValueKey" + i)}</p>
         </div>
-        <div class="col-4 right-side">
-          <!-- <div class="buttonContainer">
-            <button class="deleteButton button"><i class="bi bi-trash2 icon"></i></button>
-            <button class="editButton button"><i class="bi bi-pencil-square icon"></i></button>
-          </div> -->
+      </div>
+      <div class="col-4 right-side">
+            <div class="dropdown">
+                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item dropdown-button" href="#">Kaldır</a></li>
+                <li><a class="dropdown-item dropdown-button" href="#">Düzenle</a></li>
+                <li><a class="dropdown-item dropdown-button" href="#">Yapılanlara Taşı</a></li>
+              </ul>
+            </div>
         </div>
       </div>
     </li>
@@ -157,14 +162,23 @@ function yapilmamisDivShow(){
 }
 
 function yapilmislaraGonder(id){
-  console.log(yapilmisTodolarDiv)
-  document.getElementById(`ul${id}`).remove()
+  document.getElementById(`ul${id}`).classList.add("animate__fadeOut")
+  window.addEventListener('beforeunload', function(){
+    document.getElementById(`ul${id}`).classList.remove("animate__fadeOut")
+    document.getElementById(`ul${id}`).remove()
+    localStorage.setItem("yapilmamisHTML",yapilmamisTodolarDiv.innerHTML)
+  });
+  setTimeout(function() {
+    document.getElementById(`ul${id}`).classList.remove("animate__fadeOut")
+    document.getElementById(`ul${id}`).remove()
+    localStorage.setItem("yapilmamisHTML",yapilmamisTodolarDiv.innerHTML)
+  }, 250);
   yapilmisTodolarDiv.innerHTML += `
-  <ul class="list-group yapilmamisTodolar" id="ul${id}">
+  <ul class="list-group yapilmamisTodolar animate__animated" onclick="null" id="ul${id}">
   <li class="list-group-item todo">
     <div class="row">
       <div class="col-1 left-side">
-        <input class="form-check-input me-1 color" onclick="yapilmislaraGonder(${id})" style="background-color:${localStorage.getItem("todoRenkValueKey" + id)}" type="checkbox" id="firstCheckbox">
+        <input class="form-check-input me-1 color" style="background-color:${localStorage.getItem("todoRenkValueKey" + id)}" type="checkbox" id="firstCheckbox">
       </div>
       <div class="col-7 mid-side">
         <label class="form-check-label" for="firstCheckbox">${localStorage.getItem("todoBaslikYaziValueKey" + id)}</label>
@@ -184,7 +198,12 @@ function yapilmislaraGonder(id){
   gonderilenTodolar += id
   localStorage.setItem("gonderilenTodolar",gonderilenTodolar)
   localStorage.setItem("yapilmisHTML",yapilmisTodolarDiv.innerHTML)
-  localStorage.setItem("yapilmamisHTML",yapilmamisTodolarDiv.innerHTML)
+  window.removeEventListener('beforeunload', function(){
+    document.getElementById(`ul${id}`).classList.remove("animate__fadeOut")
+    document.getElementById(`ul${id}`).remove()
+    localStorage.setItem("yapilmamisHTML",yapilmamisTodolarDiv.innerHTML)
+  });
+
 
 }
 

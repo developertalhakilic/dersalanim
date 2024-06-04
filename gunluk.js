@@ -82,12 +82,20 @@ function yeniSayfaEkle(){
       tarihler += tarihYaziValue
     }
     localStorage.setItem("yaziTarihleri",tarihler)
+    let tarih1 = new Date()
+    let tarih2 = new Date(tarihYaziValue)
+    if(tarih1.getTime() < tarih2.getTime()){
+      alert("Lütfen geçerli bir tarih giriniz.")
+      return null
+    }
     if(tarihYaziValue != "" && baslikYaziValue != "" && icerikYaziValue != ""){
         null
     }
     else{
-        return false
+      alert("Lütfen hiç bir alanı boş bırakmayınız.")
+      return null
     }
+    console.log(tarihYaziValue)
     sayfalarDiv.innerHTML = ""
     sayfaSayisi += 1
     localStorage.setItem("sayfaSayisi",sayfaSayisi)
@@ -167,17 +175,33 @@ function elementDuzenle(elementId){
   duzenlemeBaslikInput.value = localStorage.getItem("baslikYaziValueKey" + elementId)
   duzenlemeTarihInput.value = localStorage.getItem("tarihYaziValueKey" + elementId)
   duzenlemeIcerikInput.value = localStorage.getItem("icerikYaziValueKey" + elementId)
-  sayfayiDuzenleButton.addEventListener("click",function(){
-  localStorage.setItem(`tarihYaziValueKey${elementId}`,duzenlemeTarihInput.value)
-  localStorage.setItem(`baslikYaziValueKey${elementId}`,duzenlemeBaslikInput.value)
-  localStorage.setItem(`icerikYaziValueKey${elementId}`,duzenlemeIcerikInput.value)
-  document.getElementById(`menuBaslik${elementId}`).innerText = localStorage.getItem(`baslikYaziValueKey${elementId}`)
-  document.getElementById(`menuIcerik${elementId}`).innerText = localStorage.getItem(`icerikYaziValueKey${elementId}`)
-  document.getElementById(`menuTarih${elementId}`).innerText = localStorage.getItem(`tarihYaziValueKey${elementId}`)
-  document.getElementById(`menuTarihGun${elementId}`).innerText = bugununGunu(localStorage.getItem(`tarihYaziValueKey${elementId}`,duzenlemeTarihInput.value))
-  localStorage.setItem("GunlukHTML",sayfalarDiv.innerHTML)
-  })
-}
+  let kontrol = function(){
+    let tarih3 = new Date()
+    let tarih4 = new Date(duzenlemeTarihInput.value)
+    if(tarih3.getTime() < tarih4.getTime()){
+      alert("Lütfen geçerli bir tarih giriniz.")
+      sayfayiDuzenleButton.removeEventListener("click",kontrol)
+      return null
+    }
+    if(duzenlemeBaslikInput.value != "" && duzenlemeTarihInput.valuee != "" && duzenlemeIcerikInput.value != ""){
+        null
+    }
+    else{
+      alert("Lütfen hiç bir alanı boş bırakmayınız.")
+      sayfayiDuzenleButton.removeEventListener("click",kontrol)
+      return null
+    }
+    localStorage.setItem(`tarihYaziValueKey${elementId}`,duzenlemeTarihInput.value)
+    localStorage.setItem(`baslikYaziValueKey${elementId}`,duzenlemeBaslikInput.value)
+    localStorage.setItem(`icerikYaziValueKey${elementId}`,duzenlemeIcerikInput.value)
+    document.getElementById(`menuBaslik${elementId}`).innerText = localStorage.getItem(`baslikYaziValueKey${elementId}`)
+    document.getElementById(`menuIcerik${elementId}`).innerText = localStorage.getItem(`icerikYaziValueKey${elementId}`)
+    document.getElementById(`menuTarih${elementId}`).innerText = localStorage.getItem(`tarihYaziValueKey${elementId}`)
+    document.getElementById(`menuTarihGun${elementId}`).innerText = bugununGunu(localStorage.getItem(`tarihYaziValueKey${elementId}`,duzenlemeTarihInput.value))
+    localStorage.setItem("GunlukHTML",sayfalarDiv.innerHTML)
+  }
+    sayfayiDuzenleButton.addEventListener("click",kontrol)
+  }
 function elementSil(elementId){
   let gun = bugununGunu(localStorage.getItem("tarihYaziValueKey" + elementId))
   silmeOnayButton.click()

@@ -30,40 +30,55 @@
   padding: 7px;
   padding-left: 9px;
   transition: 0.2s;
+  z-index: 0;
 }
 .color{
   width: 25px;
   height: 25px;
 }
+.todoRow{
+  height: 100%;
+}
 .todo label{
   margin-top: 1px;
   font-size: 19px;
+  margin-left: 4px;
   text-transform: capitalize;
 }
 .todo p{
   margin-top: 2px;
   font-size: 16px;  
   text-transform: capitalize;
+  padding-left: 5px;
 } 
-.left-side{
-  /* background-color: red; */
-  display: flex;
-  align-items: flex-start;
-  width: 3.3%;
-  min-width: 28px;
-}
-.mid-side{
+.labelDesc{
   display: flex;
   flex-direction: column;
 }
-.right-side{
-  /* background-color: blue; */
-}
-.buttons{
-  display: none;
-}
-.todo:hover .buttons{
+.left-side{
   display: flex;
+  align-items: flex-start;
+}
+.right-side{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.right-side button{
+  width: 35px;
+  height: 35px;
+  background-color: #111111;
+  border-radius: 50%;
+  margin-top: 1px;
+  border: none;
+  font-size: 20px;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown-button:hover{
+  background-color: #2b3035;
 }
 .todo input[type="checkbox"] {
   border-radius: 50%;

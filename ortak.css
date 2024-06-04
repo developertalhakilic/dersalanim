@@ -214,7 +214,6 @@ body{
 .slide-out-left{animation:slide-out-left .60s cubic-bezier(.25,.46,.45,.94) reverse both}
 @keyframes slide-out-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
 
-
 @media screen and (max-width:1000px) {
   .sideBarBottom i{
     font-size: 25px;
@@ -264,4 +263,8 @@ body{
   .sideBar{
     width: 100%;
   }
+}
+
+.animate__fadeOut{
+  --animate-duration: 0.6s;
 }

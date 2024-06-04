@@ -1,0 +1,28 @@
+
+.container{
+    padding-top: 10px;
+    color: white;
+}
+.gonderButton{
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+label{
+    margin-bottom: 5px;
+}
+input{
+    text-transform: uppercase;
+}
+.input-group{
+    width: 300px;
+}
+@media screen and (max-width:330px){
+    .input-group{
+        width: 260px;
+    }
+}
+
+#kontrolLabel{
+    margin-top: 10px;
+}

@@ -122,10 +122,17 @@ function soruEkleme(){
     let cozmeTarihiValue = cozmeTarihi.value
     let aciklamaTextValue = aciklamaText.value
     let soruIsmiTextValue = soruIsmi.value
+    let tarih1 = new Date()
+    let tarih2 = new Date(cozmeTarihiValue)
+    if(tarih1.getTime() < tarih2.getTime()){
+      alert("Lütfen geçerli bir tarih giriniz.")
+      return null
+    }
     if(dersIsmiValue != "" && kitapIsmiValue != "" && sayfaTestNoValue != "" && soruNoValue != "" && cozmeTarihiValue != "" && aciklamaTextValue != "" && soruIsmiTextValue != ""){
         null
     }
     else{
+        alert("Lütfen hiç bir alanı boş bırakmayınız.")
         return false
     }
     sorularDiv.innerHTML = ""
@@ -178,7 +185,7 @@ function soruEkleme(){
             localStorage.setItem("aciklamaTextValueKey" + i, aciklamaTextValue)
         }
         if(tumLocalKeyler.includes(`soruIsmiValueKey${i}`) == false){
-          localStorage.setItem("soruIsmiValueKey" + i, aciklamaTextValue)
+          localStorage.setItem("soruIsmiValueKey" + i, dersIsmiValue)
       }
         olusturulacakDivler = `
         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -230,17 +237,32 @@ inputTemizleme()
 }
 
 function elementDuzenle(elementId){
-    sayfaDuzenleButton.click()
-    console.log(elementId)
-    duzenlemeBaslik.innerText = `"${localStorage.getItem("soruIsmiValueKey" + elementId)}" Öğesini Düzenle`
-    duzenlemeSoruIsmiInput.value = localStorage.getItem("soruIsmiValueKey" + elementId)
-    duzenlemeDersIsmiInput.value = localStorage.getItem("dersIsmiValueKey" + elementId)
-    duzenlemeKitapIsmiInput.value = localStorage.getItem("kitapIsmiValueKey" + elementId)
-    duzenlemeSayfaNoInput.value = localStorage.getItem("sayfaTestNoValueKey" + elementId)
-    duzenlemeSoruNoInput.value = localStorage.getItem("soruNoValueKey" + elementId)
-    duzenlemeAciklamaInput.value = localStorage.getItem("aciklamaTextValueKey" + elementId)
-    duzenlemeCozmeTarihiInput.value = localStorage.getItem("cozmeTarihiValueKey" + elementId) 
-    sayfayiDuzenleButton.addEventListener("click",function(){
+  sayfaDuzenleButton.click()
+  duzenlemeBaslik.innerText = `"${localStorage.getItem("soruIsmiValueKey" + elementId)}" Öğesini Düzenle`
+  duzenlemeSoruIsmiInput.value = localStorage.getItem("soruIsmiValueKey" + elementId)
+  duzenlemeDersIsmiInput.value = localStorage.getItem("dersIsmiValueKey" + elementId)
+  duzenlemeKitapIsmiInput.value = localStorage.getItem("kitapIsmiValueKey" + elementId)
+  duzenlemeSayfaNoInput.value = localStorage.getItem("sayfaTestNoValueKey" + elementId)
+  duzenlemeSoruNoInput.value = localStorage.getItem("soruNoValueKey" + elementId)
+  duzenlemeAciklamaInput.value = localStorage.getItem("aciklamaTextValueKey" + elementId)
+  duzenlemeCozmeTarihiInput.value = localStorage.getItem("cozmeTarihiValueKey" + elementId) 
+      let kontrol = function(){
+        let tarih3 = new Date()
+        let tarih4 = new Date(duzenlemeCozmeTarihiInput.value)
+        if(tarih3.getTime() < tarih4.getTime()){
+          alert("Lütfen geçerli bir tarih giriniz.")
+          sayfayiDuzenleButton.removeEventListener("click",kontrol)
+          return null
+        }
+        debugger
+        if(duzenlemeDersIsmiInput.value != "" && duzenlemeKitapIsmiInput.value != "" && duzenlemeSoruIsmiInput.value != "" && duzenlemeSayfaNoInput.value != "" && duzenlemeSoruNoInput.value != "" && duzenlemeAciklamaInput.value != "" && duzenlemeCozmeTarihiInput.value != ""){
+            null
+        }
+        else{
+            alert("Lütfen hiç bir alanı boş bırakmayınız.")
+            sayfayiDuzenleButton.removeEventListener("click",kontrol)
+            return null
+        }
         localStorage.setItem(`soruIsmiValueKey${elementId}`,duzenlemeSoruIsmiInput.value)
         localStorage.setItem(`dersIsmiValueKey${elementId}`,duzenlemeDersIsmiInput.value)
         localStorage.setItem(`kitapIsmiValueKey${elementId}`, duzenlemeKitapIsmiInput.value)
@@ -248,7 +270,7 @@ function elementDuzenle(elementId){
         localStorage.setItem(`soruNoValueKey${elementId}`,duzenlemeSoruNoInput.value)
         localStorage.setItem(`aciklamaTextValueKey${elementId}`,duzenlemeAciklamaInput.value)
         localStorage.setItem(`cozmeTarihiValueKey${elementId}`,duzenlemeCozmeTarihiInput.value)
-
+  
         document.getElementById(`soruIsmi${elementId}`).innerText = localStorage.getItem(`soruIsmiValueKey${elementId}`)
         document.getElementById(`dersIsmi${elementId}`).innerText = localStorage.getItem(`dersIsmiValueKey${elementId}`)
         document.getElementById(`kitapIsmi${elementId}`).innerText = localStorage.getItem(`kitapIsmiValueKey${elementId}`)
@@ -257,7 +279,8 @@ function elementDuzenle(elementId){
         document.getElementById(`aciklamaText${elementId}`).innerText = localStorage.getItem(`aciklamaTextValueKey${elementId}`)
         document.getElementById(`cozmeTarihi${elementId}`).innerText = localStorage.getItem(`cozmeTarihiValueKey${elementId}`)
         localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
-    })
+      }
+      sayfayiDuzenleButton.addEventListener("click",kontrol)
   }
   function elementSil(elementId){
     silmeOnayButton.click()
