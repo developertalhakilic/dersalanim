@@ -123,7 +123,13 @@ function yeniSayfaEkle(){
         localStorage.setItem("gunlukPazarVerisi",Number(localStorage.getItem("gunlukPazarVerisi")) + 1)
     }
     for(let i = 1; i<=enBuyuk+1; i++){ 
-        if(localStorage.getItem("silinenIdlerGunluk").includes(i)){
+        let kontrol;
+        localStorage.getItem("silinenIdlerGunluk").split(',').forEach(function(silinenId){
+          if(i == silinenId){
+            kontrol = true
+          }
+        })
+        if(kontrol == true){
           continue
         }
         if(tumLocalKeyler.includes(`tarihYaziValueKey${i}`) == false){
@@ -214,8 +220,9 @@ function elementSil(elementId){
     document.getElementById(`gunlukElement${elementId}`).remove()
     localStorage.setItem("GunlukHTML",sayfalarDiv.innerHTML)
     let silinenIdListe = localStorage.getItem("silinenIdlerGunluk")
-    silinenIdListe += elementId
-    localStorage.setItem("silinenIdlerGunluk", silinenIdListe)
+    silinenIdListe = silinenIdListe ? silinenIdListe.split(',') : [];
+    silinenIdListe.push(elementId)
+    localStorage.setItem("silinenIdlerGunluk", silinenIdListe.join(','));
     iptalButton.click()
   })
 

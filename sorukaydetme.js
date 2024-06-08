@@ -163,7 +163,13 @@ function soruEkleme(){
     }
 
     for(let i = 1; i<=enBuyuk+1; i++){
-        if(localStorage.getItem("silinenIdlerSoru").includes(i)){
+        let kontrol;
+        localStorage.getItem("silinenIdlerSoru").split(',').forEach(function(silinenId){
+          if(i == silinenId){
+            kontrol = true
+          }
+        })
+        if(kontrol == true){
           continue
         }
         if(tumLocalKeyler.includes(`dersIsmiValueKey${i}`) == false){
@@ -238,7 +244,7 @@ inputTemizleme()
 
 function elementDuzenle(elementId){
   sayfaDuzenleButton.click()
-  duzenlemeBaslik.innerText = `"${localStorage.getItem("soruIsmiValueKey" + elementId)}" Öğesini Düzenle`
+  duzenlemeBaslik.innerText = `"${localStorage.getItem("soruIsmiValueKey" + elementId)}" Sorusunu Düzenle`
   duzenlemeSoruIsmiInput.value = localStorage.getItem("soruIsmiValueKey" + elementId)
   duzenlemeDersIsmiInput.value = localStorage.getItem("dersIsmiValueKey" + elementId)
   duzenlemeKitapIsmiInput.value = localStorage.getItem("kitapIsmiValueKey" + elementId)
@@ -296,10 +302,11 @@ function elementDuzenle(elementId){
         localStorage.setItem(`soruNoValueKey${elementId}`,"")
         localStorage.setItem(`aciklamaTextValueKey${elementId}`,"")
         localStorage.setItem(`cozmeTarihiValueKey${elementId}`,"")
-      let silinenIdListe = localStorage.getItem("silinenIdlerSoru")
-      silinenIdListe += elementId
       localStorage.setItem("SorularHTML",sorularDiv.innerHTML)
-      localStorage.setItem("silinenIdlerSoru", silinenIdListe)
+      let silinenIdListe = localStorage.getItem("silinenIdlerSoru")
+      silinenIdListe = silinenIdListe ? silinenIdListe.split(',') : [];
+      silinenIdListe.push(elementId)
+      localStorage.setItem("silinenIdlerSoru", silinenIdListe.join(','));
       iptalButton.click()
     })
 
@@ -355,4 +362,16 @@ function convertToPdf(){
     let pdfSayi = Number(localStorage.getItem("pdfAlmaSayisi"))
     pdfSayi += 1
     localStorage.setItem("pdfAlmaSayisi",pdfSayi)
+}
+
+
+function duzenlemeTemizle(){
+  duzenlemeSoruIsmiInput.value = ""
+  duzenlemeDersIsmiInput.value = ""
+  duzenlemeKitapIsmiInput.value = ""
+  duzenlemeSayfaNoInput.value = ""
+  duzenlemeSoruNoInput.value = ""
+  duzenlemeAciklamaInput.value = ""
+  duzenlemeCozmeTarihiInput.value = ""
+
 }
