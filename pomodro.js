@@ -27,10 +27,19 @@ if(localStorage.getItem("sonDakikaPomodoro") != null){
 if(localStorage.getItem("sonSaniyePomodoro") != null){
     saniyecon.innerText = localStorage.getItem("sonSaniyePomodoro")
 }
+if(localStorage.getItem("sonCikisKutuGolge") != null){
+    pomodroContainer.style.boxShadow = localStorage.getItem("sonCikisKutuGolge")
+}
+if(localStorage.getItem("sonCikisKutuBorder") != null){
+    pomodroContainer.style.border = localStorage.getItem("sonCikisKutuBorder")
+}
 
 window.addEventListener('beforeunload', function() {
     localStorage.setItem("sonDakikaPomodoro",dakikacon.innerText)
     localStorage.setItem("sonSaniyePomodoro",saniyecon.innerText)
+    localStorage.setItem("sonCikisKutuGolge",pomodroContainer.style.boxShadow)
+    localStorage.setItem("sonCikisKutuBorder",pomodroContainer.style.border)
+    
 });
 
 if(localStorage.getItem("pomodoroPazartesiVerisi") == null){
@@ -102,15 +111,22 @@ function zamanlayiciBaslat(){
         }
     }
     if(dakikacon.innerText == -1 && kontrolSayi % 2 == 0){
-        kontrolSayi+=1
-        pomodoroSayisi+=1
         dakikacon.innerText = "4"
+        kontrolSayi += 1
         saniyecon.innerText = "59"
         pomodroContainer.style.boxShadow = "0px 0px 49px 0px #ed0303"
         pomodroContainer.style.border = "3px solid red"
     }
-    if(dakikacon.innerText== -1 && kontrolSayi % 2 != 0){
+    if(dakikacon.innerText == -1 && kontrolSayi % 2 != 1){
         kontrolSayi+=1
+        dakikacon.innerText = "25"
+        saniyecon.innerText = "00"
+        pomodroContainer.style.boxShadow = "0px 0px 49px 0px #030eed"
+        pomodroContainer.style.border = "3px solid blue"
+    }
+    
+    if(dakikacon.innerText == -1){
+        kontrolSayi += 1
         dakikacon.innerText = "25"
         saniyecon.innerText = "00"
         pomodroContainer.style.boxShadow = "0px 0px 49px 0px #030eed"

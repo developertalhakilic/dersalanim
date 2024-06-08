@@ -13,11 +13,11 @@ if(localStorage.getItem("zamanlayiciDersDakikasi") != null){
 if(localStorage.getItem("kaydedilenSoru") != null){
     soruSayiYazi.innerText = localStorage.getItem("kaydedilenSoru")
 }
-// if(localStorage.getItem("pomodoroDersDakikasi") != null){
-//     yapilacakİsYazi.innerText = localStorage.getItem("pomodoroDersDakikasi")
-// }
 if(localStorage.getItem("sayfaSayisi") != null){
     sayfaSayiYazi.innerText = localStorage.getItem("sayfaSayisi")
+}
+if(localStorage.getItem("todoIsSayisi") != null){
+    yapilacakİsYazi.innerText = localStorage.getItem("todoIsSayisi")
 }
 
 const timerDiv = document.getElementById('timer');
@@ -443,3 +443,108 @@ function diaryChartOlustur(){
     }
 }
 
+const todoDiv = document.getElementById('todoList');
+var dataTodoUp1000 = {
+    labels: ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'],
+    datasets: [{
+        label: 'Yapılacak İş',
+        data: [Number(localStorage.getItem("todoPazartesiVerisi")), Number(localStorage.getItem("todoSaliVerisi")), Number(localStorage.getItem("todoCarsambaVerisi")), Number(localStorage.getItem("todoPersembeVerisi")), Number(localStorage.getItem("todoCumaVerisi")), Number(localStorage.getItem("todoCumartesiVerisi")), Number(localStorage.getItem("todoPazarVerisi"))],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ], 
+          borderWidth: 1
+    }]
+};
+var dataTodoDown1000 = {
+    labels: ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'],
+    datasets: [{
+        label: 'Sayfa',
+        data: [Number(localStorage.getItem("todoPazartesiVerisi")), Number(localStorage.getItem("todoSaliVerisi")), Number(localStorage.getItem("todoCarsambaVerisi")), Number(localStorage.getItem("todoPersembeVerisi")), Number(localStorage.getItem("todoCumaVerisi")), Number(localStorage.getItem("todoCumartesiVerisi")), Number(localStorage.getItem("todoPazarVerisi"))],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)', 
+        borderColor: 'rgba(54, 162, 235, 1)', 
+        borderWidth: 1
+    }]
+};
+
+window.addEventListener('resize', function(){
+    todoChartOlustur()
+});
+todoChartOlustur()
+function todoChartOlustur(){
+    if(window.innerWidth > 1000){
+        let myChartUpDiary = new Chart(todoDiv, {
+            type: 'bar',
+            data: dataTodoUp1000,
+            options: {
+                title: {
+                    display: true,
+                    text: 'Yapılacaklar Listesi İstatistikileri',
+                    fontColor: 'red', 
+                    fontSize: 20 
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            color: '#202020' 
+                        }
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            color: '#202020' 
+                        }
+                    }],
+                    y: {
+                      beginAtZero: true
+                    }
+                  }      
+            }
+        });
+        
+    }
+    else{
+        let myChartDownTodo = new Chart(todoDiv, {
+            type: 'line',
+            data: dataTodoDown1000,
+            options: {
+                title: {
+                    display: true,
+                    text: 'Yapılacaklar Listesi İstatistikleri',
+                    fontColor: 'red', 
+                    fontSize: 20 
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            color: '#202020' 
+                        }
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            color: '#202020' 
+                        },
+                        
+                    }],
+                    y: {
+                      beginAtZero: true,
+                    }
+                  }      
+            }
+        });
+        
+    }
+}

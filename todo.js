@@ -52,6 +52,9 @@ if(localStorage.getItem("todoPazartesiVerisi") == null){
   if(localStorage.getItem("todoPazarVerisi") == null){
     localStorage.setItem("todoPazarVerisi",0)
   }
+  if(localStorage.getItem("todoIsSayisi") == null){
+    localStorage.setItem("todoIsSayisi",0)
+  }
   if(localStorage.getItem("gonderilenTodolar") == null){
     localStorage.setItem("gonderilenTodolar","")
   }
@@ -93,6 +96,9 @@ function yeniGörevEkle(){
         alert("Lütfen hiç bir alanı boş bırakmayınız.")
         return false
     }
+    todoIsSayisi = Number(localStorage.getItem("todoIsSayisi"))
+    todoIsSayisi += 1
+    localStorage.setItem("todoIsSayisi",todoIsSayisi)
     let gunler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]
     let gun = gunler[tarih.getDay()]
     if(gun == "Pazartesi"){

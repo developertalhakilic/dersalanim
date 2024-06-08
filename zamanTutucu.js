@@ -155,9 +155,18 @@ function kronometreAyar(){
     document.getElementById("KPSS").classList.remove("sinavSayaciSecili")
     document.getElementById("MSÜ").classList.remove("sinavSayaciSecili")
     document.getElementById("ALES").classList.remove("sinavSayaciSecili")
-    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0 || Number(saatInputValue) === "" || Number(saniyeInputValue) ==="" || Number(dakikaInputValue) === ""){
+    if(Number(saatInputValue) > 24 || Number(dakikaInputValue) > 59 || Number(saniyeInputValue) > 59 || Number(saatInputValue) < 0 || Number(dakikaInputValue) < 0 || Number(saniyeInputValue) < 0){
         alert("Lütfen geçerli bir zaman giriniz.")
         return null;
+    }
+    if(saatInputValue == ""){
+        saatInputValue = 0
+    }
+    if(dakikaInputValue == ""){
+        dakikaInputValue = 0
+    }
+    if(saniyeInputValue == ""){
+        saniyeInputValue = 0
     }
 
     saatcon.innerText = saatInputValue

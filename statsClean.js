@@ -30,6 +30,13 @@ window.addEventListener("load", () => {
       localStorage.setItem("gunlukCumaVerisi",0)
       localStorage.setItem("gunlukCumartesiVerisi",0)
       localStorage.setItem("gunlukPazarVerisi",0)
+      localStorage.setItem("todoPazartesiVerisi",0)
+      localStorage.setItem("todoSaliVerisi",0)
+      localStorage.setItem("todoCarsambaVerisi",0)
+      localStorage.setItem("todoPersembeVerisi",0)
+      localStorage.setItem("todoCumaVerisi",0)
+      localStorage.setItem("todoCumartesiVerisi",0)
+      localStorage.setItem("todoPazarVerisi",0)
       localStorage.setItem("lastClearTime", now.getTime());
     }
  });

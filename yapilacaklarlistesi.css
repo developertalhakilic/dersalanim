@@ -30,7 +30,6 @@
   padding: 7px;
   padding-left: 9px;
   transition: 0.2s;
-  z-index: 0;
 }
 .topLine{
   text-decoration: line-through;
@@ -66,11 +65,14 @@
   display: flex;
   align-items: flex-start;
 }
+
+.list-group-item{
+}
+
 .right-side{
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  z-index: 0;
 }
 .right-side .button1{
   width: 35px;
