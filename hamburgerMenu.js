@@ -4,7 +4,7 @@ function displayNone(){
     sideBarFull.style.display
 }
 function openSideBar(){
-    if(sideBarFull.style.display == "block"){
+    if(sideBarFull.style.display == "flex"){
         hamburgerButton.style.color = "white"
         sideBarFull.classList.remove("slide-in-left")
         sideBarFull.classList.add("slide-out-left")
@@ -13,7 +13,7 @@ function openSideBar(){
         }, 400);
     }
     else{
-        sideBarFull.style.display = "block"
+        sideBarFull.style.display = "flex"
         hamburgerButton.style.color = "red"
         sideBarFull.classList.remove("slide-out-left")
         sideBarFull.classList.add("slide-in-left")

@@ -41,20 +41,23 @@
 
 <body>
 
-    <div class="sideBarTop">
-        <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
+  <div class="sideBarTop">
+    <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div class="sideBar" id="sideBar">
+    <div class="sideBarBottom">
+        <a href="home.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
+        <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
+        <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
+        <a href="sorukaydetme.html" class="sideBarLink"><button><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
+        <a href="yapilacaklarlistesi.html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
+        <a href="gunluk.html" class="sideBarLink"><button><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
+        <a href="istatistikler.html" class="sideBarLink"><button><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
     </div>
-    <div class="sideBar" id="sideBar">
-      <div class="sideBarBottom">
-          <a href="home.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
-          <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
-          <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
-          <a href="sorukaydetme.html" class="sideBarLink"><button><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
-          <a href="yapilacaklarlistesi.html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
-          <a href="gunluk.html" class="sideBarLink"><button><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
-          <a href="istatistikler.html" class="sideBarLink"><button><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
-      </div>
-      </div>
+    <div class="sideBarBottom2">
+      <button class="darkToggle sideBarLink" title="Temayı Değiştir" onclick="temayiDegistir()">🌓</button>
+  </div>
+    </div>
 
     <center>
     <a href="home.html"><img src="Images/Ders_Alanım-removebg-preview.png" alt="" class="logo"></a>
@@ -777,7 +780,7 @@
         <div class="section2 section animation" id="questionSaverDiv">
             <img src="Images/soruisareti.png" class="sectionIcon" alt="">
             <h2>Soru Kaydetme Hizmetimiz</h2>
-            <p>Soru Kaydetme hizmetiz sayesinde anlamadığınız, beğendiğiniz veya hocalara sormayı planladığınız soruları, sitemizdeki "Soru Kaydetme" bölümüne girip kaydedebilirsiniz. Ardından ise "PDF Çıktısı" al özelliğimiz sayesinde kaydettiğiniz soruların detaylarını çıktı alabilirsiniz böylece hocalara soru sormak vb. işlerinizi daha kolay hale getirebilirsiniz.</p>
+            <p>Soru Kaydetme hizmetiz sayesinde anlamadığınız, beğendiğiniz veya hocalara sormayı planladığınız soruları, sitemizdeki "Soru Kaydetme" bölümüne girip kaydedebilirsiniz. Ardından ise "PDF Çıktısı" al özelliğimiz sayesinde kaydettiğiniz soruların detaylarını çıktı alabilirsiniz böylece hocalara soru sormak vb. işlerinizi kolaylaştırabilirsiniz.</p>
         </div>
         <div class="section3 section animation" id="statsDiv">
             <img src="Images/analizicon.png" class="sectionIcon" alt="">
@@ -792,7 +795,7 @@
         <div class="section5 section animation" id="todoListDiv">
             <img src="Images/list.png" class="sectionIcon" alt="">
             <h2>Yapılacaklar Listesi Oluşturma</h2>
-            <p>Yapılacaklar Listesi Oluşturma hizmetimiz sayesinde gün gün yapmayı planladığınız aktiviteleri tek bir sayfada toplayabilirsiniz. Ardından ise günlük planınızın PDF çıktısını alarak fiziksel olarak listenizi edinebilirsiniz. Planlı programlı çalışacağınızdan dolayı çalışma disiplini kazanmanıza bu hizmetimiz yardımcı olur.</p>
+            <p>Yapılacaklar Listesi Oluşturma hizmetimiz sayesinde gün gün yapmayı planladığınız aktiviteleri tek bir sayfada toplayabilirsiniz. Ardından ise günlük planınızın PDF çıktısını alarak fiziksel olarak listenizi edinebilirsiniz. Planlı programlı çalışacağınızdan dolayı çalışma disiplini kazanmanızı sağlar</p>
         </div>
         <div class="section6 section animation" id="googleClasroomDiv">
             <img src="Images/clasroom.png" class="sectionIcon" alt="">
@@ -804,6 +807,8 @@
     <script src="statsClean.js"></script>
     <script src="hamburgerMenu.js"></script>
     <script src="home.js"></script>
+    <script src="themeToggle.js"></script>
+
 </body>
 
 </html>

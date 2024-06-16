@@ -38,20 +38,23 @@
     </head>
 
 <body>
-    <div class="sideBarTop">
-        <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
+  <div class="sideBarTop">
+    <button class="hamburgerButton" id="hamburgerButton" onclick="openSideBar()"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div class="sideBar" id="sideBar">
+    <div class="sideBarBottom">
+        <a href="home.html" class="sideBarLink"><button><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
+        <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
+        <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
+        <a href="sorukaydetme.html" class="sideBarLink"><button><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
+        <a href="yapilacaklarlistesi.html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
+        <a href="gunluk.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
+        <a href="istatistikler.html" class="sideBarLink"><button><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
     </div>
-    <div class="sideBar" id="sideBar">
-      <div class="sideBarBottom">
-          <a href="home.html" class="sideBarLink"><button><i class="fa-solid fa-house"></i> Ana Sayfa</button></a>
-          <a href="pomodro.html" class="sideBarLink"><button><i class="fa-solid fa-clock"></i> Pomodoro Sayacı</button></a>
-          <a href="zamantutucu.html" class="sideBarLink"><button><i class="fa-solid fa-bell"></i> Zaman Tutucu</button></a>
-          <a href="sorukaydetme.html" class="sideBarLink"><button><i class="fa-solid fa-floppy-disk"></i> Soru Kaydetme</button></a>
-          <a href="yapilacaklarlistesi.html" class="sideBarLink"><button><i class="fa-solid fa-list"></i> Yapılacaklar Listesi</button></a>
-          <a href="gunluk.html" class="sideBarLink"><button style="color: rgb(255, 140, 0);"><i class="fa-solid fa-book"></i>Günlük Tutma</button></a>
-          <a href="istatistikler.html" class="sideBarLink"><button><i class="fa-solid fa-chart-simple"></i> İstatistikler</button></a>
-      </div>
-      </div>
+    <div class="sideBarBottom2">
+      <button class="darkToggle sideBarLink" title="Temayı Değiştir" onclick="temayiDegistir()">🌓</button>
+  </div>
+    </div>
     
     <div class="pageTop" data-bs-theme="dark">
         <button class="yeniSayfaEkleButton btn btn-dark container-sm"data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" id="yeniSayfaEkleButton"><i class="fa-solid fa-plus"></i> Yeni Sayfa Ekle</button>
@@ -164,4 +167,6 @@
     <script src="hamburgerMenu.js"></script>
     <script src="aktivasyon.js"></script>
     <script src="aktivasyonKodKayit.js"></script>
+    <script src="themeToggle.js"></script>
+
 </body>
