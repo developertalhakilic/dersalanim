@@ -169,7 +169,7 @@ function showTheDuraklatButon(){
     restartButon.style.display = "none"
     duraklatButon.style.display = "inline-block"
 }
-function stopButton(){
+function stopButton(){  
     baslatButon.style.display = "inline-block"
     duraklatButon.style.display = "none"
     bitirButon.style.display = "none"

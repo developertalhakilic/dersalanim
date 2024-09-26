@@ -16,6 +16,7 @@ const side = document.getElementById("sideBar")
 const saatInput = document.getElementById("saatInput")
 const dakikaInput = document.getElementById("dakikaInput")
 const saniyeInput = document.getElementById("saniyeInput")
+const bitirmeSesi = new Audio('alarm.mp3');
 function beforeUnloadListener(event) {
     const message = 'Çıkmak istediğinize emin misiniz?';
     event.preventDefault();
@@ -184,6 +185,7 @@ function kronometreAyar(){
 }
 function zamanlayiciBaslat(){
     if(saniyecon.innerText == "00" && dakikacon.innerText == "00" && saatcon.innerText == "00"){
+        bitirmeSesi.play();
         bitirButon.click()
         return null;
     }
